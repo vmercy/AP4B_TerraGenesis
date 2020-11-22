@@ -7,3 +7,4 @@ Project team :
 * Valentin Mercy
 
 Description :
+UTBM AP4B Project aims to develop a new version of TerraGenesis game
