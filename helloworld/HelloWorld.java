@@ -1,3 +1,11 @@
+/**
+ * @author Valentin Mercy (vmercy)
+ * @version 1.0
+ */
+
+/**
+ * @brief simple helloworld
+ */
 public class HelloWorld {
 
   // Définition de la fonction main
