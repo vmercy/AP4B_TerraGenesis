@@ -62,7 +62,6 @@ public class Tree extends Vegetal {
     public boolean createTree(int nombreDePoint,String nom, double taille, double epaisseur,double oxy){
         double oxygene = getOxygenGiven();
         double gazcarbonique = getCarbonDioxydeAbsorbed();
-
         if(oxygene != 0 && gazcarbonique != 0 && nombreDePoint !=0){
             if(oxygene >= oxy && gazcarbonique >=oxy ){
                 this.nom = nom;
@@ -73,7 +72,7 @@ public class Tree extends Vegetal {
                     }else {
                         JOptionPane.showMessageDialog(null,"Nombre de nombreDePoint insuffisant pour un arbre de cette taille. Veuillez réduire la taille");
                     }
-                    this.taille = taille <= nombreDePoint ? taille:nombreDePoint;
+                    //this.taille = taille <= nombreDePoint ? taille:nombreDePoint;
                     this.epaisseur = epaisseur <= nombreDePoint ? epaisseur/nombreDePoint:epaisseur/nombreDePoint+epaisseur;
                     this.couleur = "green";
                 }else {

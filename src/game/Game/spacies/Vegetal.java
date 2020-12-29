@@ -2,6 +2,8 @@
 package Game.spacies;
 
 
+import javax.swing.*;
+
 public class Vegetal extends Species {
     
     
@@ -9,7 +11,8 @@ public class Vegetal extends Species {
     private double carbonDioxydeAbsorbed;
 
 
-    private Species species;
+
+   // private Species species;
 
     protected double getOxygenGiven() {
         return oxygenGiven;
@@ -19,9 +22,14 @@ public class Vegetal extends Species {
         return carbonDioxydeAbsorbed;
     }
 
-    public Species getSpecies() {
+    /*public Species getSpecies() {
         return this.species;
+    }*
+    public void set(Species species ) {
+        this.species = species;
     }
+
+     */
 
     protected void setOxygenGiven(double oxygenGiven) {
         this.oxygenGiven = oxygenGiven;
@@ -31,31 +39,15 @@ public class Vegetal extends Species {
         this.carbonDioxydeAbsorbed = carbonDioxydeAbsorbed;
     }
 
-    public void set(Species species ) {
-        this.species = species;
-    }
-
-
-    
-    
     public Vegetal() {
-    
-    
-    }
-    /**
-    * @param vegetal
-    */
-
-    
-    
-    public void reproduce(Vegetal vegetal) {
-    
-    
     }
 
-    public double createOxygene(double price){
-        return this.oxygenGiven;
+    public void createOxygeneAndCO2(double nombreDePoint){
+        if(nombreDePoint<=0){
+            JOptionPane.showMessageDialog(null,"Nombre de nombreDePoint insuffisant pour produire l'oxygene!");
+        }else {
+            this.oxygenGiven += this.oxygenGiven*nombreDePoint;
+            this.carbonDioxydeAbsorbed += this.carbonDioxydeAbsorbed*nombreDePoint;
+        }
     }
-
-
 }

@@ -1,32 +1,20 @@
 package Game.spacies;
 
 
-public class Animal extends Species {
+import javax.swing.*;
+
+public abstract class Animal extends Species {
     
-    
+    public static final int MAX_ENERGY = 200;
     private int strenght;
-
-    
-    
-    private byte typeOfAnimals;
-
-    
-    
+    private String typeOfAnimals;
     private int energyGiven;
-
-    
-    
     private int energyNeed;
-
-    
-    
-    private Species species;
-
     protected int getStrenght() {
         return strenght;
     }
 
-    protected byte getTypeOfAnimals() {
+    protected String getTypeOfAnimals() {
         return typeOfAnimals;
     }
 
@@ -38,15 +26,11 @@ public class Animal extends Species {
         return energyNeed;
     }
 
-    public Species getSpecies() {
-        return this.species;
-    }
-
     protected void setStrenght(int strenght) {
         this.strenght = strenght;
     }
 
-    protected void setTypeOfAnimals(byte typeOfAnimals) {
+    protected void setTypeOfAnimals(String typeOfAnimals) {
         this.typeOfAnimals = typeOfAnimals;
     }
 
@@ -66,12 +50,10 @@ public class Animal extends Species {
     }
 
 
-    
-    
-    public void eat(Animal animal) {
-    
-    
-    }
+
+
+    public abstract void eat(Species species);
+
 
 
 }
