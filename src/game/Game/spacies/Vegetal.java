@@ -6,13 +6,9 @@ public class Vegetal extends Species {
     
     
     private double oxygenGiven;
-
-    
-    
     private double carbonDioxydeAbsorbed;
 
-    
-    
+
     private Species species;
 
     protected double getOxygenGiven() {
@@ -55,6 +51,10 @@ public class Vegetal extends Species {
     public void reproduce(Vegetal vegetal) {
     
     
+    }
+
+    public double createOxygene(double price){
+        return this.oxygenGiven;
     }
 
 

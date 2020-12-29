@@ -5,63 +5,41 @@ package Game.spacies;
 public class AquaticMammal extends Animal {
     
     
-    private Mammal ;
+    private Mammal mammal;
 
     
     
-    private AquaticAnimal ;
+    private AquaticAnimal aquaticAnimal;
 
     
     
-    private Animal ;
+    private Animal animal;
 
-    public Mammal get() {
-        return ;
+    public Mammal getMammal() {
+        return this.mammal;
     }
 
-    public AquaticAnimal get() {
-        return ;
+    public AquaticAnimal getAquaticAnimal() {
+        return this.aquaticAnimal;
     }
 
-    public Animal get() {
-        return ;
+    public Animal getAnimal() {
+        return this.animal;
     }
 
-    public void set(Mammal ) {
-        this. = ;
+    public void setMammal(Mammal mammal) {
+        this.mammal =mammal ;
     }
 
-    public void set(AquaticAnimal ) {
-        this. = ;
+    public void setAquaticAnimal(AquaticAnimal aquaticAnimal) {
+        this.aquaticAnimal =aquaticAnimal ;
     }
 
-    public void set(Animal ) {
-        this. = ;
+    public void setAnimal(Animal animal) {
+        this.animal = animal;
     }
 
-    public void link(Mammal _) {
-        set(_);
-    }
 
-    public void link(AquaticAnimal _) {
-        set(_);
-    }
-
-    public void link(Animal _) {
-        set(_);
-    }
-
-    public void unlink() {
-        set(null);
-    }
-
-    public void unlink() {
-        set(null);
-    }
-
-    public void unlink() {
-        set(null);
-    }
 
     
     
