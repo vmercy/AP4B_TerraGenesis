@@ -115,8 +115,9 @@ public class Settings {
 
     
     
-    public void bool success() {
-    
+    public void bool success() 
+    {
+    	
     
     }
     

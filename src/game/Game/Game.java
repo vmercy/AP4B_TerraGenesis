@@ -4,13 +4,6 @@ package Game;
 import java.util.*;
 import java.time.*;
 
-
-
-
-
-
-
-
 public class Game {
     
     
@@ -27,7 +20,9 @@ public class Game {
     
     
     private double oxygen;
+    
 
+    private double carbonDioxide;
     
     
     private double biomass;
@@ -41,14 +36,11 @@ public class Game {
     private Planet ;
 
     
-    
     private Mission ;
 
     
-    
     private Money ;
 
-    
     
     private Settings ;
 
@@ -66,6 +58,10 @@ public class Game {
 
     private double getOxygen() {
         return oxygen;
+    }
+    
+    private double getCarbonDioxide() {
+        return carbonDioxide;
     }
 
     private double getBiomass() {
@@ -106,6 +102,10 @@ public class Game {
 
     private void setOxygen(double oxygen) {
         this.oxygen = oxygen;
+    }
+    
+    private void setCarbonDioxide(double carbonDioxide) {
+        this.carbonDioxide = carbonDioxide;
     }
 
     private void setBiomass(double biomass) {
@@ -201,21 +201,70 @@ public class Game {
     }
 
     
-    
-    public Game() {
-    
-    
-    }
+ 
     /**
-    * @param newMoney
+    * @param None
+    * @brief Lors de l'initialisation de Game, les paramètres sont définis à 0 (jauge de progression en %)
     */
 
-    
-    
-    public void setMoney(double newMoney) {
-    
-    
+    public Game() 
+    {
+    	this.setMoney(0);
+    	this.setPression(0);
+    	this.setOxygen(0);
+    	this.pression(0);
+    	this.setWater(0);
+    	this.biomass(0);
     }
-
-
-}
+    
+    /**
+     * @param Animal animal_p
+     * @brief Lorsque qu'une espèce est instaurée avec succès sur la planète, la jauge de Co2 monte 
+     */
+    
+    public void AnimalSpeciesIntroduced(Animal animal_p)
+    {
+    	double newCarbonDioxide;
+    	newCarbonDioxide = this.carbonDioxide + animal_p.getCarbonDioxideProduced();
+    	this.setOxygen(newCarbonDioxide);
+    }
+    
+    /**
+     * @param Vegetal vegetal_p
+     * @brief Lorsque qu'un végétal est instauré avec succès sur la planète, la jauge d'O2 monte
+     */
+    
+    public void AnimalSpeciesIntroduced(Animal animal_p)
+    {
+    	double newOxygen;
+    	newOxygen = this.oxygen + vegetal_p.getOxygenGiven();
+    	this.setOxygen(newOxygen);
+    }
+    
+    /**
+     * @param None
+     * @brief Si les jauges d'O2 et de Co2 sont à 10% (progression dans le jeu ce n'est pas une répartition)
+     * 		  alors la jauge d'atmosphère passe à 10%
+     */
+    
+    public void atmosphereFirstAdvanced()
+    {
+    	if(this.getCarbonDioxide()>=10 && this.getOxygen()>=10)
+    	{
+    		this.setPression(10);
+    	}
+    }
+    
+    /**
+     * @param None
+     * @brief Si les jauges d'O2 et de Co2 sont à 20% (individuellement) alors la jauge d'atmosphère passe à 20%
+     */
+    
+    public void atmosphereFirstAdvanced()
+    {
+    	double newOxygen;
+    	newOxygen = this.oxygen + vegetal_p.getOxygenGiven();
+    	this.setOxygen(newOxygen);
+    }
+    
+    

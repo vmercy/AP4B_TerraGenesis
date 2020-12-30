@@ -6,6 +6,7 @@ import javax.swing.*;
 public abstract class Animal extends Species {
     
     public static final int MAX_ENERGY = 200;
+    private double carbonDioxideProduced;
     private int strenght;
     private String typeOfAnimals;
     private int energyGiven;
@@ -14,10 +15,15 @@ public abstract class Animal extends Species {
         return strenght;
     }
 
+    
+    public double getcarbonDioxideProduced() {
+        return carbonDioxideProduced;
+    }
+    
     protected String getTypeOfAnimals() {
         return typeOfAnimals;
     }
-
+    
     protected int getEnergyGiven() {
         return energyGiven;
     }
@@ -26,6 +32,11 @@ public abstract class Animal extends Species {
         return energyNeed;
     }
 
+    
+    public void setcarbonDioxideProduced(double carbonDioxideProduced) {
+        this.carbonDioxideProduced = carbonDioxideProduced;
+    }
+    
     protected void setStrenght(int strenght) {
         this.strenght = strenght;
     }
