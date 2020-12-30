@@ -67,11 +67,11 @@ public class Plant extends Vegetal {
     }
 
 
-    public boolean createPlant(int nombreDePoint,String nom,double epaisseur,double oxy){
+    public boolean createPlant(int nombreDePoint,String nom,double epaisseur){
         double oxygene = getOxygenGiven();
         double gazcarbonique = getCarbonDioxydeAbsorbed();
         if(oxygene != 0 && gazcarbonique != 0 && nombreDePoint !=0){
-            if(oxygene >= oxy && gazcarbonique >=oxy ){
+
                 this.nom = nom;
                 if(nombreDePoint >0 ){
                     if(LENGTH_OF_PLANT <= nombreDePoint){
@@ -88,10 +88,10 @@ public class Plant extends Vegetal {
                     this.epaisseur = 0;
                     this.couleur = "orange";
                 }
-                numbreOfPlant +=oxy*oxy*nombreDePoint;
-                setOxygenGiven(oxygene-oxy);
-                setCarbonDioxydeAbsorbed(gazcarbonique-oxy);
-            }
+                numbreOfPlant +=oxygene*oxygene*nombreDePoint;
+                setOxygenGiven(oxygene+numbreOfPlant*oxygene/100);
+                //setCarbonDioxydeAbsorbed(gazcarbonique-oxy);
+
         }
 
         return  this.iscorrectPlanCreated;

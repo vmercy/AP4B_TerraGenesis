@@ -45,15 +45,12 @@ public abstract class Animal extends Species {
 
     
     public Animal() {
-    
-    
+
     }
 
 
 
 
     public abstract void eat(Species species);
-
-
 
 }

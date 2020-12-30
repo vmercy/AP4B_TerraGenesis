@@ -7,8 +7,8 @@ import javax.swing.*;
 public class Vegetal extends Species {
     
     
-    private double oxygenGiven;
-    private double carbonDioxydeAbsorbed;
+    public static   double oxygenGiven;
+    public static double carbonDioxydeAbsorbed;
 
 
 
@@ -31,23 +31,23 @@ public class Vegetal extends Species {
 
      */
 
-    protected void setOxygenGiven(double oxygenGiven) {
-        this.oxygenGiven = oxygenGiven;
+    protected void setOxygenGiven(double oxygenGive) {
+        oxygenGiven = oxygenGive;
     }
 
-    protected void setCarbonDioxydeAbsorbed(double carbonDioxydeAbsorbed) {
-        this.carbonDioxydeAbsorbed = carbonDioxydeAbsorbed;
+    protected void setCarbonDioxydeAbsorbed(double carbonDioxydeAbsorbe) {
+        carbonDioxydeAbsorbed = carbonDioxydeAbsorbe;
     }
 
     public Vegetal() {
     }
 
-    public void createOxygeneAndCO2(double nombreDePoint){
+    public void createOxygene(double nombreDePoint){
         if(nombreDePoint<=0){
             JOptionPane.showMessageDialog(null,"Nombre de nombreDePoint insuffisant pour produire l'oxygene!");
         }else {
-            this.oxygenGiven += this.oxygenGiven*nombreDePoint;
-            this.carbonDioxydeAbsorbed += this.carbonDioxydeAbsorbed*nombreDePoint;
+            oxygenGiven += oxygenGiven*nombreDePoint;
+            //carbonDioxydeAbsorbed += carbonDioxydeAbsorbed*nombreDePoint;
         }
     }
 }

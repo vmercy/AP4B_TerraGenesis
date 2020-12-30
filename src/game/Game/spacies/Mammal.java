@@ -6,21 +6,12 @@ import Game.spacies.Animal;
 
 import javax.swing.*;
 
+import static Game.spacies.Vegetal.carbonDioxydeAbsorbed;
+
 
 public class Mammal extends Animal {
     
-    
-    private Vertebrate vertebrate;
 
-
-
-    public Vertebrate getVertebrate() {
-        return this.vertebrate;
-    }
-
-    public void set(Vertebrate vertebrate) {
-        this.vertebrate = vertebrate ;
-    }
 
 
     
@@ -28,6 +19,50 @@ public class Mammal extends Animal {
     public Mammal() {
     
     }
+
+    private String nom;
+    private double taille;
+
+    public double getTaille() {
+        return taille;
+    }
+
+    public void setTaille(double taille) {
+        this.taille = taille;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getUrlPhoto() {
+        return urlPhoto;
+    }
+
+    public void setUrlPhoto(String urlPhoto) {
+        this.urlPhoto = urlPhoto;
+    }
+
+    private  String urlPhoto;
+
+
+
+    public Mammal(String nom,double taille, String urlPhoto) {
+        this.nom = nom;
+        this.urlPhoto = urlPhoto;
+        this.taille = taille;
+    }
+
+    public Mammal createAquatiqueMammal(String nom, String urlPhoto){
+        Mammal Mammal = new Mammal(nom,taille,urlPhoto);
+        carbonDioxydeAbsorbed += taille;
+        return  Mammal;
+    }
+
 
     private static int energyNeed = 200;
     private  int energyProgress;

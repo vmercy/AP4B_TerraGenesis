@@ -4,30 +4,60 @@ package Game.spacies;
 
 import javax.swing.*;
 
+import static Game.spacies.Vegetal.carbonDioxydeAbsorbed;
+
 public class AquaticMammal extends Animal {
     
-    
-    private Mammal mammal;
+
     private static int energyNeed = 110;
-    private  int energyProgress;
-    public Mammal getMammal() {
-        return this.mammal;
+    private   int energyProgress;
+
+    private String nom;
+    private double taille;
+
+    public double getTaille() {
+        return taille;
+    }
+
+    public void setTaille(double taille) {
+        this.taille = taille;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getUrlPhoto() {
+        return urlPhoto;
+    }
+
+    public void setUrlPhoto(String urlPhoto) {
+        this.urlPhoto = urlPhoto;
+    }
+
+    private  String urlPhoto;
+
+    public AquaticMammal(){
+        super();
     }
 
 
-    public void setMammal(Mammal mammal) {
-        this.mammal =mammal ;
+    public AquaticMammal(String nom,double taille, String urlPhoto) {
+        this.nom = nom;
+        this.urlPhoto = urlPhoto;
+        this.taille = taille;
     }
 
-
-
-
-    
-    
-    public AquaticMammal() {
-    
-    
+    public AquaticMammal createAquatiqueMammal(String nom, String urlPhoto){
+        AquaticMammal aquaticMammal = new AquaticMammal(nom,taille,urlPhoto);
+        carbonDioxydeAbsorbed += taille;
+        return  aquaticMammal;
     }
+
 
     @Override
     public void eat(Species species) {

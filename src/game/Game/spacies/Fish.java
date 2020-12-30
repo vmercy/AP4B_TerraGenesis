@@ -4,31 +4,10 @@ package Game.spacies;
 
 import javax.swing.*;
 
+import static Game.spacies.Vegetal.carbonDioxydeAbsorbed;
+
 public class Fish extends Animal {
-    
-    
-    private Invertebrate invertebrate;
 
-    
-    
-    private Vertebrate vertebrate;
-
-
-    public Invertebrate getInvertebrate() {
-        return this.invertebrate;
-    }
-
-    public Vertebrate getVertebrate() {
-        return this.vertebrate;
-    }
-
-    public void set(Invertebrate invertebrate) {
-        this.invertebrate = invertebrate ;
-    }
-
-    public void set(Vertebrate vertebrate) {
-        this.vertebrate = vertebrate;
-    }
     private static int energyNeed = 80;
     private  int energyProgress;
 
@@ -101,5 +80,49 @@ public class Fish extends Animal {
                     JOptionPane.showMessageDialog(null,"Niveau maximal d'energie atteint");
                 }
         }
+
+}
+
+
+    private String nom;
+    private  String urlPhoto;
+    private double taille;
+
+    public double getTaille() {
+        return taille;
+    }
+
+    public void setTaille(double taille) {
+        this.taille = taille;
+    }
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getUrlPhoto() {
+        return urlPhoto;
+    }
+
+    public Fish() {
+    }
+
+    public void setUrlPhoto(String urlPhoto) {
+        this.urlPhoto = urlPhoto;
+    }
+
+    public Fish(String nom,double taille, String urlPhoto) {
+        this.nom = nom;
+        this.urlPhoto = urlPhoto;
+        this.taille = taille;
+    }
+
+    public Fish createFish(String nom,double taille, String urlPhoto){
+        Fish fish = new  Fish(nom,taille,urlPhoto);
+        carbonDioxydeAbsorbed += taille;
+        return  fish;
     }
 }
