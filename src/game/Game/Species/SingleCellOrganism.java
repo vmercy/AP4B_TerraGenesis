@@ -1,8 +1,8 @@
 
-package Game.spacies;
+package Game.Species;
 
 import Game.Game;
-import Game.spacies.Fish;
+import Game.Species.Fish;
 
 
 public class SingleCellOrganism extends Fish {

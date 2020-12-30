@@ -1,5 +1,5 @@
 
-package Game.spacies;
+package Game.Species;
 
 
 public class Human extends Mammal {
