@@ -1,19 +1,35 @@
 
-package Game.spacies;
-
+package Game.Species;
 
 import Game.Game;
-import Game.spacies.Animal;
+import Game.Species.Animal;
 
 import javax.swing.*;
 
-public class Insect extends Animal {
+
+public class Mammal extends Animal {
     
     
-    public Insect() {
+    private Vertebrate vertebrate;
+
+
+
+    public Vertebrate getVertebrate() {
+        return this.vertebrate;
     }
 
-    private static int energyNeed = 20;
+    public void set(Vertebrate vertebrate) {
+        this.vertebrate = vertebrate ;
+    }
+
+
+    
+    
+    public Mammal() {
+    
+    }
+
+    private static int energyNeed = 200;
     private  int energyProgress;
 
     @Override
@@ -86,5 +102,6 @@ public class Insect extends Animal {
                 }
         }
     }
+
 
 }

@@ -1,8 +1,8 @@
 
-package Game.spacies;
+package Game.Species;
 
 import Game.Game;
-import Game.spacies.Vegetal;
+import Game.Species.Vegetal;
 
 import javax.swing.*;
 

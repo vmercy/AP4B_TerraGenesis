@@ -1,4 +1,4 @@
-package Game.spacies;
+package Game.Species;
 
 
 import javax.swing.*;

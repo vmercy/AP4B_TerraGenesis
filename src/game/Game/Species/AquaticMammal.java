@@ -1,36 +1,33 @@
 
-package Game.spacies;
+package Game.Species;
 
 
 import javax.swing.*;
 
-public class Fish extends Animal {
+public class AquaticMammal extends Animal {
     
     
-    private Invertebrate invertebrate;
-
-    
-    
-    private Vertebrate vertebrate;
-
-
-    public Invertebrate getInvertebrate() {
-        return this.invertebrate;
-    }
-
-    public Vertebrate getVertebrate() {
-        return this.vertebrate;
-    }
-
-    public void set(Invertebrate invertebrate) {
-        this.invertebrate = invertebrate ;
-    }
-
-    public void set(Vertebrate vertebrate) {
-        this.vertebrate = vertebrate;
-    }
-    private static int energyNeed = 80;
+    private Mammal mammal;
+    private static int energyNeed = 110;
     private  int energyProgress;
+    public Mammal getMammal() {
+        return this.mammal;
+    }
+
+
+    public void setMammal(Mammal mammal) {
+        this.mammal =mammal ;
+    }
+
+
+
+
+    
+    
+    public AquaticMammal() {
+    
+    
+    }
 
     @Override
     public void eat(Species species) {
@@ -102,4 +99,6 @@ public class Fish extends Animal {
                 }
         }
     }
+
+
 }
