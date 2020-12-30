@@ -1,4 +1,4 @@
-package utbm.TerraGenesis;
+
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -148,7 +148,7 @@ public class Conditions extends Home{
 		textField_3.setBounds(255, 440, 125, 32);
 		frame.getContentPane().add(textField_3);
 		
-		textField_4 = new JTextField("600°C");
+		textField_4 = new JTextField("600ï¿½C");
 		textField_4.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		textField_4.setEditable(false);
 		textField_4.setHorizontalAlignment(JTextField.CENTER);

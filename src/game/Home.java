@@ -1,4 +1,4 @@
-package utbm.TerraGenesis;
+//
 
 import java.awt.Color;
 import java.awt.EventQueue;
