@@ -1,5 +1,4 @@
 
-
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -56,11 +55,34 @@ public class Animals extends Home{
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		Object[] elements = new Object[] {"Fish", "Mammal", "Insect"};
+		Object[] element = new Object[] {"Tuna", "Shark", "Shrimp", "Mackerel", "Small Fish", "Single Cell Organism"};
+		@SuppressWarnings({ "unchecked", "rawtypes" })
+		JComboBox<String> comboBox_1 = new JComboBox(element);
+		comboBox_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		comboBox_1.addActionListener(bHandler);
+		comboBox_1.setBounds(296, 293, 141, 32);
+		comboBox_1.setVisible(false);
+		frame.getContentPane().add(comboBox_1);
+		
+		Object[] elements = new Object[] {"Aquatic Mammal","Insect","Fish"};
 		@SuppressWarnings({ "unchecked", "rawtypes" })
 		JComboBox<String> comboBox = new JComboBox(elements);
 		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		comboBox.addActionListener(bHandler);
+		comboBox.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				if(comboBox.getSelectedItem().equals("Fish")) {
+					
+					comboBox_1.setVisible(true);
+				}
+				else {
+					
+					comboBox_1.setVisible(false);
+				}
+					
+			}
+		});
 		comboBox.setBounds(296, 251, 141, 32);
 		frame.getContentPane().add(comboBox);
 		
@@ -70,11 +92,17 @@ public class Animals extends Home{
 		btnNewButton_3_1.setIcon(new ImageIcon(".\\Images\\add-icon-1.png"));
 		btnNewButton_3_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showConfirmDialog(null, "Add a "+ comboBox.getSelectedItem() +" : -600$");
-
+				if(comboBox.getSelectedItem().equals("Fish")) {
+					
+					JOptionPane.showConfirmDialog(null, "Add "+ comboBox_1.getSelectedItem() +" : -400$");
+				}
+				else {
+					
+					JOptionPane.showConfirmDialog(null, "Add "+ comboBox.getSelectedItem() +" : -600$");
+				}
 			}
 		});
-		btnNewButton_3_1.setBounds(211, 370, 103, 32);
+		btnNewButton_3_1.setBounds(214, 378, 103, 32);
 		frame.getContentPane().add(btnNewButton_3_1);
 		
 		JButton btnNewButton_3 = new JButton("Back");
@@ -104,6 +132,7 @@ public class Animals extends Home{
 		
 		JProgressBar progressBar = new JProgressBar();
 		progressBar.setBounds(878, 27, 207, 11);
+		progressBar.setValue(30);
 		frame.getContentPane().add(progressBar);
 
 		JLabel lblNewLabel_6 = new JLabel("Mission");
@@ -128,9 +157,5 @@ public class Animals extends Home{
 		lblNewLabel_1.setIcon(new ImageIcon(".\\Images\\lunee.jpg"));
 		lblNewLabel_1.setBounds(0, 0, 1106, 680);
 		frame.getContentPane().add(lblNewLabel_1);
-		
-		
-		
-
 	}
 }

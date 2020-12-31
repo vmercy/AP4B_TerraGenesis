@@ -1,5 +1,4 @@
 
-
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -69,7 +68,7 @@ public class Facility extends Home {
 		btnNewButton_3_1.addActionListener(bHandler);
 		btnNewButton_3_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showConfirmDialog(null, "Create a "+ comboBox.getSelectedItem() +" : -5000$");
+				JOptionPane.showConfirmDialog(null, "Create "+ comboBox.getSelectedItem() +" : -5000$");
 
 			}
 		});
@@ -103,6 +102,7 @@ public class Facility extends Home {
 		
 		JProgressBar progressBar = new JProgressBar();
 		progressBar.setBounds(878, 27, 207, 11);
+		progressBar.setValue(30);
 		frame.getContentPane().add(progressBar);
 
 		JLabel lblNewLabel_6 = new JLabel("Mission");

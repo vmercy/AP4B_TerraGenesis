@@ -1,4 +1,3 @@
-//
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -14,6 +13,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 import javax.swing.JProgressBar;
@@ -25,6 +25,7 @@ public class Home {
 	String clickSound, tavernMusic;
 	SoundEffect se = new SoundEffect();
 	Music mu = new Music();
+	int x=1;
 	
 	public static void main(String[] args) {
 		
@@ -105,10 +106,22 @@ public class Home {
 		JButton btnNewButton_5 = new JButton("Add Humans");
 		btnNewButton_5.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnNewButton_5.addActionListener(bHandler);
+		if(x!=0) {
+			
+			btnNewButton_5.setBackground(Color.DARK_GRAY);	
+		}
 		btnNewButton_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Humans humans = new Humans();
-				humans.frame.setVisible(true);
+				if(x!=0) {
+					
+					JOptionPane.showInternalMessageDialog(null, "Not yet !");
+				}
+				else {
+
+					Humans humans = new Humans();
+					humans.frame.setVisible(true);
+				}
+			
 			}
 		});
 		btnNewButton_5.setBounds(315, 291, 175, 62);
@@ -124,14 +137,8 @@ public class Home {
 				materials.frame.setVisible(true);
 			}
 		});
-		btnNewButton_3.setBounds(10, 631, 135, 39);
+		btnNewButton_3.setBounds(10, 631, 116, 39);
 		frame.getContentPane().add(btnNewButton_3);
-		
-		JButton btnNewButton_3_1 = new JButton("");
-		btnNewButton_3_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		btnNewButton_3_1.addActionListener(bHandler);
-		btnNewButton_3_1.setBounds(208, 631, 135, 39);
-		frame.getContentPane().add(btnNewButton_3_1);
 		
 		JButton btnNewButton_3_1_1 = new JButton("View Conditions");
 		btnNewButton_3_1_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -142,7 +149,7 @@ public class Home {
 				conditions.frame.setVisible(true);
 			}
 		});
-		btnNewButton_3_1_1.setBounds(403, 631, 135, 39);
+		btnNewButton_3_1_1.setBounds(136, 631, 116, 39);
 		frame.getContentPane().add(btnNewButton_3_1_1);
 		
 		JButton btnNewButton_4 = new JButton("Exit");
@@ -165,6 +172,7 @@ public class Home {
 		
 		JProgressBar progressBar = new JProgressBar();
 		progressBar.setBounds(878, 27, 207, 11);
+		progressBar.setValue(30);
 		frame.getContentPane().add(progressBar);
 	
 		JLabel lblNewLabel_3 = new JLabel("Mission");

@@ -1,5 +1,4 @@
 
-
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -11,19 +10,12 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JProgressBar;
-import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 
 public class Conditions extends Home{
 
 	JFrame frame;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
 
 	/**
 	 * Launch the application.
@@ -94,78 +86,61 @@ public class Conditions extends Home{
 		JLabel lblNewLabel_3_1_1 = new JLabel("Gaz :");
 		lblNewLabel_3_1_1.setForeground(Color.WHITE);
 		lblNewLabel_3_1_1.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
-		lblNewLabel_3_1_1.setBounds(65, 506, 233, 32);
+		lblNewLabel_3_1_1.setBounds(65, 499, 233, 32);
 		frame.getContentPane().add(lblNewLabel_3_1_1);
 		
 		
 		JLabel lblNewLabel_3_1_2 = new JLabel("Oxygen :");
 		lblNewLabel_3_1_2.setForeground(Color.WHITE);
 		lblNewLabel_3_1_2.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
-		lblNewLabel_3_1_2.setBounds(65, 368, 233, 32);
+		lblNewLabel_3_1_2.setBounds(65, 363, 233, 32);
 		frame.getContentPane().add(lblNewLabel_3_1_2);
 		
 		JLabel lblNewLabel_3_1_2_1 = new JLabel("Water :");
 		lblNewLabel_3_1_2_1.setForeground(Color.WHITE);
 		lblNewLabel_3_1_2_1.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
-		lblNewLabel_3_1_2_1.setBounds(65, 437, 233, 32);
+		lblNewLabel_3_1_2_1.setBounds(65, 429, 233, 32);
 		frame.getContentPane().add(lblNewLabel_3_1_2_1);
 	
 		JLabel lblNewLabel_3_1_2_2 = new JLabel("Biomass :");
 		lblNewLabel_3_1_2_2.setForeground(Color.WHITE);
 		lblNewLabel_3_1_2_2.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
-		lblNewLabel_3_1_2_2.setBounds(65, 298, 233, 32);
+		lblNewLabel_3_1_2_2.setBounds(65, 297, 233, 32);
 		frame.getContentPane().add(lblNewLabel_3_1_2_2);
 		
-		textField = new JTextField("5000D");
-		textField.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		textField.setEditable(false);
-		textField.setHorizontalAlignment(JTextField.CENTER);
-		textField.setBounds(255, 234, 125, 32);
-		frame.getContentPane().add(textField);
-		textField.setColumns(10);
+		JProgressBar progressBar_1 = new JProgressBar();
+		progressBar_1.setBounds(253, 179, 207, 11);
+		progressBar_1.setValue(50);
+		frame.getContentPane().add(progressBar_1);
 		
-		textField_1 = new JTextField("332147W");
-		textField_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		textField_1.setEditable(false);
-		textField_1.setHorizontalAlignment(JTextField.CENTER);
-		textField_1.setColumns(10);
-		textField_1.setBounds(255, 301, 125, 32);
-		frame.getContentPane().add(textField_1);
+		JProgressBar progressBar_2 = new JProgressBar();
+		progressBar_2.setBounds(253, 244, 207, 11);
+		progressBar_2.setValue(45);
+		frame.getContentPane().add(progressBar_2);
 		
-		textField_2 = new JTextField("100P");
-		textField_2.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		textField_2.setEditable(false);
-		textField_2.setHorizontalAlignment(JTextField.CENTER);
-		textField_2.setColumns(10);
-		textField_2.setBounds(255, 371, 125, 32);
-		frame.getContentPane().add(textField_2);
+		JProgressBar progressBar_3 = new JProgressBar();
+		progressBar_3.setBounds(253, 308, 207, 11);
+		progressBar_3.setValue(12);
+		frame.getContentPane().add(progressBar_3);
 		
-		textField_3 = new JTextField("94560ml");
-		textField_3.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		textField_3.setEditable(false);
-		textField_3.setHorizontalAlignment(JTextField.CENTER);
-		textField_3.setColumns(10);
-		textField_3.setBounds(255, 440, 125, 32);
-		frame.getContentPane().add(textField_3);
+		JProgressBar progressBar_3_1 = new JProgressBar();
+		progressBar_3_1.setBounds(253, 374, 207, 11);
+		progressBar_3_1.setValue(95);
+		frame.getContentPane().add(progressBar_3_1);
 		
-		textField_4 = new JTextField("600�C");
-		textField_4.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		textField_4.setEditable(false);
-		textField_4.setHorizontalAlignment(JTextField.CENTER);
-		textField_4.setColumns(10);
-		textField_4.setBounds(255, 169, 125, 32);
-		frame.getContentPane().add(textField_4);
+		JProgressBar progressBar_3_1_1 = new JProgressBar();
+		progressBar_3_1_1.setBounds(253, 443, 207, 11);
+		progressBar_3_1_1.setValue(73);
+		frame.getContentPane().add(progressBar_3_1_1);
 		
-		textField_5 = new JTextField("10000K");
-		textField_5.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		textField_5.setEditable(false);
-		textField_5.setHorizontalAlignment(JTextField.CENTER);
-		textField_5.setColumns(10);
-		textField_5.setBounds(255, 509, 125, 32);
-		frame.getContentPane().add(textField_5);
+		JProgressBar progressBar_3_1_2 = new JProgressBar();
+		progressBar_3_1_2.setBounds(253, 511, 207, 11);
+		progressBar_3_1_2.setValue(66);
+		frame.getContentPane().add(progressBar_3_1_2);
 		
 		JProgressBar progressBar = new JProgressBar();
 		progressBar.setBounds(878, 27, 207, 11);
+		progressBar.setValue(30);
 		frame.getContentPane().add(progressBar);
 	
 		JLabel lblNewLabel_6 = new JLabel("Mission");

@@ -1,5 +1,4 @@
 
-
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -103,6 +102,7 @@ public class Vegetals extends Home{
 		
 		JProgressBar progressBar = new JProgressBar();
 		progressBar.setBounds(878, 27, 207, 11);
+		progressBar.setValue(30);
 		frame.getContentPane().add(progressBar);
 
 		JLabel lblNewLabel_6 = new JLabel("Mission");
