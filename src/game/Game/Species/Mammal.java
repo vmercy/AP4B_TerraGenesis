@@ -1,21 +1,70 @@
 
-package Game.spacies;
-
+package Game.Species;
 
 import Game.Game;
-import Game.spacies.Animal;
+import Game.Species.Animal;
 
 import javax.swing.*;
 
 import static Game.spacies.Vegetal.carbonDioxydeAbsorbed;
 
-public class Insect extends Animal {
+
+public class Mammal extends Animal {
+    
+
+
+
     
     
-    public Insect() {
+    public Mammal() {
+    
     }
 
-    private static int energyNeed = 20;
+    private String nom;
+    private double taille;
+
+    public double getTaille() {
+        return taille;
+    }
+
+    public void setTaille(double taille) {
+        this.taille = taille;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getUrlPhoto() {
+        return urlPhoto;
+    }
+
+    public void setUrlPhoto(String urlPhoto) {
+        this.urlPhoto = urlPhoto;
+    }
+
+    private  String urlPhoto;
+
+
+
+    public Mammal(String nom,double taille, String urlPhoto) {
+        this.nom = nom;
+        this.urlPhoto = urlPhoto;
+        this.taille = taille;
+    }
+
+    public Mammal createAquatiqueMammal(String nom, String urlPhoto){
+        Mammal Mammal = new Mammal(nom,taille,urlPhoto);
+        carbonDioxydeAbsorbed += taille;
+        return  Mammal;
+    }
+
+
+    private static int energyNeed = 200;
     private  int energyProgress;
 
     @Override
@@ -89,51 +138,5 @@ public class Insect extends Animal {
         }
     }
 
-    private String nom;
-    private  String urlPhoto;
-    private double taille;
-
-    public double getTaille() {
-        return taille;
-    }
-
-    public void setTaille(double taille) {
-        this.taille = taille;
-    }
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public String getUrlPhoto() {
-        return urlPhoto;
-    }
-
-
-
-    public void setUrlPhoto(String urlPhoto) {
-        this.urlPhoto = urlPhoto;
-    }
-
-    public Insect(String nom,double taille, String urlPhoto) {
-        this.nom = nom;
-        this.urlPhoto = urlPhoto;
-        this.taille = taille;
-    }
-
-    public Fish createInsect(String nom,double taille, String urlPhoto){
-        Fish fish;
-        if(taille>4){
-            JOptionPane.showMessageDialog(null,"Taille trop grande ce type de poisson");
-        }else {
-             fish = new Fish(nom, taille, urlPhoto);
-            carbonDioxydeAbsorbed += taille;
-            return fish;
-        }
-        return null;
-    }
 
 }

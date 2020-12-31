@@ -1,7 +1,7 @@
 
 package Game;
 
-import Game.spacies.Fish;
+import Game.Species.Fish;
 
 
 public class Shark extends Fish {

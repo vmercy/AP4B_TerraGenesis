@@ -1,8 +1,8 @@
 
-package Game.spacies;
+package Game.Species;
 
 import Game.Game;
-import Game.spacies.Fish;
+import Game.Species.Fish;
 
 import javax.swing.*;
 

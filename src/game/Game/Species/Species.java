@@ -1,4 +1,4 @@
-package Game.spacies;
+package Game.Species;
 
 public class Species {
     public Species(String type) {

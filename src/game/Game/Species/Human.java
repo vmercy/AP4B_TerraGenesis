@@ -1,5 +1,5 @@
 
-package Game.spacies;
+package Game.Species;
 
 
 import static Game.spacies.Plant.numbreOfPlant;
