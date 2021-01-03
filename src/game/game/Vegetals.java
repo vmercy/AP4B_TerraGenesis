@@ -1,4 +1,4 @@
-
+package game;
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -16,7 +16,7 @@ import javax.swing.JProgressBar;
 import javax.swing.UIManager;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 
-public class Materials extends Home {
+public class Vegetals extends Home{
 
 	JFrame frame;
 
@@ -28,7 +28,7 @@ public class Materials extends Home {
 			public void run() {
 				try {
 					UIManager.setLookAndFeel(new NimbusLookAndFeel());
-					Materials window = new Materials();
+					Vegetals window = new Vegetals();
 					window.frame.setVisible(true);
 					window.frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
@@ -41,7 +41,7 @@ public class Materials extends Home {
 	/**
 	 * Create the application.
 	 */
-	public Materials() {
+	public Vegetals() {
 		initialize();
 		mu.stop();
 	}
@@ -54,8 +54,8 @@ public class Materials extends Home {
 		frame.setBounds(100, 100, 1109, 717);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-
-		Object[] elements = new Object[] {"Material 1", "Material 2", "Material 3"};
+		
+		Object[] elements = new Object[] {"Plant", "Tree"};
 		@SuppressWarnings({ "unchecked", "rawtypes" })
 		JComboBox<String> comboBox = new JComboBox(elements);
 		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -63,13 +63,13 @@ public class Materials extends Home {
 		comboBox.setBounds(296, 251, 141, 32);
 		frame.getContentPane().add(comboBox);
 		
-		JButton btnNewButton_3_1 = new JButton("Buy");
+		JButton btnNewButton_3_1 = new JButton("Add");
 		btnNewButton_3_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		btnNewButton_3_1.setIcon(new ImageIcon(".\\Images\\Money-icon.png"));
+		btnNewButton_3_1.setIcon(new ImageIcon(".\\Images\\add-icon-1.png"));
 		btnNewButton_3_1.addActionListener(bHandler);
 		btnNewButton_3_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showConfirmDialog(null, "Buy a "+ comboBox.getSelectedItem() +" : -400$");
+				JOptionPane.showConfirmDialog(null, "Add a "+ comboBox.getSelectedItem() +" : -200$");
 
 			}
 		});
@@ -95,10 +95,10 @@ public class Materials extends Home {
 		lblNewLabel_2.setBounds(468, 10, 168, 39);
 		frame.getContentPane().add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_3 = new JLabel("Select a type of materials :");
+		JLabel lblNewLabel_3 = new JLabel("Select a type of vegetals :");
 		lblNewLabel_3.setForeground(Color.WHITE);
 		lblNewLabel_3.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
-		lblNewLabel_3.setBounds(36, 251, 235, 32);
+		lblNewLabel_3.setBounds(38, 251, 233, 32);
 		frame.getContentPane().add(lblNewLabel_3);
 		
 		JProgressBar progressBar = new JProgressBar();

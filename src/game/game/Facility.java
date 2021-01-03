@@ -1,4 +1,4 @@
-
+package game;
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -16,7 +16,7 @@ import javax.swing.JProgressBar;
 import javax.swing.UIManager;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 
-public class Vegetals extends Home{
+public class Facility extends Home {
 
 	JFrame frame;
 
@@ -28,7 +28,7 @@ public class Vegetals extends Home{
 			public void run() {
 				try {
 					UIManager.setLookAndFeel(new NimbusLookAndFeel());
-					Vegetals window = new Vegetals();
+					Facility window = new Facility();
 					window.frame.setVisible(true);
 					window.frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
@@ -41,7 +41,7 @@ public class Vegetals extends Home{
 	/**
 	 * Create the application.
 	 */
-	public Vegetals() {
+	public Facility() {
 		initialize();
 		mu.stop();
 	}
@@ -55,7 +55,7 @@ public class Vegetals extends Home{
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		Object[] elements = new Object[] {"Plant", "Tree"};
+		Object[] elements = new Object[] {"Factory", "Dormitory", "Oxygen supply", "Energy plant"};
 		@SuppressWarnings({ "unchecked", "rawtypes" })
 		JComboBox<String> comboBox = new JComboBox(elements);
 		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -63,13 +63,13 @@ public class Vegetals extends Home{
 		comboBox.setBounds(296, 251, 141, 32);
 		frame.getContentPane().add(comboBox);
 		
-		JButton btnNewButton_3_1 = new JButton("Add");
+		JButton btnNewButton_3_1 = new JButton("Create");
 		btnNewButton_3_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnNewButton_3_1.setIcon(new ImageIcon(".\\Images\\add-icon-1.png"));
 		btnNewButton_3_1.addActionListener(bHandler);
 		btnNewButton_3_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showConfirmDialog(null, "Add a "+ comboBox.getSelectedItem() +" : -200$");
+				JOptionPane.showConfirmDialog(null, "Create a "+ comboBox.getSelectedItem() +" : -5000$");
 
 			}
 		});
@@ -95,7 +95,7 @@ public class Vegetals extends Home{
 		lblNewLabel_2.setBounds(468, 10, 168, 39);
 		frame.getContentPane().add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_3 = new JLabel("Select a type of vegetals :");
+		JLabel lblNewLabel_3 = new JLabel("Select a type of facility :");
 		lblNewLabel_3.setForeground(Color.WHITE);
 		lblNewLabel_3.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
 		lblNewLabel_3.setBounds(38, 251, 233, 32);
@@ -127,6 +127,7 @@ public class Vegetals extends Home{
 		lblNewLabel_1.setIcon(new ImageIcon(".\\Images\\lunee.jpg"));
 		lblNewLabel_1.setBounds(0, 0, 1106, 680);
 		frame.getContentPane().add(lblNewLabel_1);
+
 	}
 
 }
