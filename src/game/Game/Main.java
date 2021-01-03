@@ -24,6 +24,7 @@ public class Main {
 		notreJeu.atmosphereStateUpdate();
 		
 		System.out.println("La jauge de CO2 est à " + notreJeu.getCarbonDioxide() + "%");
+		//successful
 		System.out.println("La jauge de 02 est à " + notreJeu.getOxygen() + "%");
 	}
 
