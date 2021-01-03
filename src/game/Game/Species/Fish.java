@@ -6,7 +6,7 @@ import javax.swing.*;
 
 public class Fish extends Animal {
     
-	public Fish(double carbonDioxideProduced, int strenght, string typeOfAnimals) {
+	public Fish(double carbonDioxideProduced, int strenght, String typeOfAnimals) {
     	super(carbonDioxideProduced, strenght, typeOfAnimals);
     }
 	
