@@ -8,28 +8,15 @@ public class Game {
     
     
     private double money;
-
-    
-    
-    private double temperature;
-
-    
-    
-    private double pression;
-
-    
-    
+        
+    private double atmosphere;
+        
     private double oxygen;
     
-
     private double carbonDioxide;
     
-    
     private double biomass;
-
     
-    
-    private double water;
 
     
     
@@ -44,16 +31,13 @@ public class Game {
     
     private Settings ;
 
+    
     private double getMoney() {
         return money;
     }
 
-    private double getTemperature() {
-        return temperature;
-    }
-
-    private double getPression() {
-        return pression;
+    private double getAtmosphere() {
+        return atmosphere;
     }
 
     private double getOxygen() {
@@ -68,37 +52,18 @@ public class Game {
         return biomass;
     }
 
-    private double getWater() {
-        return water;
-    }
 
-    public Planet get() {
-        return ;
-    }
 
-    public Mission get() {
-        return ;
-    }
 
-    public Money get() {
-        return ;
-    }
-
-    public Settings get() {
-        return ;
-    }
-
+    
     private void setMoney(double money) {
         this.money = money;
     }
 
-    private void setTemperature(double temperature) {
+    private void setAtmosphere(double temperature) {
         this.temperature = temperature;
     }
 
-    private void setPression(double pression) {
-        this.pression = pression;
-    }
 
     private void setOxygen(double oxygen) {
         this.oxygen = oxygen;
@@ -112,95 +77,6 @@ public class Game {
         this.biomass = biomass;
     }
 
-    private void setWater(double water) {
-        this.water = water;
-    }
-
-    public void set(Planet ) {
-        this. = ;
-    }
-
-    public void set(Mission ) {
-        this. = ;
-    }
-
-    public void set(Money ) {
-        this. = ;
-    }
-
-    public void set(Settings ) {
-        this. = ;
-    }
-
-    public void link(Planet _) {
-        if (_ != null) {
-            _.unlink();
-            _.set(this);
-        }
-
-        unlink();
-        set(_);
-    }
-
-    public void link(Mission _) {
-        if (_ != null) {
-            _.unlink();
-            _.set(this);
-        }
-
-        unlink();
-        set(_);
-    }
-
-    public void link(Money _) {
-        if (_ != null) {
-            _.unlink();
-            _.set(this);
-        }
-
-        unlink();
-        set(_);
-    }
-
-    public void link(Settings _) {
-        if (_ != null) {
-            _.unlink();
-            _.set(this);
-        }
-
-        unlink();
-        set(_);
-    }
-
-    public void unlink() {
-        if (get() != null) {
-            get().set(null);
-            set(null);
-        }
-    }
-
-    public void unlink() {
-        if (get() != null) {
-            get().set(null);
-            set(null);
-        }
-    }
-
-    public void unlink() {
-        if (get() != null) {
-            get().set(null);
-            set(null);
-        }
-    }
-
-    public void unlink() {
-        if (get() != null) {
-            get().set(null);
-            set(null);
-        }
-    }
-
-    
  
     /**
     * @param None
@@ -209,12 +85,11 @@ public class Game {
 
     public Game() 
     {
-    	this.setMoney(0);
-    	this.setPression(0);
-    	this.setOxygen(0);
-    	this.pression(0);
-    	this.setWater(0);
-    	this.biomass(0);
+    	this.money = 0;
+    	this.atmosphere = 0;
+    	this.oxygen = 0;
+    	this.carbonDioxide = 0;
+    	this.biomass = 0;
     }
     
     /**
@@ -225,16 +100,17 @@ public class Game {
     public void AnimalSpeciesIntroduced(Animal animal_p)
     {
     	double newCarbonDioxide;
-    	newCarbonDioxide = this.carbonDioxide + animal_p.getCarbonDioxideProduced();
-    	this.setOxygen(newCarbonDioxide);
+    	this.carbonDioxide += animal_p.ca
     }
+    	
+    
     
     /**
      * @param Vegetal vegetal_p
      * @brief Lorsque qu'un végétal est instauré avec succès sur la planète, la jauge d'O2 monte
      */
     
-    public void AnimalSpeciesIntroduced(Animal animal_p)
+    public void vegetalSpeciesIntroduced(Animal animal_p)
     {
     	double newOxygen;
     	newOxygen = this.oxygen + vegetal_p.getOxygenGiven();

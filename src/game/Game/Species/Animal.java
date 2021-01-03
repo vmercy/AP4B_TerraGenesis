@@ -1,9 +1,8 @@
 package Game.Species;
 
-
 import javax.swing.*;
 
-public abstract class Animal extends Species {
+public class Animal extends Species {
     
     public static final int MAX_ENERGY = 200;
     private double carbonDioxideProduced;
@@ -55,9 +54,10 @@ public abstract class Animal extends Species {
 
 
     
-    public Animal() {
-    
-    
+    public Animal(double carbonDioxideProduced, int strenght, string typeOfAnimals) {
+    	this.carbonDioxideProduced = carbonDioxideProduced;
+    	this.strenght = strenght;
+    	this.typeOfAnimals = typeOfAnimals;
     }
 
 
