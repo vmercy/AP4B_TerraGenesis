@@ -1,10 +1,12 @@
 
 package Game;
 
+
 import javax.swing.JOptionPane;
 
 import Game.Species.Animal;
 import Game.Species.Vegetal;
+
 
 public class Game {
     
@@ -84,6 +86,8 @@ public class Game {
     {
     	double addCarbonDioxide;
     	addCarbonDioxide = animal_p.getcarbonDioxideProduced();
+    	addCarbonDioxide = animal_p.getcarbonDioxideProduced();
+
     	this.carbonDioxide += addCarbonDioxide;
     }
     	
@@ -152,7 +156,7 @@ public class Game {
     		this.atmosphere = 90;
     		JOptionPane.showMessageDialog(null,"Atmosphère formée à 90% !");
     	}
-    	if(this.carbonDioxide==80 && this.oxygen==100)
+    	if(this.carbonDioxide==100 && this.oxygen==100)
     	{
     		this.atmosphere = 100;
     		JOptionPane.showMessageDialog(null,"Atmosphère complètement formée !");
