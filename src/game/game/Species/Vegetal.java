@@ -1,5 +1,5 @@
 
-package Game.Species;
+package game.Species;
 
 
 import javax.swing.*;

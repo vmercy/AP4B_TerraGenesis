@@ -18,16 +18,6 @@ public class AquaticMammal extends Animal {
         this.mammal =mammal ;
     }
 
-
-
-
-    
-    
-    public AquaticMammal() {
-    
-    
-    }
-
     @Override
     public void eat(Species species) {
         String message ="message";

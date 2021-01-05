@@ -1,11 +1,11 @@
 
-package Game;
+package game;
 
 
 import javax.swing.JOptionPane;
 
-import Game.Species.Animal;
-import Game.Species.Vegetal;
+import game.Species.Animal;
+import game.Species.Vegetal;
 
 
 public class Game {
@@ -65,7 +65,7 @@ public class Game {
  
     /**
     * @param None
-    * @brief Lors de l'initialisation de Game, les paramètres sont définis à 0 (jauge de progression en %)
+    * @brief Lors de l'initialisation de Game, les paramï¿½tres sont dï¿½finis ï¿½ 0 (jauge de progression en %)
     */
 
     public Game() 
@@ -79,7 +79,7 @@ public class Game {
     
     /**
      * @param Animal animal_p
-     * @brief Lorsque qu'une espèce est instaurée avec succès sur la planète, la jauge de Co2 monte 
+     * @brief Lorsque qu'une espï¿½ce est instaurï¿½e avec succï¿½s sur la planï¿½te, la jauge de Co2 monte 
      */
     
     public void animalSpeciesIntroduced(Animal animal_p)
@@ -93,7 +93,7 @@ public class Game {
     	
     /**
      * @param Vegetal vegetal_p
-     * @brief Lorsque qu'un végétal est instauré avec succès sur la planète, la jauge d'O2 monte
+     * @brief Lorsque qu'un vï¿½gï¿½tal est instaurï¿½ avec succï¿½s sur la planï¿½te, la jauge d'O2 monte
      */
     
     public void vegetalSpeciesIntroduced(Vegetal vegetal_p)
@@ -105,8 +105,8 @@ public class Game {
     
     /**
      * @param None
-     * @brief Si les jauges d'O2 et de Co2 sont à 10% (progression dans le jeu ce n'est pas une répartition)
-     * 		  alors la jauge d'atmosphère passe à 10%
+     * @brief Si les jauges d'O2 et de Co2 sont ï¿½ 10% (progression dans le jeu ce n'est pas une rï¿½partition)
+     * 		  alors la jauge d'atmosphï¿½re passe ï¿½ 10%
      */
     
     public void atmosphereStateUpdate()
@@ -114,52 +114,52 @@ public class Game {
     	if(this.carbonDioxide>=10 && this.carbonDioxide<20 && this.oxygen>=10 && this.oxygen<20)
     	{
     		this.atmosphere = 10;
-    		JOptionPane.showMessageDialog(null,"Atmosphère formée à 10% !");
+    		JOptionPane.showMessageDialog(null,"Atmosphï¿½re formï¿½e ï¿½ 10% !");
     	}
     	if(this.carbonDioxide>=20 && this.carbonDioxide<30 && this.oxygen>=20 && this.oxygen<30)
     	{
     		this.atmosphere = 20;
-    		JOptionPane.showMessageDialog(null,"Atmosphère formée à 20% !");
+    		JOptionPane.showMessageDialog(null,"Atmosphï¿½re formï¿½e ï¿½ 20% !");
     	}
     	if(this.carbonDioxide>=30 && this.carbonDioxide<40 && this.oxygen>=30 && this.oxygen<40)
     	{
     		this.atmosphere = 30;
-    		JOptionPane.showMessageDialog(null,"Atmosphère formée à 30% !");
+    		JOptionPane.showMessageDialog(null,"Atmosphï¿½re formï¿½e ï¿½ 30% !");
     	}
     	if(this.carbonDioxide>=40 && this.carbonDioxide<50 && this.oxygen>=40 && this.oxygen<50)
     	{
     		this.atmosphere = 40;
-    		JOptionPane.showMessageDialog(null,"Atmosphère formée à 40% !");
+    		JOptionPane.showMessageDialog(null,"Atmosphï¿½re formï¿½e ï¿½ 40% !");
     	}
     	if(this.carbonDioxide>=50 && this.carbonDioxide<60 && this.oxygen>=50 && this.oxygen<60)
     	{
     		this.atmosphere = 50;
-    		JOptionPane.showMessageDialog(null,"Atmosphère formée à 50% !");
+    		JOptionPane.showMessageDialog(null,"Atmosphï¿½re formï¿½e ï¿½ 50% !");
     	}
     	if(this.carbonDioxide>=60 && this.carbonDioxide<70 && this.oxygen>=60 && this.oxygen<70)
     	{
     		this.atmosphere = 60;
-    		JOptionPane.showMessageDialog(null,"Atmosphère formée à 60% !");
+    		JOptionPane.showMessageDialog(null,"Atmosphï¿½re formï¿½e ï¿½ 60% !");
     	}
     	if(this.carbonDioxide>=70 && this.carbonDioxide<80 && this.oxygen>=70 && this.oxygen<80)
     	{
     		this.atmosphere = 70;
-    		JOptionPane.showMessageDialog(null,"Atmosphère formée à 70% !");
+    		JOptionPane.showMessageDialog(null,"Atmosphï¿½re formï¿½e ï¿½ 70% !");
     	}
     	if(this.carbonDioxide>=80 && this.carbonDioxide<90 && this.oxygen>=80 && this.oxygen<90)
     	{
     		this.atmosphere = 80;
-    		JOptionPane.showMessageDialog(null,"Atmosphère formée à 80% !");
+    		JOptionPane.showMessageDialog(null,"Atmosphï¿½re formï¿½e ï¿½ 80% !");
     	}
     	if(this.carbonDioxide>=90 && this.carbonDioxide<100 && this.oxygen>=90 && this.oxygen<100)
     	{
     		this.atmosphere = 90;
-    		JOptionPane.showMessageDialog(null,"Atmosphère formée à 90% !");
+    		JOptionPane.showMessageDialog(null,"Atmosphï¿½re formï¿½e ï¿½ 90% !");
     	}
     	if(this.carbonDioxide==100 && this.oxygen==100)
     	{
     		this.atmosphere = 100;
-    		JOptionPane.showMessageDialog(null,"Atmosphère complètement formée !");
+    		JOptionPane.showMessageDialog(null,"Atmosphï¿½re complï¿½tement formï¿½e !");
     	}
     }
 }   

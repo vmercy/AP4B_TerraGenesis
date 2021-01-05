@@ -4,6 +4,11 @@ package game.Species;
 import javax.swing.*;
 
 public class Fish extends Animal {
+
+  Fish()
+  {
+    
+  }
     
 	public Fish(double carbonDioxideProduced, int strenght, String typeOfAnimals) {
     	super(carbonDioxideProduced, strenght, typeOfAnimals);

@@ -1,6 +1,11 @@
 package game.Species;
 
 public abstract class Animal extends Species {
+
+  Animal()
+  {
+    
+  }
     
     public static final int MAX_ENERGY = 200;
     private double carbonDioxideProduced;

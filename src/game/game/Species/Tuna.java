@@ -1,31 +1,10 @@
 
-package Game;
+package game.Species;
 
-import Game.Species.Fish;
-
+import game.Species.Fish;
 
 public class Tuna extends Fish {
-    
-    
-    private Fish ;
-
-    public Fish get() {
-        return ;
-    }
-
-    public void set(Fish ) {
-        this. = ;
-    }
-
-    public void link(Fish _) {
-        set(_);
-    }
-
-    public void unlink() {
-        set(null);
-    }
-
-    
+       
     
     public Tuna() {
     
