@@ -84,11 +84,15 @@ public class Game {
     
     public void animalSpeciesIntroduced(Animal animal_p)
     {
-    	double addCarbonDioxide;
-    	addCarbonDioxide = animal_p.getcarbonDioxideProduced();
-    	addCarbonDioxide = animal_p.getcarbonDioxideProduced();
-
-    	this.carbonDioxide += addCarbonDioxide;
+    	if(this.carbonDioxide<100)
+    	{
+    		this.carbonDioxide += animal_p.getcarbonDioxideProduced();
+    	}
+    	if(this.carbonDioxide>=100)
+    	{
+    		this.carbonDioxide = 100;
+    		JOptionPane.showMessageDialog(null,"Taux de dioxyde de carbone propice à la vie humaine atteint !");
+    	}
     }
     	
     /**
@@ -98,15 +102,40 @@ public class Game {
     
     public void vegetalSpeciesIntroduced(Vegetal vegetal_p)
     {
-    	double addOxygen;
-    	addOxygen = vegetal_p.getOxygenGiven();
-    	this.oxygen += addOxygen;
+    	if(this.oxygen<100)
+    	{
+    		this.oxygen += vegetal_p.getOxygenGiven();
+    	}
+    	if(this.oxygen>=100)
+    	{
+    		this.oxygen = 100;
+    		JOptionPane.showMessageDialog(null,"Taux d'oxygène propice à la vie humaine atteint !");
+    	}
+    }
+    
+    /**
+     * @param Vegetal vegetal_p
+     * @brief Lorsque qu'un végétal est instauré avec succès sur la planète, la jauge d'O2 monte
+     */
+    
+    public void FactoryIntroduced(Factory factory_p)
+    {
+    	
+    	if(this.biomass<100)
+    	{
+    		this.biomass += factory_p.getBiomassGain();
+    	}
+    	if(this.biomass>=100)
+    	{
+    		this.biomass = 100;
+    		JOptionPane.showMessageDialog(null,"Biomasse requise atteinte !");
+    	}
     }
     
     /**
      * @param None
      * @brief Si les jauges d'O2 et de Co2 sont à 10% (progression dans le jeu ce n'est pas une répartition)
-     * 		  alors la jauge d'atmosphère passe à 10%
+     * 		  alors la jauge d'atmosphère passe à 10% et pareil de 10 en 10
      */
     
     public void atmosphereStateUpdate()

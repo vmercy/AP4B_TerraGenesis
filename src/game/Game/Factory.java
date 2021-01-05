@@ -65,6 +65,10 @@ public class Factory {
         }
     }
 
+	public double getBiomassGain() {
+		return 0;
+	}
+
 
 
 }
