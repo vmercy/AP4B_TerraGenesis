@@ -1,12 +1,14 @@
 package game.Species;
 
 public class Species {
+	
+	private  String type;
+	
     public Species(String type) {
         this.type = type;
     }
 
-    private  String type;
-
+   
     public String getType() {
         return type;
     }

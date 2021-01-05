@@ -14,7 +14,7 @@ public class Vegetal extends Species {
 
    // private Species species;
 
-    protected double getOxygenGiven() {
+    public double getOxygenGiven() {
         return oxygenGiven;
     }
 

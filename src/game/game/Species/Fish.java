@@ -5,13 +5,14 @@ import javax.swing.*;
 
 public class Fish extends Animal {
     
-    
+	public Fish(double carbonDioxideProduced, int strenght, String typeOfAnimals) {
+    	super(carbonDioxideProduced, strenght, typeOfAnimals);
+    }
+	
     private Invertebrate invertebrate;
-
-    
-    
     private Vertebrate vertebrate;
 
+    
 
     public Invertebrate getInvertebrate() {
         return this.invertebrate;
