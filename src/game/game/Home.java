@@ -40,13 +40,8 @@ public class Home {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-				
-			
-
 			}
-			
 		});
-		
 	}
 
 	
