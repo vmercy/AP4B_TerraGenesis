@@ -2,9 +2,9 @@
 package Game.Species;
 
 
-import static Game.spacies.Plant.numbreOfPlant;
-import static Game.spacies.Tree.numbreOfTree;
-import static Game.spacies.Vegetal.carbonDioxydeAbsorbed;
+import static Game.Species.Plant.numbreOfPlant;
+import static Game.Species.Tree.numbreOfTree;
+import static Game.Species.Vegetal.carbonDioxydeAbsorbed;
 
 public class Human extends Mammal {
     
@@ -62,7 +62,11 @@ public class Human extends Mammal {
 
 
     public Mammal createHuman(String nom, String sex,double taille, String urlPhoto){
-        Human human = new Human(nom,sex,taille,urlPhoto);
+        this.nom = nom;
+        this.sex = sex;
+        this.urlPhoto = urlPhoto;
+        this.taille = taille;
+        Human human = new Human(this.nom,this.sex,this.taille,this.urlPhoto);
         carbonDioxydeAbsorbed += taille;
         return  human;
     }

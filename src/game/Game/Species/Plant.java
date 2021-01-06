@@ -1,9 +1,6 @@
 
 package Game.Species;
 
-import Game.Game;
-import Game.Species.Vegetal;
-
 import javax.swing.*;
 
 

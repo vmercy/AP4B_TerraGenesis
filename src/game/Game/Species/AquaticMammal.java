@@ -4,7 +4,10 @@ package Game.Species;
 
 import javax.swing.*;
 
-import static Game.spacies.Vegetal.carbonDioxydeAbsorbed;
+import java.util.Random;
+
+import static Game.Species.Vegetal.carbonDioxydeAbsorbed;
+
 
 public class AquaticMammal extends Animal {
     
@@ -52,16 +55,25 @@ public class AquaticMammal extends Animal {
         this.taille = taille;
     }
 
-    public AquaticMammal createAquatiqueMammal(String nom, String urlPhoto){
-        AquaticMammal aquaticMammal = new AquaticMammal(nom,taille,urlPhoto);
+    public AquaticMammal createAquatiqueMammal(String nom,double taille, String urlPhoto){
+        this.nom = nom;
+        this.urlPhoto = urlPhoto;
+        this.taille = taille;
+        AquaticMammal aquaticMammal = new AquaticMammal(this.nom,this.taille,this.urlPhoto);
         carbonDioxydeAbsorbed += taille;
         return  aquaticMammal;
     }
 
 
+    private int generateEnergy(int interval){
+        Random r = new Random();
+        int enrgy = r.nextInt(interval);
+        return enrgy;
+    }
+
     @Override
-    public void eat(Species species) {
-        String message ="message";
+    public int eat(Species species) {
+        String message ="Niveau maximal d'energie atteint";
         switch (species.getType()){
             case "Animal":
                 switch (this.getTypeOfAnimals()){
@@ -69,7 +81,7 @@ public class AquaticMammal extends Animal {
                         if(getEnergyGiven()<=MAX_ENERGY){
                             if(this.energyProgress<=energyNeed){
                                 setEnergyGiven(MAX_ENERGY/energyNeed);
-                                this.energyProgress += getEnergyGiven();
+                                this.energyProgress += generateEnergy(energyNeed+20);
                             }else {
                                 JOptionPane.showMessageDialog(null,message);
                             }
@@ -81,7 +93,7 @@ public class AquaticMammal extends Animal {
                         if(getEnergyGiven()<=MAX_ENERGY){
                             if(this.energyProgress<=energyNeed){
                                 setEnergyGiven(MAX_ENERGY/energyNeed-10);
-                                this.energyProgress += getEnergyGiven();
+                                this.energyProgress += generateEnergy(energyNeed+15);
                             }else {
                                 JOptionPane.showMessageDialog(null,message);
                             }
@@ -93,7 +105,7 @@ public class AquaticMammal extends Animal {
                         if(getEnergyGiven()<=MAX_ENERGY){
                             if(this.energyProgress<=energyNeed){
                                 setEnergyGiven(MAX_ENERGY/energyNeed+140);
-                                this.energyProgress += getEnergyGiven();
+                                this.energyProgress += generateEnergy(energyNeed);;
                             }else {
                                 JOptionPane.showMessageDialog(null,message);
                             }
@@ -105,7 +117,7 @@ public class AquaticMammal extends Animal {
                         if(getEnergyGiven()<=MAX_ENERGY){
                             if(this.energyProgress<=energyNeed){
                                 setEnergyGiven(MAX_ENERGY/energyNeed+180);
-                                this.energyProgress += getEnergyGiven();
+                                this.energyProgress += generateEnergy(energyNeed+10);
                             }else {
                                 JOptionPane.showMessageDialog(null,message);
                             }
@@ -120,7 +132,7 @@ public class AquaticMammal extends Animal {
                 if(getEnergyGiven()<=MAX_ENERGY){
                     if(this.energyProgress<=energyNeed){
                         setEnergyGiven(MAX_ENERGY/energyNeed+200);
-                        this.energyProgress += getEnergyGiven();
+                        this.energyProgress += generateEnergy(energyNeed+5);
                     }else {
                         JOptionPane.showMessageDialog(null,message);
                     }
@@ -128,7 +140,10 @@ public class AquaticMammal extends Animal {
                     JOptionPane.showMessageDialog(null,"Niveau maximal d'energie atteint");
                 }
         }
+        return this.energyProgress;
+
     }
+
 
 
 }
