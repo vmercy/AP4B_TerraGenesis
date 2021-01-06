@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JProgressBar;
+import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 
@@ -51,7 +52,7 @@ public class Conditions extends Home{
 		frame.setBounds(100, 100, 1109, 717);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		
+
 		JButton btnNewButton_3 = new JButton("Back");
 		btnNewButton_3.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnNewButton_3.setIcon(new ImageIcon(".\\Images\\Go-back-icon-1.png"));
@@ -108,46 +109,83 @@ public class Conditions extends Home{
 		lblNewLabel_3_1_2_2.setBounds(65, 297, 233, 32);
 		frame.getContentPane().add(lblNewLabel_3_1_2_2);
 		
+		JProgressBar progressBar = new JProgressBar();
+		progressBar.setBounds(878, 27, 207, 11);
+		progressBar.setValue(100);
+		frame.getContentPane().add(progressBar);
+		
 		JProgressBar progressBar_1 = new JProgressBar();
 		progressBar_1.setBounds(253, 179, 207, 11);
-		progressBar_1.setValue(50);
+		progressBar_1.setValue(45);
 		frame.getContentPane().add(progressBar_1);
+		JLabel lblNewLabel_3_3_5 = new JLabel("45%");
+		lblNewLabel_3_3_5.setForeground(Color.WHITE);
+		lblNewLabel_3_3_5.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
+		lblNewLabel_3_3_5.setBounds(468, 166, 50, 32);
+		frame.getContentPane().add(lblNewLabel_3_3_5);
 		
 		JProgressBar progressBar_2 = new JProgressBar();
 		progressBar_2.setBounds(253, 244, 207, 11);
-		progressBar_2.setValue(45);
+		progressBar_2.setValue(30);
 		frame.getContentPane().add(progressBar_2);
+		JLabel lblNewLabel_3_3 = new JLabel("30%");
+		lblNewLabel_3_3.setForeground(Color.WHITE);
+		lblNewLabel_3_3.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
+		lblNewLabel_3_3.setBounds(468, 231, 50, 32);
+		frame.getContentPane().add(lblNewLabel_3_3);
 		
 		JProgressBar progressBar_3 = new JProgressBar();
 		progressBar_3.setBounds(253, 308, 207, 11);
-		progressBar_3.setValue(12);
+		progressBar_3.setValue(10);
 		frame.getContentPane().add(progressBar_3);
+		JLabel lblNewLabel_3_3_4 = new JLabel("10%");
+		lblNewLabel_3_3_4.setForeground(Color.WHITE);
+		lblNewLabel_3_3_4.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
+		lblNewLabel_3_3_4.setBounds(468, 297, 50, 32);
+		frame.getContentPane().add(lblNewLabel_3_3_4);
 		
 		JProgressBar progressBar_3_1 = new JProgressBar();
 		progressBar_3_1.setBounds(253, 374, 207, 11);
 		progressBar_3_1.setValue(95);
 		frame.getContentPane().add(progressBar_3_1);
+		JLabel lblNewLabel_3_3_3 = new JLabel("95%");
+		lblNewLabel_3_3_3.setForeground(Color.WHITE);
+		lblNewLabel_3_3_3.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
+		lblNewLabel_3_3_3.setBounds(468, 363, 50, 32);
+		frame.getContentPane().add(lblNewLabel_3_3_3);
 		
 		JProgressBar progressBar_3_1_1 = new JProgressBar();
 		progressBar_3_1_1.setBounds(253, 443, 207, 11);
 		progressBar_3_1_1.setValue(73);
 		frame.getContentPane().add(progressBar_3_1_1);
+		JLabel lblNewLabel_3_3_2 = new JLabel("73%");
+		lblNewLabel_3_3_2.setForeground(Color.WHITE);
+		lblNewLabel_3_3_2.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
+		lblNewLabel_3_3_2.setBounds(468, 429, 50, 32);
+		frame.getContentPane().add(lblNewLabel_3_3_2);
 		
 		JProgressBar progressBar_3_1_2 = new JProgressBar();
 		progressBar_3_1_2.setBounds(253, 511, 207, 11);
 		progressBar_3_1_2.setValue(66);
 		frame.getContentPane().add(progressBar_3_1_2);
+		JLabel lblNewLabel_3_3_1 = new JLabel("66%");
+		lblNewLabel_3_3_1.setForeground(Color.WHITE);
+		lblNewLabel_3_3_1.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
+		lblNewLabel_3_3_1.setBounds(468, 499, 50, 32);
+		frame.getContentPane().add(lblNewLabel_3_3_1);
 		
-		JProgressBar progressBar = new JProgressBar();
-		progressBar.setBounds(878, 27, 207, 11);
-		progressBar.setValue(30);
-		frame.getContentPane().add(progressBar);
-	
 		JLabel lblNewLabel_6 = new JLabel("Mission");
 		lblNewLabel_6.setForeground(Color.WHITE);
 		lblNewLabel_6.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		lblNewLabel_6.setBounds(955, 12, 59, 11);
 		frame.getContentPane().add(lblNewLabel_6);
+		
+		JLabel lblNewLabel_3_2 = new JLabel("{Mission Name}");
+		lblNewLabel_3_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_3_2.setForeground(Color.WHITE);
+		lblNewLabel_3_2.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+		lblNewLabel_3_2.setBounds(878, 41, 207, 20);
+		frame.getContentPane().add(lblNewLabel_3_2);
 		
 		JLabel lblNewLabel_4 = new JLabel("100000$");
 		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
@@ -167,4 +205,12 @@ public class Conditions extends Home{
 		frame.getContentPane().add(lblNewLabel_1);
 		
 	}
+	
+	public Color getColor()
+	  {
+	    byte red, green;
+	    red = (byte) (255-(10*255));
+	    green = (byte) (255 * 10);
+	    return (new Color(red, green, 0));
+	  }
 }
