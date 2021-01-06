@@ -31,7 +31,7 @@ public class HomeInterface {
 	SoundEffect se = new SoundEffect();
 	Music mu = new Music();
 	private MyThread t;
-	private boolean x=false;
+	private boolean allConditionsReached =false;
 	
 	public static void main(String[] args) {
 		
@@ -113,7 +113,7 @@ public class HomeInterface {
 		btnNewButton_5.addActionListener(bHandler);
 		btnNewButton_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(!x) {
+				if(!allConditionsReached) {
 					
 					JOptionPane.showMessageDialog(null, "Not yet !");
 				}
@@ -220,7 +220,7 @@ public class HomeInterface {
 		@Override
 		public void run() {
 			while(true) {
-				if(!x) {
+				if(!allConditionsReached) {
 					btnNewButton_5.setBackground(Color.DARK_GRAY);	
 				}
 				else {
