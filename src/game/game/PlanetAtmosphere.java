@@ -19,6 +19,10 @@ public class PlanetAtmosphere
     m_conditions.add(new Condition("Biomass", "Energy obtained from factories", 0, 0.15, 0.15, 1));
   }
 
+  public Vector<Condition> getConditions()
+  {
+	  return m_conditions;
+  }
   
   public Condition findCondition(String conditionName_p)
   {
@@ -93,44 +97,5 @@ public class PlanetAtmosphere
   {
     return (nbCompleted() == NBCONDITIONS);
   }
-
-  
-  
-  public class ConditionThread extends Thread
-  {
-	Enumeration<Condition> e = m_conditions.elements();
-		
-	boolean allCompleted = false;
-	
-  	public void run()
-  	{
-  		while(e.hasMoreElements())
-  		{
-  			if(e.nextElement().getCurrentValuePercent()>=100 && !e.nextElement().getDisplayed())
-  			{
-  				JOptionPane.showMessageDialog(null,"Paramètre " + e.nextElement().getName() + " propice à la vie !");
-  				e.nextElement().setDisplayed();
-  			}
-  		}		
-  		
-  		if(PlanetAtmosphere.this.isAllCompleted() && !allCompleted)
-  		{
-  			JOptionPane.showMessageDialog(null,"Tous les paramètres propices à la vie sont réunis");
-  		}
-  		
-  		while(true)
-  		{
-  			try 
-  			{
-  				Thread.sleep(1000);
-  			}
-  			catch(InterruptedException e1) 
-  			{
-  				e1.printStackTrace();
-  			}
-  		}
-  	}
-  }
-  
-  
+ 
 }

@@ -1,6 +1,7 @@
 
 package game;
 
+import java.util.Enumeration;
 import java.util.Vector;
 
 import javax.swing.JOptionPane;
@@ -72,7 +73,7 @@ public class Game {
     public void FactoryIntroduced(Factory factory_p)
     {
     	
-    	if(m_planet.m_planetAtmosphere.findCondition("Biomass").getCurrentValuePercent()<100)
+    	if(m_planet.m_planetAtmosphere.findCondition("Biomass").getCurrentValuePercent() < 100)
     	{
     		m_planet.m_planetAtmosphere.incrementCondition("Biomass", factory_p.getBiomassGain());
     	}
@@ -80,6 +81,43 @@ public class Game {
     	if(m_planet.m_planetAtmosphere.findCondition("Biomass").getCurrentValuePercent() >= 100)
     	{
     		m_planet.m_planetAtmosphere.findCondition("Biomass").setCurrentValue(1);
+    	}
+    }
+    
+    public class ConditionThread extends Thread
+    {
+  	Enumeration<Condition> e = m_planet.m_planetAtmosphere.getConditions().elements();
+  		
+  	boolean allCompleted = false;
+  	
+    	public void run()
+    	{
+    		while(e.hasMoreElements())
+    		{
+    			if(e.nextElement().getCurrentValuePercent()>=100 && !e.nextElement().getDisplayed())
+    			{
+    				JOptionPane.showMessageDialog(null,"Paramètre " + e.nextElement().getName() + " propice à la vie !");
+    				e.nextElement().setDisplayed();
+    			}
+    		}		
+    		
+    		if(m_planet.m_planetAtmosphere.isAllCompleted() && !allCompleted)
+    		{
+    			JOptionPane.showMessageDialog(null,"Tous les paramètres propices à la vie sont réunis");
+    			allCompleted = true;
+    		}
+    		
+    		while(true)
+    		{
+    			try 
+    			{
+    				Thread.sleep(1000);
+    			}
+    			catch(InterruptedException e1) 
+    			{
+    				e1.printStackTrace();
+    			}
+    		}
     	}
     }
     
