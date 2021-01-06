@@ -17,6 +17,7 @@ import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 import javax.swing.JProgressBar;
+import javax.swing.SwingConstants;
 
 public class Home {
 
@@ -178,6 +179,13 @@ public class Home {
 		lblNewLabel_3.setBounds(955, 12, 59, 11);
 		frame.getContentPane().add(lblNewLabel_3);
 		
+		JLabel lblNewLabel_3_1 = new JLabel("{Mission Name}");
+		lblNewLabel_3_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_3_1.setForeground(Color.WHITE);
+		lblNewLabel_3_1.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+		lblNewLabel_3_1.setBounds(878, 41, 207, 20);
+		frame.getContentPane().add(lblNewLabel_3_1);
+		
 		JLabel lblNewLabel_4 = new JLabel("100000$");
 		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		lblNewLabel_4.setForeground(Color.WHITE);
@@ -199,7 +207,7 @@ public class Home {
 		lblNewLabel_1.setIcon(new ImageIcon(".//Images//lunee.jpg"));
 		lblNewLabel_1.setBounds(0, 0, 1106, 680);
 		frame.getContentPane().add(lblNewLabel_1);
-		
+				
 		clickSound = ".//Sounds//button.wav";
 		tavernMusic = ".//Sounds//backMusic.wav";
 	}
