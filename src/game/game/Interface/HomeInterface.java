@@ -1,4 +1,4 @@
-package game;
+package game.Interface;
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -14,17 +14,24 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 import javax.swing.JProgressBar;
+import javax.swing.SwingConstants;
 
-public class Home {
+public class HomeInterface {
+  public final String IMAGES_PATH = "Images/";
+  public final String SOUNDS_PATH = "Sounds/";
 
 	JFrame frame;
 	ButtonHandler bHandler = new ButtonHandler();
+	JButton btnNewButton_5 = new JButton("Add Humans");
 	String clickSound, tavernMusic;
 	SoundEffect se = new SoundEffect();
 	Music mu = new Music();
+	private MyThread t;
+	private boolean x=false;
 	
 	public static void main(String[] args) {
 		
@@ -33,7 +40,7 @@ public class Home {
 				
 				try {
 					UIManager.setLookAndFeel(new NimbusLookAndFeel());
-					Home window = new Home();
+					HomeInterface window = new HomeInterface();
 					window.frame.setVisible(true);
 					window.frame.setLocationRelativeTo(null);
 				
@@ -41,8 +48,6 @@ public class Home {
 					e.printStackTrace();
 				}
 				
-			
-
 			}
 			
 		});
@@ -50,12 +55,14 @@ public class Home {
 	}
 
 	
-	public Home() {
+	public HomeInterface() {
 		
 		
 			initialize();
 			mu.setFile(tavernMusic);
-			mu.play();	
+			mu.play();
+			t = new MyThread();
+			t.start();
 	}
 	
 	private void initialize() {
@@ -71,7 +78,7 @@ public class Home {
 		btnNewButton.addActionListener(bHandler);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				City city = new City();
+				CityInterface city = new CityInterface();
 				city.frame.setVisible(true);
 			}	
 		});
@@ -83,7 +90,7 @@ public class Home {
 		btnNewButton_1.addActionListener(bHandler);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Animals animals = new Animals();
+				AnimalsInterface animals = new AnimalsInterface();
 				animals.frame.setVisible(true);
 			}
 		});
@@ -95,20 +102,27 @@ public class Home {
 		btnNewButton_2.addActionListener(bHandler);
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Vegetals vegetals = new Vegetals();
+				VegetalsInterface vegetals = new VegetalsInterface();
 				vegetals.frame.setVisible(true);
 			}
 		});
 		btnNewButton_2.setBounds(315, 402, 175, 62);
 		frame.getContentPane().add(btnNewButton_2);
 		
-		JButton btnNewButton_5 = new JButton("Add Humans");
 		btnNewButton_5.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnNewButton_5.addActionListener(bHandler);
 		btnNewButton_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Humans humans = new Humans();
-				humans.frame.setVisible(true);
+				if(!x) {
+					
+					JOptionPane.showMessageDialog(null, "Not yet !");
+				}
+				else {
+
+					HumansInterface humans = new HumansInterface();
+					humans.frame.setVisible(true);
+				}
+			
 			}
 		});
 		btnNewButton_5.setBounds(315, 291, 175, 62);
@@ -120,38 +134,32 @@ public class Home {
 		btnNewButton_3.addActionListener(bHandler);
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Materials materials = new Materials();
+				MaterialsInterface materials = new MaterialsInterface();
 				materials.frame.setVisible(true);
 			}
 		});
-		btnNewButton_3.setBounds(10, 631, 135, 39);
+		btnNewButton_3.setBounds(10, 631, 116, 39);
 		frame.getContentPane().add(btnNewButton_3);
-		
-		JButton btnNewButton_3_1 = new JButton("");
-		btnNewButton_3_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		btnNewButton_3_1.addActionListener(bHandler);
-		btnNewButton_3_1.setBounds(208, 631, 135, 39);
-		frame.getContentPane().add(btnNewButton_3_1);
 		
 		JButton btnNewButton_3_1_1 = new JButton("View Conditions");
 		btnNewButton_3_1_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnNewButton_3_1_1.addActionListener(bHandler);
 		btnNewButton_3_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Conditions conditions = new Conditions();
+				ConditionsInterface conditions = new ConditionsInterface();
 				conditions.frame.setVisible(true);
 			}
 		});
-		btnNewButton_3_1_1.setBounds(403, 631, 135, 39);
+		btnNewButton_3_1_1.setBounds(136, 631, 116, 39);
 		frame.getContentPane().add(btnNewButton_3_1_1);
 		
 		JButton btnNewButton_4 = new JButton("Exit");
 		btnNewButton_4.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		btnNewButton_4.setIcon(new ImageIcon(".\\Images\\Close-2-icon.png"));
+		btnNewButton_4.setIcon(new ImageIcon(IMAGES_PATH+"Close-2-icon.png"));
 		btnNewButton_4.addActionListener(bHandler);
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frame.dispose();
+					System.exit(0);
 			}
 		});
 		btnNewButton_4.setBounds(992, 640, 93, 30);
@@ -165,6 +173,7 @@ public class Home {
 		
 		JProgressBar progressBar = new JProgressBar();
 		progressBar.setBounds(878, 27, 207, 11);
+		progressBar.setValue(30);
 		frame.getContentPane().add(progressBar);
 	
 		JLabel lblNewLabel_3 = new JLabel("Mission");
@@ -173,31 +182,57 @@ public class Home {
 		lblNewLabel_3.setBounds(955, 12, 59, 11);
 		frame.getContentPane().add(lblNewLabel_3);
 		
+		JLabel lblNewLabel_3_1 = new JLabel("{Mission Name}");
+		lblNewLabel_3_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_3_1.setForeground(Color.WHITE);
+		lblNewLabel_3_1.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+		lblNewLabel_3_1.setBounds(878, 41, 207, 20);
+		frame.getContentPane().add(lblNewLabel_3_1);
+		
 		JLabel lblNewLabel_4 = new JLabel("100000$");
 		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		lblNewLabel_4.setForeground(Color.WHITE);
-		lblNewLabel_4.setIcon(new ImageIcon(".\\Images\\coin-us-dollar-icon-1.png"));
+		lblNewLabel_4.setIcon(new ImageIcon(IMAGES_PATH+"coin-us-dollar-icon-1.png"));
 		lblNewLabel_4.setBounds(38, 10, 123, 28);
 		frame.getContentPane().add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_5 = new JLabel("");
-		lblNewLabel_5.setIcon(new ImageIcon(".\\Images\\Webp.net-resizeimage.png"));
+		lblNewLabel_5.setIcon(new ImageIcon(IMAGES_PATH+"Webp.net-resizeimage.png"));
 		lblNewLabel_5.setBounds(208, 79, 146, 156);
 		frame.getContentPane().add(lblNewLabel_5);
 		
 		JLabel lblNewLabel = new JLabel();
-		lblNewLabel.setIcon(new ImageIcon(".//Images//terree.png"));
+		lblNewLabel.setIcon(new ImageIcon(IMAGES_PATH+"terree.png"));
 		lblNewLabel.setBounds(570, 79, 515, 523);
 		frame.getContentPane().add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel();
-		lblNewLabel_1.setIcon(new ImageIcon(".//Images//lunee.jpg"));
+		lblNewLabel_1.setIcon(new ImageIcon(IMAGES_PATH+"lunee.jpg"));
 		lblNewLabel_1.setBounds(0, 0, 1106, 680);
 		frame.getContentPane().add(lblNewLabel_1);
+				
+		clickSound = SOUNDS_PATH+"button.wav";
+		tavernMusic = SOUNDS_PATH+"backMusic.wav";
+	}
+	
+	private class MyThread extends Thread{
 		
-		clickSound = ".//Sounds//button.wav";
-		tavernMusic = ".//Sounds//backMusic.wav";
-
+		@Override
+		public void run() {
+			while(true) {
+				if(!x) {
+					btnNewButton_5.setBackground(Color.DARK_GRAY);	
+				}
+				else {
+					btnNewButton_5.setBackground(null);	
+				}
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e1) {
+					e1.printStackTrace();
+				}
+			}
+		}
 	}
 	
 	public class SoundEffect{

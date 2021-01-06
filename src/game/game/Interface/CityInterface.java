@@ -1,4 +1,4 @@
-package game;
+package game.Interface;
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -12,10 +12,11 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JProgressBar;
+import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 
-public class City extends Home{
+public class CityInterface extends HomeInterface{
 
 	JFrame frame;
 
@@ -27,7 +28,7 @@ public class City extends Home{
 			public void run() {
 				try {
 					UIManager.setLookAndFeel(new NimbusLookAndFeel());
-					City window = new City();
+					CityInterface window = new CityInterface();
 					window.frame.setVisible(true);
 					window.frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
@@ -40,7 +41,7 @@ public class City extends Home{
 	/**
 	 * Create the application.
 	 */
-	public City() {
+	public CityInterface() {
 		initialize();
 		mu.stop();
 	}
@@ -51,7 +52,7 @@ public class City extends Home{
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1109, 717);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
 		JButton btnNewButton = new JButton("Create Facility");
@@ -59,7 +60,7 @@ public class City extends Home{
 		btnNewButton.addActionListener(bHandler);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Facility facility = new Facility();
+				FacilityInterface facility = new FacilityInterface();
 				facility.frame.setVisible(true);
 			}	
 		});
@@ -92,7 +93,7 @@ public class City extends Home{
 		
 		JButton btnNewButton_3 = new JButton("Back");
 		btnNewButton_3.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		btnNewButton_3.setIcon(new ImageIcon(".\\Images\\Go-back-icon-1.png"));
+		btnNewButton_3.setIcon(new ImageIcon(IMAGES_PATH+"Go-back-icon-1.png"));
 		btnNewButton_3.addActionListener(bHandler);
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -110,6 +111,7 @@ public class City extends Home{
 		
 		JProgressBar progressBar = new JProgressBar();
 		progressBar.setBounds(878, 27, 207, 11);
+		progressBar.setValue(30);
 		frame.getContentPane().add(progressBar);
 
 		JLabel lblNewLabel_6 = new JLabel("Mission");
@@ -118,20 +120,27 @@ public class City extends Home{
 		lblNewLabel_6.setBounds(955, 12, 59, 11);
 		frame.getContentPane().add(lblNewLabel_6);
 		
+		JLabel lblNewLabel_3_1 = new JLabel("{Mission Name}");
+		lblNewLabel_3_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_3_1.setForeground(Color.WHITE);
+		lblNewLabel_3_1.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+		lblNewLabel_3_1.setBounds(878, 41, 207, 20);
+		frame.getContentPane().add(lblNewLabel_3_1);
+		
 		JLabel lblNewLabel_4 = new JLabel("100000$");
 		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		lblNewLabel_4.setForeground(Color.WHITE);
-		lblNewLabel_4.setIcon(new ImageIcon(".\\Images\\coin-us-dollar-icon-1.png"));
+		lblNewLabel_4.setIcon(new ImageIcon(IMAGES_PATH+"coin-us-dollar-icon-1.png"));
 		lblNewLabel_4.setBounds(38, 10, 123, 28);
 		frame.getContentPane().add(lblNewLabel_4);
 		
 		JLabel lblNewLabel = new JLabel();
-		lblNewLabel.setIcon(new ImageIcon(".\\Images\\terree.png"));
+		lblNewLabel.setIcon(new ImageIcon(IMAGES_PATH+"terree.png"));
 		lblNewLabel.setBounds(570, 79, 515, 523);
 		frame.getContentPane().add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel();
-		lblNewLabel_1.setIcon(new ImageIcon(".\\Images\\lunee.jpg"));
+		lblNewLabel_1.setIcon(new ImageIcon(IMAGES_PATH+"lunee.jpg"));
 		lblNewLabel_1.setBounds(0, 0, 1106, 680);
 		frame.getContentPane().add(lblNewLabel_1);
 		
