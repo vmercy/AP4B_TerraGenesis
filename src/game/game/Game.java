@@ -11,6 +11,23 @@ import game.Species.Vegetal;
 
 public class Game {
 
+  private class CompleteMissions extends Thread{
+		
+		@Override
+		public void run() { //TODO: deplacer vers la classe Game
+			while(true) {
+        
+        
+
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e1) {
+					e1.printStackTrace();
+				}
+			}
+		}
+  }
+
   private Planet m_planet;
 
     private Vector<BuildingMaterial> m_buildingMaterials;
