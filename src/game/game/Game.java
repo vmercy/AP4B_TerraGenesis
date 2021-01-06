@@ -29,9 +29,20 @@ public class Game {
 		}
   }
   
-  public Missions m_missions; //TODO: turn to public and implement getter
+  private Missions m_missions; //TODO: turn to public and implement getter
   private Planet m_planet;
   private Vector<BuildingMaterial> m_buildingMaterials;
+  private Money m_money;
+
+  public Missions getMissions()
+  {
+    return m_missions;
+  }
+
+  public Money getMoney()
+  {
+    return m_money;
+  }
 
     private final byte NB_BUILDING_MATERIALS = 4;
 
@@ -48,6 +59,7 @@ public class Game {
       m_buildingMaterials.add(new BuildingMaterial("Metal", 500.0));
       m_buildingMaterials.add(new BuildingMaterial("Concrete", 800.0));
       m_missions = new Missions();
+      m_money = new Money();
     }
     
     /**

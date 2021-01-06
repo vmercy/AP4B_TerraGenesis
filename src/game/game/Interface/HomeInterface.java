@@ -28,8 +28,10 @@ public class HomeInterface {
   public final String SOUNDS_PATH = "Sounds/";
   
   Game mainGame = new Game();
-
-	JFrame frame;
+  
+  JFrame frame;
+  JLabel lblNewLabel_3_1 = new JLabel(mainGame.getMissions().getCurrentMission().getTitle());
+  JLabel lblNewLabel_4 = new JLabel(mainGame.getMoney().getAmount()+"$");
 	ButtonHandler bHandler = new ButtonHandler();
 	JButton btnNewButton_5 = new JButton("Add Humans");
 	String clickSound, tavernMusic;
@@ -136,7 +138,7 @@ public class HomeInterface {
 				conditions.frame.setVisible(true);
 			}
 		});
-		btnNewButton_3_1_1.setBounds(136, 631, 116, 39);
+		btnNewButton_3_1_1.setBounds(136, 631, 130, 39);
 		frame.getContentPane().add(btnNewButton_3_1_1);
 		
 		JButton btnNewButton_4 = new JButton("Exit");
@@ -165,11 +167,9 @@ public class HomeInterface {
 		JLabel lblNewLabel_3 = new JLabel("Mission");
 		lblNewLabel_3.setForeground(Color.WHITE);
 		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
-		lblNewLabel_3.setBounds(955, 12, 59, 11);
+		lblNewLabel_3.setBounds(955, 12, 69, 11);
 		frame.getContentPane().add(lblNewLabel_3);
 		
-    //JLabel lblNewLabel_3_1 = new JLabel("{Mission Name}");
-    JLabel lblNewLabel_3_1 = new JLabel(mainGame.m_missions.getCurrentMission().getTitle());
 		lblNewLabel_3_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3_1.setForeground(Color.WHITE);
 		lblNewLabel_3_1.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
@@ -183,14 +183,12 @@ public class HomeInterface {
 			public void actionPerformed(ActionEvent e) {
 				MaterialsInterface materials = new MaterialsInterface();
         materials.frame.setVisible(true);
-        mainGame.m_missions.nextMission();
-        lblNewLabel_3_1.setText(mainGame.m_missions.getCurrentMission().getTitle());
+        mainGame.getMissions().nextMission();
 			}
 		});
 		btnNewButton_3.setBounds(10, 631, 116, 39);
 		frame.getContentPane().add(btnNewButton_3);
 		
-		JLabel lblNewLabel_4 = new JLabel("100000$");
 		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		lblNewLabel_4.setForeground(Color.WHITE);
 		lblNewLabel_4.setIcon(new ImageIcon(IMAGES_PATH+"coin-us-dollar-icon-1.png"));
@@ -221,6 +219,9 @@ public class HomeInterface {
 		@Override
 		public void run() {
 			while(true) {
+        lblNewLabel_3_1.setText(mainGame.getMissions().getCurrentMission().getTitle());
+        lblNewLabel_4.setText(mainGame.getMoney().getAmount()+"$");
+
 				if(!allConditionsReached) {
 					btnNewButton_5.setBackground(Color.DARK_GRAY);	
 				}

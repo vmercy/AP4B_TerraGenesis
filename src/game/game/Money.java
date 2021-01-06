@@ -1,17 +1,17 @@
 package game;
 
 public class Money {
+  private static final double START_MONEY = 3000.0;
   private double m_amount;
-  private String m_currency;
+
+  public Money()
+  {
+    m_amount = START_MONEY;
+  }
 
   public double getAmount()
   {
     return m_amount;
-  }
-
-  public String getCurrency()
-  {
-    return m_currency;
   }
 
   /**
@@ -20,5 +20,10 @@ public class Money {
   public void add(double amount_p)
   {
     m_amount+=amount_p; 
+  }
+
+  public void sub(double amount_p)
+  {
+    m_amount-=amount_p; 
   }
 }

@@ -61,17 +61,17 @@ public class Missions {
   
   public void fill()
   {
-    m_missionsList.add(new Mission("Ajouter un animal","Ajouter un animal à la planète",500));
-    m_missionsList.add(new Mission("Construire une usine","Ajouter une usine dans la ville",500));
-    m_missionsList.add(new Mission("Construire un laboratoire ","Ajouter un laboratoire dans la ville pour débloquer l'achat d'animaux",500));
-    m_missionsList.add(new Mission("Construire un jardin botanique","Ajouter un jardin botanique dans la ville pour débloquer l'achat de végétaux",500));
-    m_missionsList.add(new Mission("Construire un dortoir","Ajouter un dortoir à la ville pour abriter les colons",500));
-    m_missionsList.add(new Mission("Acheter un matériau ","Acheter un matériau de construction pour construire des bâtiments",500));
-    m_missionsList.add(new Mission("Acheter un arbre","Acheter un arbre pour permettre la photosynthèse",500));
-    m_missionsList.add(new Mission("Atteindre 25 % de conditions atmosphériques ","Atteindre 25% de conditions remplies ",500));
-    m_missionsList.add(new Mission("Atteindre 50 % de conditions atmosphériques ","Atteindre 50% de conditions remplies ",500));
-    m_missionsList.add(new Mission("Atteindre 75 % de conditions atmosphériques ","Atteindre 75% de conditions remplies ",500));
-    m_missionsList.add(new Mission("Atteindre 100 % de conditions atmosphériques ","Atteindre 100% de conditions remplies ",500));
+    m_missionsList.add(new Mission("Add animal","Add an animal to the planet",500));
+    m_missionsList.add(new Mission("Build a factory","Add a factory in the city",500));
+    m_missionsList.add(new Mission("Build a laboratory","Add a laboratory in the city to unlock the purchase of animals",500));
+    m_missionsList.add(new Mission("Build a botanical garden","Add a botanical garden in the city to unlock the purchase of plants",500));
+    m_missionsList.add(new Mission("Construire un dortoir","Add a dormitory to the city to house the settlers",500));
+    m_missionsList.add(new Mission("Buy a material ","Buy building material to construct buildings",500));
+    m_missionsList.add(new Mission("Buy a tree","Buy a tree to allow photosynthesis",500));
+    m_missionsList.add(new Mission("Reach 25% atmospheric conditions ","Achieve 25% of conditions met ",500));
+    m_missionsList.add(new Mission("Reach 50% atmospheric conditions ","Reach 50% of conditions met ",500));
+    m_missionsList.add(new Mission("Reach 75% atmospheric conditions ","Achieve 75% of conditions met ",500));
+    m_missionsList.add(new Mission("Achieve 100% atmospheric conditions ","Achieve 100% of conditions met ",500));
   }
 
   public int nbMissionsAchieved()
