@@ -1,4 +1,4 @@
-package game;
+package game.Interface;
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -8,15 +8,13 @@ import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JProgressBar;
 import javax.swing.UIManager;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 
-public class Vegetals extends Home{
+public class HumansInterface extends HomeInterface {
 
 	JFrame frame;
 
@@ -28,7 +26,7 @@ public class Vegetals extends Home{
 			public void run() {
 				try {
 					UIManager.setLookAndFeel(new NimbusLookAndFeel());
-					Vegetals window = new Vegetals();
+					HumansInterface window = new HumansInterface();
 					window.frame.setVisible(true);
 					window.frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
@@ -41,7 +39,7 @@ public class Vegetals extends Home{
 	/**
 	 * Create the application.
 	 */
-	public Vegetals() {
+	public HumansInterface() {
 		initialize();
 		mu.stop();
 	}
@@ -54,27 +52,6 @@ public class Vegetals extends Home{
 		frame.setBounds(100, 100, 1109, 717);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		
-		Object[] elements = new Object[] {"Plant", "Tree"};
-		@SuppressWarnings({ "unchecked", "rawtypes" })
-		JComboBox<String> comboBox = new JComboBox(elements);
-		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		comboBox.addActionListener(bHandler);
-		comboBox.setBounds(296, 251, 141, 32);
-		frame.getContentPane().add(comboBox);
-		
-		JButton btnNewButton_3_1 = new JButton("Add");
-		btnNewButton_3_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		btnNewButton_3_1.setIcon(new ImageIcon(".\\Images\\add-icon-1.png"));
-		btnNewButton_3_1.addActionListener(bHandler);
-		btnNewButton_3_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showConfirmDialog(null, "Add a "+ comboBox.getSelectedItem() +" : -200$");
-
-			}
-		});
-		btnNewButton_3_1.setBounds(211, 370, 103, 32);
-		frame.getContentPane().add(btnNewButton_3_1);
 		
 		JButton btnNewButton_3 = new JButton("Back");
 		btnNewButton_3.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -95,21 +72,15 @@ public class Vegetals extends Home{
 		lblNewLabel_2.setBounds(468, 10, 168, 39);
 		frame.getContentPane().add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_3 = new JLabel("Select a type of vegetals :");
-		lblNewLabel_3.setForeground(Color.WHITE);
-		lblNewLabel_3.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
-		lblNewLabel_3.setBounds(38, 251, 233, 32);
-		frame.getContentPane().add(lblNewLabel_3);
-		
 		JProgressBar progressBar = new JProgressBar();
 		progressBar.setBounds(878, 27, 207, 11);
 		frame.getContentPane().add(progressBar);
-
-		JLabel lblNewLabel_6 = new JLabel("Mission");
-		lblNewLabel_6.setForeground(Color.WHITE);
-		lblNewLabel_6.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
-		lblNewLabel_6.setBounds(955, 12, 59, 11);
-		frame.getContentPane().add(lblNewLabel_6);
+	
+		JLabel lblNewLabel_3 = new JLabel("Mission");
+		lblNewLabel_3.setForeground(Color.WHITE);
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+		lblNewLabel_3.setBounds(955, 12, 59, 11);
+		frame.getContentPane().add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("100000$");
 		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));

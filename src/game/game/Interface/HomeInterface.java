@@ -1,4 +1,4 @@
-package game;
+package game.Interface;
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -18,7 +18,7 @@ import javax.swing.UIManager;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 import javax.swing.JProgressBar;
 
-public class Home {
+public class HomeInterface {
 
 	JFrame frame;
 	ButtonHandler bHandler = new ButtonHandler();
@@ -33,7 +33,7 @@ public class Home {
 				
 				try {
 					UIManager.setLookAndFeel(new NimbusLookAndFeel());
-					Home window = new Home();
+					HomeInterface window = new HomeInterface();
 					window.frame.setVisible(true);
 					window.frame.setLocationRelativeTo(null);
 				
@@ -50,7 +50,7 @@ public class Home {
 	}
 
 	
-	public Home() {
+	public HomeInterface() {
 		
 		
 			initialize();
@@ -71,7 +71,7 @@ public class Home {
 		btnNewButton.addActionListener(bHandler);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				City city = new City();
+				CityInterface city = new CityInterface();
 				city.frame.setVisible(true);
 			}	
 		});
@@ -83,7 +83,7 @@ public class Home {
 		btnNewButton_1.addActionListener(bHandler);
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Animals animals = new Animals();
+				AnimalsInterface animals = new AnimalsInterface();
 				animals.frame.setVisible(true);
 			}
 		});
@@ -95,7 +95,7 @@ public class Home {
 		btnNewButton_2.addActionListener(bHandler);
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Vegetals vegetals = new Vegetals();
+				VegetalsInterface vegetals = new VegetalsInterface();
 				vegetals.frame.setVisible(true);
 			}
 		});
@@ -107,7 +107,7 @@ public class Home {
 		btnNewButton_5.addActionListener(bHandler);
 		btnNewButton_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Humans humans = new Humans();
+				HumansInterface humans = new HumansInterface();
 				humans.frame.setVisible(true);
 			}
 		});
@@ -120,7 +120,7 @@ public class Home {
 		btnNewButton_3.addActionListener(bHandler);
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Materials materials = new Materials();
+				MaterialsInterface materials = new MaterialsInterface();
 				materials.frame.setVisible(true);
 			}
 		});
@@ -138,7 +138,7 @@ public class Home {
 		btnNewButton_3_1_1.addActionListener(bHandler);
 		btnNewButton_3_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Conditions conditions = new Conditions();
+				ConditionsInterface conditions = new ConditionsInterface();
 				conditions.frame.setVisible(true);
 			}
 		});

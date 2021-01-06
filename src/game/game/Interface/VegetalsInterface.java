@@ -1,4 +1,4 @@
-package game;
+package game.Interface;
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -16,7 +16,7 @@ import javax.swing.JProgressBar;
 import javax.swing.UIManager;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 
-public class Animals extends Home{
+public class VegetalsInterface extends HomeInterface{
 
 	JFrame frame;
 
@@ -28,7 +28,7 @@ public class Animals extends Home{
 			public void run() {
 				try {
 					UIManager.setLookAndFeel(new NimbusLookAndFeel());
-					Animals window = new Animals();
+					VegetalsInterface window = new VegetalsInterface();
 					window.frame.setVisible(true);
 					window.frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
@@ -41,10 +41,9 @@ public class Animals extends Home{
 	/**
 	 * Create the application.
 	 */
-	public Animals() {
+	public VegetalsInterface() {
 		initialize();
 		mu.stop();
-
 	}
 
 	/**
@@ -56,7 +55,7 @@ public class Animals extends Home{
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		Object[] elements = new Object[] {"Fish", "Mammal", "Insect"};
+		Object[] elements = new Object[] {"Plant", "Tree"};
 		@SuppressWarnings({ "unchecked", "rawtypes" })
 		JComboBox<String> comboBox = new JComboBox(elements);
 		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -65,12 +64,12 @@ public class Animals extends Home{
 		frame.getContentPane().add(comboBox);
 		
 		JButton btnNewButton_3_1 = new JButton("Add");
-		btnNewButton_3_1.addActionListener(bHandler);
 		btnNewButton_3_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnNewButton_3_1.setIcon(new ImageIcon(".\\Images\\add-icon-1.png"));
+		btnNewButton_3_1.addActionListener(bHandler);
 		btnNewButton_3_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showConfirmDialog(null, "Add a "+ comboBox.getSelectedItem() +" : -600$");
+				JOptionPane.showConfirmDialog(null, "Add a "+ comboBox.getSelectedItem() +" : -200$");
 
 			}
 		});
@@ -96,7 +95,7 @@ public class Animals extends Home{
 		lblNewLabel_2.setBounds(468, 10, 168, 39);
 		frame.getContentPane().add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_3 = new JLabel("Select a type of animals :");
+		JLabel lblNewLabel_3 = new JLabel("Select a type of vegetals :");
 		lblNewLabel_3.setForeground(Color.WHITE);
 		lblNewLabel_3.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
 		lblNewLabel_3.setBounds(38, 251, 233, 32);
@@ -128,9 +127,6 @@ public class Animals extends Home{
 		lblNewLabel_1.setIcon(new ImageIcon(".\\Images\\lunee.jpg"));
 		lblNewLabel_1.setBounds(0, 0, 1106, 680);
 		frame.getContentPane().add(lblNewLabel_1);
-		
-		
-		
-
 	}
+
 }

@@ -1,4 +1,4 @@
-package game;
+package game.Interface;
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -10,11 +10,12 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JProgressBar;
 import javax.swing.UIManager;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 
-public class Humans extends Home {
+public class CityInterface extends HomeInterface{
 
 	JFrame frame;
 
@@ -26,7 +27,7 @@ public class Humans extends Home {
 			public void run() {
 				try {
 					UIManager.setLookAndFeel(new NimbusLookAndFeel());
-					Humans window = new Humans();
+					CityInterface window = new CityInterface();
 					window.frame.setVisible(true);
 					window.frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
@@ -39,7 +40,7 @@ public class Humans extends Home {
 	/**
 	 * Create the application.
 	 */
-	public Humans() {
+	public CityInterface() {
 		initialize();
 		mu.stop();
 	}
@@ -52,6 +53,42 @@ public class Humans extends Home {
 		frame.setBounds(100, 100, 1109, 717);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+
+		JButton btnNewButton = new JButton("Create Facility");
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		btnNewButton.addActionListener(bHandler);
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				FacilityInteface facility = new FacilityInteface();
+				facility.frame.setVisible(true);
+			}	
+		});
+		btnNewButton.setBounds(190, 218, 175, 62);
+		frame.getContentPane().add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Create Laboratory");
+		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		btnNewButton_1.addActionListener(bHandler);
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showConfirmDialog(null, "Create a Laboratory : -2000$");
+
+			}
+		});
+		btnNewButton_1.setBounds(190, 312, 175, 62);
+		frame.getContentPane().add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("Create Botanic Garden");
+		btnNewButton_2.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		btnNewButton_2.addActionListener(bHandler);
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showConfirmDialog(null, "Create a Botanic Garden : -3500$");
+
+			}
+		});
+		btnNewButton_2.setBounds(190, 405, 175, 62);
+		frame.getContentPane().add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("Back");
 		btnNewButton_3.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -60,7 +97,6 @@ public class Humans extends Home {
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
-
 			}
 		});
 		btnNewButton_3.setBounds(10, 638, 103, 32);
@@ -75,12 +111,12 @@ public class Humans extends Home {
 		JProgressBar progressBar = new JProgressBar();
 		progressBar.setBounds(878, 27, 207, 11);
 		frame.getContentPane().add(progressBar);
-	
-		JLabel lblNewLabel_3 = new JLabel("Mission");
-		lblNewLabel_3.setForeground(Color.WHITE);
-		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
-		lblNewLabel_3.setBounds(955, 12, 59, 11);
-		frame.getContentPane().add(lblNewLabel_3);
+
+		JLabel lblNewLabel_6 = new JLabel("Mission");
+		lblNewLabel_6.setForeground(Color.WHITE);
+		lblNewLabel_6.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+		lblNewLabel_6.setBounds(955, 12, 59, 11);
+		frame.getContentPane().add(lblNewLabel_6);
 		
 		JLabel lblNewLabel_4 = new JLabel("100000$");
 		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
@@ -98,6 +134,6 @@ public class Humans extends Home {
 		lblNewLabel_1.setIcon(new ImageIcon(".\\Images\\lunee.jpg"));
 		lblNewLabel_1.setBounds(0, 0, 1106, 680);
 		frame.getContentPane().add(lblNewLabel_1);
+		
 	}
-
 }

@@ -1,4 +1,4 @@
-package game;
+package game.Interface;
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -15,7 +15,7 @@ import javax.swing.JTextField;
 import javax.swing.UIManager;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 
-public class Conditions extends Home{
+public class ConditionsInterface extends HomeInterface{
 
 	JFrame frame;
 	private JTextField textField;
@@ -33,7 +33,7 @@ public class Conditions extends Home{
 			public void run() {
 				try {
 					UIManager.setLookAndFeel(new NimbusLookAndFeel());
-					Conditions window = new Conditions();
+					ConditionsInterface window = new ConditionsInterface();
 					window.frame.setVisible(true);
 					window.frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
@@ -46,7 +46,7 @@ public class Conditions extends Home{
 	/**
 	 * Create the application.
 	 */
-	public Conditions() {
+	public ConditionsInterface() {
 		initialize();
 		mu.stop();
 	}

@@ -1,4 +1,4 @@
-package game;
+package game.Interface;
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -16,7 +16,7 @@ import javax.swing.JProgressBar;
 import javax.swing.UIManager;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 
-public class Materials extends Home {
+public class MaterialsInterface extends HomeInterface {
 
 	JFrame frame;
 
@@ -28,7 +28,7 @@ public class Materials extends Home {
 			public void run() {
 				try {
 					UIManager.setLookAndFeel(new NimbusLookAndFeel());
-					Materials window = new Materials();
+					MaterialsInterface window = new MaterialsInterface();
 					window.frame.setVisible(true);
 					window.frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
@@ -41,7 +41,7 @@ public class Materials extends Home {
 	/**
 	 * Create the application.
 	 */
-	public Materials() {
+	public MaterialsInterface() {
 		initialize();
 		mu.stop();
 	}

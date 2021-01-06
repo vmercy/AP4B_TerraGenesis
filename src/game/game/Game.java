@@ -9,8 +9,10 @@ import game.Species.Vegetal;
 
 
 public class Game {
+
+    private Planet m_planet;
     
-    
+    /* 
     private double money;
         
     private double atmosphere;
@@ -62,7 +64,7 @@ public class Game {
         this.biomass = biomass;
     }
 
- 
+  */
     /**
     * @param None
     * @brief Lors de l'initialisation de Game, les param�tres sont d�finis � 0 (jauge de progression en %)
@@ -70,6 +72,7 @@ public class Game {
 
     public Game() 
     {
+      m_planet.
     	this.money = 0;
     	this.atmosphere = 0;
     	this.oxygen = 0;
@@ -111,6 +114,8 @@ public class Game {
     
     public void atmosphereStateUpdate()
     {
+      
+
     	if(this.carbonDioxide>=10 && this.carbonDioxide<20 && this.oxygen>=10 && this.oxygen<20)
     	{
     		this.atmosphere = 10;
