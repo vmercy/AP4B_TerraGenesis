@@ -3,22 +3,7 @@ package game;
 import java.util.Vector;
 
 public class Missions {
-  private class CompleteMissions extends Thread{
-		
-		@Override
-		public void run() {
-			while(true) {
-        
-        //TODO : 
-
-				try {
-					Thread.sleep(1000);
-				} catch (InterruptedException e1) {
-					e1.printStackTrace();
-				}
-			}
-		}
-  }
+  
   
   private final byte nbMissionsTotal = 12;
   private Vector<Mission> m_missionsList;
@@ -39,6 +24,9 @@ public class Missions {
     m_missionsList.add(new Mission("Acheter un matériau ","Acheter un matériau de construction pour construire des bâtiments",500)); //TODO
     m_missionsList.add(new Mission("Acheter un arbre","Acheter un arbre pour permettre la photosynthèse",500)); //TODO
     m_missionsList.add(new Mission("Atteindre 25 % de conditions atmosphériques ","Atteindre 25% de conditions remplies ",500)); //TODO
+    m_missionsList.add(new Mission("Atteindre 50 % de conditions atmosphériques ","Atteindre 50% de conditions remplies ",500)); //TODO
+    m_missionsList.add(new Mission("Atteindre 75 % de conditions atmosphériques ","Atteindre 75% de conditions remplies ",500)); //TODO
+    m_missionsList.add(new Mission("Atteindre 100 % de conditions atmosphériques ","Atteindre 100% de conditions remplies ",500)); //TODO
   }
 
   public int nbMissionsAchieved()
