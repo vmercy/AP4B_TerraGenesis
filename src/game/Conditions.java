@@ -205,12 +205,4 @@ public class Conditions extends Home{
 		frame.getContentPane().add(lblNewLabel_1);
 		
 	}
-	
-	public Color getColor()
-	  {
-	    byte red, green;
-	    red = (byte) (255-(10*255));
-	    green = (byte) (255 * 10);
-	    return (new Color(red, green, 0));
-	  }
 }
