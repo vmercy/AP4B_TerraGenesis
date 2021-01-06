@@ -62,7 +62,7 @@ public Condition()
    * @param defaultIncrement_p default increment to add to current value when incrementing
    * @param defaultDecrement_p default decrement to substract from current value when decrementing
    */
-  public Condition(String name_p, String description_p, double startValue_p, double defaultIncrement_p, double defaultDecrement_p)
+  public Condition(String name_p, String description_p, double startValue_p, double defaultIncrement_p, double defaultDecrement_p, double treshold)
   {
     m_name = name_p;
     m_description = description_p;
@@ -70,6 +70,7 @@ public Condition()
     m_currentValue = startValue_p;
     m_defaultIncrement = defaultIncrement_p;
     m_defaultDecrement = defaultDecrement_p;
+    m_threshold = treshold;
     displayed = false;
   }
 

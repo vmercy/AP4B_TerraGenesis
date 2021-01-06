@@ -13,10 +13,10 @@ public class PlanetAtmosphere
   public PlanetAtmosphere()
   {
     m_conditions = new Vector<Condition>(NBCONDITIONS);
-    m_conditions.add(new Condition("Carbon dioxide", "Carbon dioxide rate in the air", 0, 0.20, 0.20));
-    m_conditions.add(new Condition("Oxygen", "Oxygen rate in the air", 0, 0.20, 0.20));
-    m_conditions.add(new Condition("Atmosphere", "Atmosphere of the planet", 0, 0.20, 0.20));
-    m_conditions.add(new Condition("Biomass", "Energy obtained from factories", 0, 0.15, 0.15));
+    m_conditions.add(new Condition("Carbon dioxide", "Carbon dioxide rate in the air", 0, 0.20, 0.20, 1));
+    m_conditions.add(new Condition("Oxygen", "Oxygen rate in the air", 0, 0.20, 0.20, 1));
+    m_conditions.add(new Condition("Atmosphere", "Atmosphere of the planet", 0, 0.20, 0.20, 1));
+    m_conditions.add(new Condition("Biomass", "Energy obtained from factories", 0, 0.15, 0.15, 1));
   }
 
   
@@ -131,4 +131,6 @@ public class PlanetAtmosphere
   		}
   	}
   }
+  
+  
 }

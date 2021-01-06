@@ -11,7 +11,7 @@ import game.Species.Vegetal;
 
 public class Game {
 
-  private Planet m_planet;
+	private Planet m_planet;
 
     private Vector<BuildingMaterial> m_buildingMaterials;
 
@@ -23,142 +23,68 @@ public class Game {
     public Game() 
     {
       m_buildingMaterials = new Vector<BuildingMaterial>(10);
-      
       m_buildingMaterials.add(new BuildingMaterial("Wood", ))
       //TODO: ajouter des matÃ©riaux de construction
 
-    	this.money = 0;
-    	this.atmosphere = 0;
-    	this.oxygen = 0;
-    	this.carbonDioxide = 0;
-    	this.biomass = 0;
     }
     
     /**
      * @param Animal animal_p
-     * @brief Lorsque qu'une espï¿½ce est instaurï¿½e avec succï¿½s sur la planï¿½te, la jauge de Co2 monte 
+     * @brief Lorsque qu'une espèce animale est instaurée avec succès sur la planète, la jauge de Co2 monte 
      */
     
     public void animalSpeciesIntroduced(Animal animal_p)
     {
-    	if(this.carbonDioxide<100)
+    	if(m_planet.m_planetAtmosphere.findCondition("Carbon dioxide").getCurrentValuePercent() < 100)
     	{
-    		this.carbonDioxide += animal_p.getcarbonDioxideProduced();
+    		m_planet.m_planetAtmosphere.incrementCondition("Carbon dioxide", animal_p.getcarbonDioxideProduced());
     	}
-    	if(this.carbonDioxide>=100)
+    	
+    	if(m_planet.m_planetAtmosphere.findCondition("Carbon dioxide").getCurrentValuePercent() >= 100)
     	{
-    		this.carbonDioxide = 100;
-    		JOptionPane.showMessageDialog(null,"Taux de dioxyde de carbone propice ï¿½ la vie humaine atteint !");
+    		m_planet.m_planetAtmosphere.findCondition("Carbon dioxide").setCurrentValue(1);
     	}
     }
     	
     /**
      * @param Vegetal vegetal_p
-     * @brief Lorsque qu'un vï¿½gï¿½tal est instaurï¿½ avec succï¿½s sur la planï¿½te, la jauge d'O2 monte
+     * @brief Lorsque qu'une espèce végétale est instaurée avec succès sur la planète, la jauge d'O2 monte 
      */
     
     public void vegetalSpeciesIntroduced(Vegetal vegetal_p)
     {
-    	if(this.oxygen<100)
+    	if(m_planet.m_planetAtmosphere.findCondition("Carbon dioxide").getCurrentValuePercent() < 100)
     	{
-    		this.oxygen += vegetal_p.getOxygenGiven();
+    		m_planet.m_planetAtmosphere.incrementCondition("Oxygen", vegetal_p.getOxygenGiven());
     	}
-    	if(this.oxygen>=100)
+    	
+    	if(m_planet.m_planetAtmosphere.findCondition("Carbon dioxide").getCurrentValuePercent() >= 100)
     	{
-    		this.oxygen = 100;
-    		JOptionPane.showMessageDialog(null,"Taux d'oxygï¿½ne propice ï¿½ la vie humaine atteint !");
+    		m_planet.m_planetAtmosphere.findCondition("Oxygen").setCurrentValue(1);
     	}
     }
     
     /**
-     * @param Vegetal vegetal_p
-     * @brief Lorsque qu'un vï¿½gï¿½tal est instaurï¿½ avec succï¿½s sur la planï¿½te, la jauge d'O2 monte
+     * @param 
+     * @brief 
      */
     
     public void FactoryIntroduced(Factory factory_p)
     {
     	
-    	if(this.biomass<100)
+    	if(m_planet.m_planetAtmosphere.findCondition("Biomass").getCurrentValuePercent()<100)
     	{
-    		this.biomass += factory_p.getBiomassGain();
+    		m_planet.m_planetAtmosphere.incrementCondition("Biomass", factory_p.getBiomassGain());
     	}
-    	if(this.biomass>=100)
+    	
+    	if(m_planet.m_planetAtmosphere.findCondition("Biomass").getCurrentValuePercent() >= 100)
     	{
-    		this.biomass = 100;
-    		JOptionPane.showMessageDialog(null,"Biomasse requise atteinte !");
+    		m_planet.m_planetAtmosphere.findCondition("Biomass").setCurrentValue(1);
     	}
     }
     
-    /**
-     * @param None
-     * @brief Si les jauges d'O2 et de Co2 sont ï¿½ 10% (progression dans le jeu ce n'est pas une rï¿½partition)
-     * 		  alors la jauge d'atmosphï¿½re passe ï¿½ 10%
-     */
-    
-    public void atmosphereStateUpdate()
-    {
-      
-    	if(this.carbonDioxide>=10 && this.carbonDioxide<20 && this.oxygen>=10 && this.oxygen<20)
-    	{
-    		this.atmosphere = 10;
-    		JOptionPane.showMessageDialog(null,"Atmosphï¿½re formï¿½e ï¿½ 10% !");
-    	}
-    	
-    	if(this.carbonDioxide>20 && this.oxygen>20 && this.atmosphere<20)
-    	{
-    		this.atmosphere = 20;
-    		JOptionPane.showMessageDialog(null,"Atmosphï¿½re formï¿½e ï¿½ 20% !");
-    	}
-    	
-    	if(this.carbonDioxide>30 && this.oxygen>30 && this.atmosphere<30)
-    	{
-    		this.atmosphere = 30;
-    		JOptionPane.showMessageDialog(null,"Atmosphï¿½re formï¿½e ï¿½ 30% !");
-    	}
-    	
-    	if(this.carbonDioxide>40 && this.oxygen>40 && this.atmosphere<40)
-    	{
-    		this.atmosphere = 40;
-    		JOptionPane.showMessageDialog(null,"Atmosphï¿½re formï¿½e ï¿½ 40% !");
-    	}
-    	
-    	if(this.carbonDioxide>50 && this.oxygen>50 && this.atmosphere<50)
-    	{
-    		this.atmosphere = 50;
-    		JOptionPane.showMessageDialog(null,"Atmosphï¿½re formï¿½e ï¿½ 50% !");
-    	}
-    	
-    	if(this.carbonDioxide>60 && this.oxygen>60 && this.atmosphere<60)
-    	{
-    		this.atmosphere = 60;
-    		JOptionPane.showMessageDialog(null,"Atmosphï¿½re formï¿½e ï¿½ 60% !");
-    	}
-    	
-    	if(this.carbonDioxide>70 && this.oxygen>70 && this.atmosphere<70)
-    	{
-    		this.atmosphere = 70;
-    		JOptionPane.showMessageDialog(null,"Atmosphï¿½re formï¿½e ï¿½ 70% !");
-    	}
-    	
-    	if(this.carbonDioxide>80 && this.oxygen>80 && this.atmosphere<80)
-    	{
-    		this.atmosphere = 80;
-    		JOptionPane.showMessageDialog(null,"Atmosphï¿½re formï¿½e ï¿½ 80% !");
-    	}
-    	
-    	if(this.carbonDioxide>90 && this.oxygen>90 && this.atmosphere<90)
-    	{
-    		this.atmosphere = 90;
-    		JOptionPane.showMessageDialog(null,"Atmosphï¿½re formï¿½e ï¿½ 90% !");
-    	}
-    	
-    	if(this.carbonDioxide>100 && this.oxygen>100)
-    	{
-    		this.atmosphere = 100;
-    		JOptionPane.showMessageDialog(null,"Atmosphï¿½re complï¿½tement formï¿½e !");
-    	}
-    }
-}   
+}
+  
 
 
     
