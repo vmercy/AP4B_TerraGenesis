@@ -1,6 +1,7 @@
 package game;
 
 import java.util.Vector;
+import java.awt.Color;
 
 public class Missions {
   private Mission m_currentMission;
@@ -18,6 +19,11 @@ public class Missions {
   {
     return m_currentMission;
   }
+  
+  private byte getNbMissions()
+  {
+    return (byte)m_missionsList.size();
+  }
 
   /**
    * @brief completes current mission and set current mission to next one
@@ -27,7 +33,10 @@ public class Missions {
     m_currentMission.complete();
     byte nextMissionIndex = (byte) m_missionsList.indexOf(m_currentMission);
     nextMissionIndex++;
-    m_currentMission = m_missionsList.get(nextMissionIndex);
+    if(nextMissionIndex<getNbMissions())
+    {
+      m_currentMission = m_missionsList.get(nextMissionIndex);
+    }
   }
 
   private Mission findMission(String missionName_p)
@@ -74,6 +83,18 @@ public class Missions {
     m_missionsList.add(new Mission("Achieve 100% atmospheric conditions ","Achieve 100% of conditions met ",500));
   }
 
+  /**
+   * @brief return the color representation that corresponds to the missions completion status from red to green
+   */
+  public Color getColor()
+  {
+    byte red, green;
+    double achievement = percentAchieved();
+    red = (byte) (255-(achievement*255));
+    green = (byte) (255 * achievement);
+    return (new Color(red, green, 0));
+  }
+
   public int nbMissionsAchieved()
   {
     int nb = 0;
@@ -87,6 +108,6 @@ public class Missions {
 
   public double percentAchieved()
   {
-    return (double)nbMissionsAchieved()/nbMissionsTotal;
+    return (double)nbMissionsAchieved()/getNbMissions();
   }
 }

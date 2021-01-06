@@ -121,7 +121,7 @@ public Condition()
   }
 
   /**
-   * @brief return the color representation in hex string that corresponds to the condition completion status from red to green
+   * @brief return the color representation that corresponds to the condition completion status from red to green
    * TODO: use it in interface progress bars implemented by @ZackBNT
    */
   public Color getColor()

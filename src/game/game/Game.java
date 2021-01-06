@@ -31,7 +31,7 @@ public class Game {
   
   private Missions m_missions; //TODO: turn to public and implement getter
   private Planet m_planet;
-  private Vector<BuildingMaterial> m_buildingMaterials;
+  private BuildingMaterials m_buildingMaterials;
   private Money m_money;
 
   public Missions getMissions()
@@ -44,7 +44,11 @@ public class Game {
     return m_money;
   }
 
-    private final byte NB_BUILDING_MATERIALS = 4;
+  public BuildingMaterials getMaterials()
+  {
+    return m_buildingMaterials;
+  }
+
 
     /**
     * @param None
@@ -53,11 +57,7 @@ public class Game {
 
     public Game() 
     {
-      m_buildingMaterials = new Vector<BuildingMaterial>(NB_BUILDING_MATERIALS);
-      m_buildingMaterials.add(new BuildingMaterial("Wood", 100.0));
-      m_buildingMaterials.add(new BuildingMaterial("Iron", 1000.0));
-      m_buildingMaterials.add(new BuildingMaterial("Metal", 500.0));
-      m_buildingMaterials.add(new BuildingMaterial("Concrete", 800.0));
+      m_buildingMaterials = new BuildingMaterials();
       m_missions = new Missions();
       m_money = new Money();
     }

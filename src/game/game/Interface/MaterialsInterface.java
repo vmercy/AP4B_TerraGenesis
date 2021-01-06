@@ -17,6 +17,8 @@ import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 
+import game.BuildingMaterial;
+
 public class MaterialsInterface extends HomeInterface {
 
 	JFrame frame;
@@ -55,10 +57,8 @@ public class MaterialsInterface extends HomeInterface {
 		frame.setBounds(100, 100, 1109, 717);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-
-		Object[] elements = new Object[] {"Material 1", "Material 2", "Material 3"};
 		@SuppressWarnings({ "unchecked", "rawtypes" })
-		JComboBox<String> comboBox = new JComboBox(elements);
+		JComboBox<String> comboBox = new JComboBox(mainGame.getMaterials().getMaterialsNames());
 		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		comboBox.addActionListener(bHandler);
 		comboBox.setBounds(296, 251, 141, 32);
@@ -70,7 +70,12 @@ public class MaterialsInterface extends HomeInterface {
 		btnNewButton_3_1.addActionListener(bHandler);
 		btnNewButton_3_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showConfirmDialog(null, "Buy a "+ comboBox.getSelectedItem() +" : -400$");
+        BuildingMaterial target = mainGame.getMaterials().getMaterial(comboBox.getSelectedItem().toString());
+        int userChoice = JOptionPane.showConfirmDialog(null, "Unlock material "+ target.getName() +" : "+target.getPrice()+"$ ?");
+        if(userChoice==JOptionPane.YES_OPTION)
+        {
+          target.buy(mainGame.getMoney());
+        }
 
 			}
 		});
