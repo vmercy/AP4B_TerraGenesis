@@ -51,7 +51,7 @@ public class Facility extends Home {
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 1109, 717);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		Object[] elements = new Object[] {"Factory", "Dormitory", "Oxygen supply", "Energy plant"};

@@ -22,10 +22,12 @@ public class Home {
 
 	JFrame frame;
 	ButtonHandler bHandler = new ButtonHandler();
+	JButton btnNewButton_5 = new JButton("Add Humans");
 	String clickSound, tavernMusic;
 	SoundEffect se = new SoundEffect();
 	Music mu = new Music();
-	int x=1;
+	private MyThread t;
+	private boolean x=false;
 	
 	public static void main(String[] args) {
 		
@@ -42,8 +44,6 @@ public class Home {
 					e.printStackTrace();
 				}
 				
-			
-
 			}
 			
 		});
@@ -56,7 +56,9 @@ public class Home {
 		
 			initialize();
 			mu.setFile(tavernMusic);
-			mu.play();	
+			mu.play();
+			t = new MyThread();
+			t.start();
 	}
 	
 	private void initialize() {
@@ -103,18 +105,13 @@ public class Home {
 		btnNewButton_2.setBounds(315, 402, 175, 62);
 		frame.getContentPane().add(btnNewButton_2);
 		
-		JButton btnNewButton_5 = new JButton("Add Humans");
 		btnNewButton_5.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnNewButton_5.addActionListener(bHandler);
-		if(x!=0) {
-			
-			btnNewButton_5.setBackground(Color.DARK_GRAY);	
-		}
 		btnNewButton_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(x!=0) {
+				if(!x) {
 					
-					JOptionPane.showInternalMessageDialog(null, "Not yet !");
+					JOptionPane.showMessageDialog(null, "Not yet !");
 				}
 				else {
 
@@ -158,7 +155,7 @@ public class Home {
 		btnNewButton_4.addActionListener(bHandler);
 		btnNewButton_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				frame.dispose();
+					System.exit(0);
 			}
 		});
 		btnNewButton_4.setBounds(992, 640, 93, 30);
@@ -205,7 +202,26 @@ public class Home {
 		
 		clickSound = ".//Sounds//button.wav";
 		tavernMusic = ".//Sounds//backMusic.wav";
-
+	}
+	
+	private class MyThread extends Thread{
+		
+		@Override
+		public void run() {
+			while(true) {
+				if(!x) {
+					btnNewButton_5.setBackground(Color.DARK_GRAY);	
+				}
+				else {
+					btnNewButton_5.setBackground(null);	
+				}
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e1) {
+					e1.printStackTrace();
+				}
+			}
+		}
 	}
 	
 	public class SoundEffect{
