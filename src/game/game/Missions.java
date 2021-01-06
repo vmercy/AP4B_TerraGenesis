@@ -13,6 +13,25 @@ public class Missions {
     m_missionsList = new Vector<Mission>(nbMissionsTotal);
     fill();
   }
+
+  private Mission findMission(String conditionName_p)
+  {
+    for (Condition condition : m_conditions) {
+      if(condition.getName()==conditionName_p)
+        return condition;
+    }
+    return null;
+  }
+
+  public double getReward(String missionName_p)
+  {
+
+  }
+
+  public String getDescription(String missionsName_p)
+  {
+    
+  }
   
   public void fill()
   {
@@ -28,6 +47,8 @@ public class Missions {
     m_missionsList.add(new Mission("Atteindre 75 % de conditions atmosphériques ","Atteindre 75% de conditions remplies ",500)); //TODO
     m_missionsList.add(new Mission("Atteindre 100 % de conditions atmosphériques ","Atteindre 100% de conditions remplies ",500)); //TODO
   }
+
+  
 
   public int nbMissionsAchieved()
   {
