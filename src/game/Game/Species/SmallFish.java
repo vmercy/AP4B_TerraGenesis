@@ -1,12 +1,9 @@
 
 package Game.Species;
 
-import Game.Game;
-import Game.Species.Fish;
-
 import javax.swing.*;
 
-import static Game.spacies.Vegetal.carbonDioxydeAbsorbed;
+import static Game.Species.Vegetal.carbonDioxydeAbsorbed;
 
 
 public class SmallFish extends Fish {

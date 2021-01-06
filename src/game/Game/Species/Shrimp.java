@@ -1,12 +1,9 @@
 
 package Game.Species;
 
-import Game.Game;
-import Game.Species.Fish;
-
 import javax.swing.*;
 
-import static Game.spacies.Vegetal.carbonDioxydeAbsorbed;
+import static Game.Species.Vegetal.carbonDioxydeAbsorbed;
 
 
 public class Shrimp extends Fish {
@@ -15,15 +12,18 @@ public class Shrimp extends Fish {
 
     public Shrimp() {
     }
-    private Fish makerel;
+    private Fish shrim;
     public Fish createFish(String nom,double taille, String urlPhoto){
         if(taille>15){
             JOptionPane.showMessageDialog(null,"Taille trop grande pour ce type de poisson");
         }else {
-            this.makerel  = new Fish(nom,taille,urlPhoto)  ;
+            setNom(nom);
+            setTaille(taille);
+            setUrlPhoto(urlPhoto);
+            this.shrim  = new Fish(getNom(),getTaille(),getUrlPhoto());
             carbonDioxydeAbsorbed += taille;
         }
-        return this.makerel;
+        return this.shrim;
 
     }
 

@@ -1,12 +1,9 @@
 
 package Game.Species;
 
-import Game.Game;
-import Game.Species.Fish;
-
 import javax.swing.*;
 
-import static Game.spacies.Vegetal.carbonDioxydeAbsorbed;
+import static Game.Species.Vegetal.carbonDioxydeAbsorbed;
 
 
 public class SingleCellOrganism extends Fish {
@@ -18,15 +15,18 @@ public class SingleCellOrganism extends Fish {
 
     }
 
-    private Fish makerel;
+    private Fish singelCellOrganique;
     public Fish createFish(String nom,double taille, String urlPhoto){
         if(taille>10){
             JOptionPane.showMessageDialog(null,"Taille trop grande pour ce type de poisson");
         }else {
-            this.makerel  = new Fish(nom,taille,urlPhoto)  ;
+            setNom(nom);
+            setTaille(taille);
+            setUrlPhoto(urlPhoto);
+            this.singelCellOrganique  = new Fish(getNom(),getTaille(),getUrlPhoto());
             carbonDioxydeAbsorbed += taille;
         }
-        return this.makerel;
+        return this.singelCellOrganique;
 
     }
 
