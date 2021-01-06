@@ -14,60 +14,7 @@ public class Game {
   private Planet m_planet;
 
     private Vector<BuildingMaterial> m_buildingMaterials;
-    
-    /* 
-    private double money;
-        
-    private double atmosphere;
-        
-    private double oxygen;
-    
-    private double carbonDioxide;
-    
-    private double biomass;
-    
-    
-    public double getMoney() {
-        return money;
-    }
 
-    public double getAtmosphere() {
-        return atmosphere;
-    }
-
-    public double getOxygen() {
-        return oxygen;
-    }
-    
-    public double getCarbonDioxide() {
-        return carbonDioxide;
-    }
-
-    public double getBiomass() {
-        return biomass;
-    }
-
-
-
-
-    
-    public void setMoney(double money) {
-        this.money = money;
-    }
-
-    public void setOxygen(double oxygen) {
-        this.oxygen = oxygen;
-    }
-    
-    public void setCarbonDioxide(double carbonDioxide) {
-        this.carbonDioxide = carbonDioxide;
-    }
-
-    public void setBiomass(double biomass) {
-        this.biomass = biomass;
-    }
-
-  */
     /**
     * @param None
     * @brief Lors de l'initialisation de Game, les param�tres sont d�finis � 0 (jauge de progression en %)
@@ -80,10 +27,6 @@ public class Game {
       m_buildingMaterials.add(new BuildingMaterial("Wood", ))
       //TODO: ajouter des matériaux de construction
 
-
-
-      //TODO: replace with condition class
-      m_planet.
     	this.money = 0;
     	this.atmosphere = 0;
     	this.oxygen = 0;
@@ -155,7 +98,6 @@ public class Game {
     public void atmosphereStateUpdate()
     {
       
-      //FIXME: probleme si le dioxyde de carbone et l'atmisphère ne sont pas dans le même intervalle
     	if(this.carbonDioxide>=10 && this.carbonDioxide<20 && this.oxygen>=10 && this.oxygen<20)
     	{
     		this.atmosphere = 10;
@@ -218,17 +160,5 @@ public class Game {
     }
 }   
 
-public class ConditionThread extends Thread
-{
-	public void run()
-	{
-		while(true)
-		{
-			try 
-			{
-				Thread.sleep(1000);
-			}
-		}
-	}
-}
+
     
