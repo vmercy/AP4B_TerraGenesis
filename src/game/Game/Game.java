@@ -193,5 +193,17 @@ public class Game {
     }
 }   
 
-    
+public class ConditionThread extends Thread
+{
+	public void run()
+	{
+		while(true)
+		{
+			try 
+			{
+				Thread.sleep(1000);
+			}
+		}
+	}
+}
     
