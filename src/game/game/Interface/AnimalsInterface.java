@@ -1,3 +1,4 @@
+package game.Interface;
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -16,7 +17,7 @@ import javax.swing.SwingConstants;
 import javax.swing.UIManager;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 
-public class Materials extends Home {
+public class AnimalsInterface extends HomeInterface{
 
 	JFrame frame;
 
@@ -28,7 +29,7 @@ public class Materials extends Home {
 			public void run() {
 				try {
 					UIManager.setLookAndFeel(new NimbusLookAndFeel());
-					Materials window = new Materials();
+					AnimalsInterface window = new AnimalsInterface();
 					window.frame.setVisible(true);
 					window.frame.setLocationRelativeTo(null);
 				} catch (Exception e) {
@@ -41,9 +42,10 @@ public class Materials extends Home {
 	/**
 	 * Create the application.
 	 */
-	public Materials() {
+	public AnimalsInterface() {
 		initialize();
 		mu.stop();
+
 	}
 
 	/**
@@ -54,26 +56,55 @@ public class Materials extends Home {
 		frame.setBounds(100, 100, 1109, 717);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-
-		Object[] elements = new Object[] {"Material 1", "Material 2", "Material 3"};
+		
+		Object[] element = new Object[] {"Tuna", "Shark", "Shrimp", "Mackerel", "Small Fish", "Single Cell Organism"};
+		@SuppressWarnings({ "unchecked", "rawtypes" })
+		JComboBox<String> comboBox_1 = new JComboBox(element);
+		comboBox_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		comboBox_1.addActionListener(bHandler);
+		comboBox_1.setBounds(296, 293, 141, 32);
+		comboBox_1.setVisible(false);
+		frame.getContentPane().add(comboBox_1);
+		
+		Object[] elements = new Object[] {"Aquatic Mammal","Insect","Fish"};
 		@SuppressWarnings({ "unchecked", "rawtypes" })
 		JComboBox<String> comboBox = new JComboBox(elements);
 		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		comboBox.addActionListener(bHandler);
+		comboBox.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+				if(comboBox.getSelectedItem().equals("Fish")) {
+					
+					comboBox_1.setVisible(true);
+				}
+				else {
+					
+					comboBox_1.setVisible(false);
+				}
+					
+			}
+		});
 		comboBox.setBounds(296, 251, 141, 32);
 		frame.getContentPane().add(comboBox);
 		
-		JButton btnNewButton_3_1 = new JButton("Buy");
-		btnNewButton_3_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		btnNewButton_3_1.setIcon(new ImageIcon(".\\Images\\Money-icon.png"));
+		JButton btnNewButton_3_1 = new JButton("Add");
 		btnNewButton_3_1.addActionListener(bHandler);
+		btnNewButton_3_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		btnNewButton_3_1.setIcon(new ImageIcon(".\\Images\\add-icon-1.png"));
 		btnNewButton_3_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showConfirmDialog(null, "Buy a "+ comboBox.getSelectedItem() +" : -400$");
-
+				if(comboBox.getSelectedItem().equals("Fish")) {
+					
+					JOptionPane.showConfirmDialog(null, "Add "+ comboBox_1.getSelectedItem() +" : -400$");
+				}
+				else {
+					
+					JOptionPane.showConfirmDialog(null, "Add "+ comboBox.getSelectedItem() +" : -600$");
+				}
 			}
 		});
-		btnNewButton_3_1.setBounds(211, 370, 103, 32);
+		btnNewButton_3_1.setBounds(214, 378, 103, 32);
 		frame.getContentPane().add(btnNewButton_3_1);
 		
 		JButton btnNewButton_3 = new JButton("Back");
@@ -95,10 +126,10 @@ public class Materials extends Home {
 		lblNewLabel_2.setBounds(468, 10, 168, 39);
 		frame.getContentPane().add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_3 = new JLabel("Select a type of materials :");
+		JLabel lblNewLabel_3 = new JLabel("Select a type of animals :");
 		lblNewLabel_3.setForeground(Color.WHITE);
 		lblNewLabel_3.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
-		lblNewLabel_3.setBounds(36, 251, 235, 32);
+		lblNewLabel_3.setBounds(38, 251, 233, 32);
 		frame.getContentPane().add(lblNewLabel_3);
 		
 		JProgressBar progressBar = new JProgressBar();
@@ -136,5 +167,4 @@ public class Materials extends Home {
 		lblNewLabel_1.setBounds(0, 0, 1106, 680);
 		frame.getContentPane().add(lblNewLabel_1);
 	}
-
 }
