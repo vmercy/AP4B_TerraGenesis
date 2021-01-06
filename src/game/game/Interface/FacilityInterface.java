@@ -1,5 +1,7 @@
 package game.Interface;
 
+import game.*;
+
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -42,7 +44,7 @@ public class FacilityInterface extends HomeInterface {
 	/**
 	 * Create the application.
 	 */
-	public FacilityInterface() {
+  public FacilityInterface() {
 		initialize();
 		mu.stop();
 	}

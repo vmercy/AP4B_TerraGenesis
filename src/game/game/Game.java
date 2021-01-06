@@ -12,9 +12,28 @@ import game.Species.Vegetal;
 
 public class Game {
 
-	private Planet m_planet;
+  private class CompleteMissions extends Thread{
+    
+    @Override
+		public void run() { //TODO: deplacer vers la classe Game
+			while(true) {
+        
+        
+        
+        try {
+          Thread.sleep(1000);
+				} catch (InterruptedException e1) {
+          e1.printStackTrace();
+				}
+			}
+		}
+  }
+  
+  public Missions m_missions; //TODO: turn to public and implement getter
+  private Planet m_planet;
+  private Vector<BuildingMaterial> m_buildingMaterials;
 
-    private Vector<BuildingMaterial> m_buildingMaterials;
+    private final byte NB_BUILDING_MATERIALS = 4;
 
     /**
     * @param None
@@ -23,10 +42,12 @@ public class Game {
 
     public Game() 
     {
-      m_buildingMaterials = new Vector<BuildingMaterial>(10);
-      m_buildingMaterials.add(new BuildingMaterial("Wood", ""));
-      //TODO: ajouter des matériaux de construction
-
+      m_buildingMaterials = new Vector<BuildingMaterial>(NB_BUILDING_MATERIALS);
+      m_buildingMaterials.add(new BuildingMaterial("Wood", 100.0));
+      m_buildingMaterials.add(new BuildingMaterial("Iron", 1000.0));
+      m_buildingMaterials.add(new BuildingMaterial("Metal", 500.0));
+      m_buildingMaterials.add(new BuildingMaterial("Concrete", 800.0));
+      m_missions = new Missions();
     }
     
     /**
@@ -70,7 +91,7 @@ public class Game {
      * @brief 
      */
     
-    public void FactoryIntroduced(Factory factory_p)
+    public void FactoryIntroduced(Factory factory_p) //TODO: call on factory creation via interface
     {
     	
     	if(m_planet.m_planetAtmosphere.findCondition("Biomass").getCurrentValuePercent() < 100)

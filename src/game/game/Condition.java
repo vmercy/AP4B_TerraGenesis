@@ -61,8 +61,9 @@ public Condition()
    * @param startValue_p value of progress on initilization
    * @param defaultIncrement_p default increment to add to current value when incrementing
    * @param defaultDecrement_p default decrement to substract from current value when decrementing
+   * @param threshold_p value above which the condition is considered as completed
    */
-  public Condition(String name_p, String description_p, double startValue_p, double defaultIncrement_p, double defaultDecrement_p, double treshold)
+  public Condition(String name_p, String description_p, double startValue_p, double defaultIncrement_p, double defaultDecrement_p, double threshold_p)
   {
     m_name = name_p;
     m_description = description_p;
@@ -70,7 +71,7 @@ public Condition()
     m_currentValue = startValue_p;
     m_defaultIncrement = defaultIncrement_p;
     m_defaultDecrement = defaultDecrement_p;
-    m_threshold = treshold;
+    m_threshold = threshold_p;
     displayed = false;
   }
 

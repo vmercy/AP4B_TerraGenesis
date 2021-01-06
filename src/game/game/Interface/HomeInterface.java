@@ -1,5 +1,7 @@
 package game.Interface;
 
+import game.*;
+
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -21,8 +23,11 @@ import javax.swing.JProgressBar;
 import javax.swing.SwingConstants;
 
 public class HomeInterface {
+  
   public final String IMAGES_PATH = "Images/";
   public final String SOUNDS_PATH = "Sounds/";
+  
+  Game mainGame = new Game();
 
 	JFrame frame;
 	ButtonHandler bHandler = new ButtonHandler();
@@ -37,7 +42,6 @@ public class HomeInterface {
 		
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
-				
 				try {
 					UIManager.setLookAndFeel(new NimbusLookAndFeel());
 					HomeInterface window = new HomeInterface();
@@ -47,20 +51,15 @@ public class HomeInterface {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-				
 			}
-			
 		});
-		
 	}
-
 	
 	public HomeInterface() {
-		
-		
 			initialize();
 			mu.setFile(tavernMusic);
-			mu.play();
+      mu.play();
+      mu.loop();
 			t = new MyThread();
 			t.start();
 	}
@@ -128,19 +127,6 @@ public class HomeInterface {
 		btnNewButton_5.setBounds(315, 291, 175, 62);
 		frame.getContentPane().add(btnNewButton_5);
 		
-		
-		JButton btnNewButton_3 = new JButton("Buy Materials");
-		btnNewButton_3.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		btnNewButton_3.addActionListener(bHandler);
-		btnNewButton_3.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				MaterialsInterface materials = new MaterialsInterface();
-				materials.frame.setVisible(true);
-			}
-		});
-		btnNewButton_3.setBounds(10, 631, 116, 39);
-		frame.getContentPane().add(btnNewButton_3);
-		
 		JButton btnNewButton_3_1_1 = new JButton("View Conditions");
 		btnNewButton_3_1_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnNewButton_3_1_1.addActionListener(bHandler);
@@ -182,12 +168,27 @@ public class HomeInterface {
 		lblNewLabel_3.setBounds(955, 12, 59, 11);
 		frame.getContentPane().add(lblNewLabel_3);
 		
-		JLabel lblNewLabel_3_1 = new JLabel("{Mission Name}");
+    //JLabel lblNewLabel_3_1 = new JLabel("{Mission Name}");
+    JLabel lblNewLabel_3_1 = new JLabel(mainGame.m_missions.getCurrentMission().getTitle());
 		lblNewLabel_3_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3_1.setForeground(Color.WHITE);
 		lblNewLabel_3_1.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		lblNewLabel_3_1.setBounds(878, 41, 207, 20);
-		frame.getContentPane().add(lblNewLabel_3_1);
+    frame.getContentPane().add(lblNewLabel_3_1);
+    
+    JButton btnNewButton_3 = new JButton("Buy Materials");
+		btnNewButton_3.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		btnNewButton_3.addActionListener(bHandler);
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MaterialsInterface materials = new MaterialsInterface();
+        materials.frame.setVisible(true);
+        mainGame.m_missions.nextMission();
+        lblNewLabel_3_1.setText(mainGame.m_missions.getCurrentMission().getTitle());
+			}
+		});
+		btnNewButton_3.setBounds(10, 631, 116, 39);
+		frame.getContentPane().add(btnNewButton_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("100000$");
 		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
