@@ -1,6 +1,7 @@
 
 package game;
 
+import java.util.Vector;
 
 import javax.swing.JOptionPane;
 
@@ -10,7 +11,9 @@ import game.Species.Vegetal;
 
 public class Game {
 
-    private Planet m_planet;
+  private Planet m_planet;
+
+    private Vector<BuildingMaterial> m_buildingMaterials;
     
     /* 
     private double money;
@@ -72,6 +75,13 @@ public class Game {
 
     public Game() 
     {
+      m_buildingMaterials = new Vector<BuildingMaterial>(10);
+      
+      m_buildingMaterials.add(new BuildingMaterial("Wood", ))
+      //TODO: ajouter des matériaux de construction
+
+
+
       //TODO: replace with condition class
       m_planet.
     	this.money = 0;
