@@ -177,13 +177,15 @@ public class HomeInterface {
     frame.getContentPane().add(lblNewLabel_3_1);
     
     JButton btnNewButton_3 = new JButton("Buy Materials");
+    //TODO: fill materials dropdown list
 		btnNewButton_3.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnNewButton_3.addActionListener(bHandler);
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				MaterialsInterface materials = new MaterialsInterface();
         materials.frame.setVisible(true);
-        mainGame.getMissions().nextMission();
+        mainGame.getMissions().nextMission(); //TODO: REMOVE
+        mainGame.getMoney().sub(150.0); //TODO: REMOVE
 			}
 		});
 		btnNewButton_3.setBounds(10, 631, 116, 39);
