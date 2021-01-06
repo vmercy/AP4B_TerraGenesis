@@ -8,10 +8,10 @@ public class Missions {
   private final byte nbMissionsTotal = 12;
   private Vector<Mission> m_missionsList;
   
-  public Mission()
+  public Missions()
   {
-    m_missionsList = new Vector<Mission>();
-
+    m_missionsList = new Vector<Mission>(nbMissionsTotal);
+    fill();
   }
   
   public void fill()
