@@ -72,6 +72,7 @@ public class Game {
 
     public Game() 
     {
+      //TODO: replace with condition class
       m_planet.
     	this.money = 0;
     	this.atmosphere = 0;
@@ -115,7 +116,7 @@ public class Game {
     public void atmosphereStateUpdate()
     {
       
-
+      //FIXME: probleme si le dioxyde de carbone et l'atmisphère ne sont pas dans le même intervalle
     	if(this.carbonDioxide>=10 && this.carbonDioxide<20 && this.oxygen>=10 && this.oxygen<20)
     	{
     		this.atmosphere = 10;
