@@ -1,4 +1,5 @@
 package game.Interface;
+import game.*;
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -21,7 +22,9 @@ import game.BuildingMaterial;
 
 public class BuyMaterialsInterface extends HomeInterface {
 
-	JFrame frame;
+  JFrame frame;
+  JLabel lblCurrentMoney = new JLabel("100000$");
+  private MyThread t;
 
 	/**
 	 * Launch the application.
@@ -44,9 +47,11 @@ public class BuyMaterialsInterface extends HomeInterface {
 	/**
 	 * Create the application.
 	 */
-	public BuyMaterialsInterface() {
-		initialize();
-		mu.stop();
+	public BuyMaterialsInterface(){
+    initialize();
+    t = new MyThread();
+    mu.stop();
+    t.start();
 	}
 
 	/**
@@ -125,12 +130,11 @@ public class BuyMaterialsInterface extends HomeInterface {
 		lblNewLabel_3_1.setBounds(878, 41, 207, 20);
 		frame.getContentPane().add(lblNewLabel_3_1);
 		
-		JLabel lblNewLabel_4 = new JLabel("100000$");
-		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
-		lblNewLabel_4.setForeground(Color.WHITE);
-		lblNewLabel_4.setIcon(new ImageIcon(IMAGES_PATH+"coin-icon.png"));
-		lblNewLabel_4.setBounds(38, 10, 123, 28);
-		frame.getContentPane().add(lblNewLabel_4);
+		lblCurrentMoney.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+		lblCurrentMoney.setForeground(Color.WHITE);
+		lblCurrentMoney.setIcon(new ImageIcon(IMAGES_PATH+"coin-icon.png"));
+		lblCurrentMoney.setBounds(38, 10, 123, 28);
+		frame.getContentPane().add(lblCurrentMoney);
 		
 		JLabel lblNewLabel = new JLabel();
 		lblNewLabel.setIcon(new ImageIcon(IMAGES_PATH+"planet.png"));
@@ -141,6 +145,26 @@ public class BuyMaterialsInterface extends HomeInterface {
 		lblNewLabel_1.setIcon(new ImageIcon(IMAGES_PATH+"sky.jpg"));
 		lblNewLabel_1.setBounds(0, 0, 1106, 680);
 		frame.getContentPane().add(lblNewLabel_1);
-	}
+  }
+
+  private class MyThread extends Thread{
+		
+		@Override
+		public void run() {
+			while(true) {
+        //lblCurrentMission.setText(mainGame.getMissions().getCurrentMission().getTitle());
+        lblCurrentMoney.setText(mainGame.getMoney().getAmount()+"$");
+        
+        //missionsProgressBar.setValue((int)mainGame.getMissions().percentAchieved());
+
+
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e1) {
+					e1.printStackTrace();
+				}
+			}
+		}
+  }
 
 }

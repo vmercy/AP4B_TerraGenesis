@@ -31,7 +31,7 @@ public class BuildingMaterial {
   {
     if(currentMoney_p.getAmount()>=m_price)
     {
-      currentMoney_p.add(-m_price);
+      currentMoney_p.sub(m_price);
       m_owned = true;
       return true;
     }

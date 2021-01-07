@@ -27,7 +27,7 @@ public class HomeInterface {
   public final String IMAGES_PATH = "Images/";
   public final String SOUNDS_PATH = "Sounds/";
   
-  Game mainGame = new Game();
+  protected static Game mainGame = new Game();
   
   JFrame frame;
   JLabel lblCurrentMission = new JLabel(mainGame.getMissions().getCurrentMission().getTitle());
@@ -138,7 +138,7 @@ public class HomeInterface {
 				conditions.frame.setVisible(true);
 			}
 		});
-		btnViewConditions.setBounds(136, 631, 130, 39);
+		btnViewConditions.setBounds(252, 631, 130, 39);
 		frame.getContentPane().add(btnViewConditions);
 		
 		JButton btnExit = new JButton("Exit");
@@ -180,12 +180,24 @@ public class HomeInterface {
 		btnBuyMaterials.addActionListener(bHandler);
 		btnBuyMaterials.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				BuyMaterialsInterface materials = new BuyMaterialsInterface();
-        materials.frame.setVisible(true);
+				BuyMaterialsInterface buyMaterialsFrale = new BuyMaterialsInterface();
+        buyMaterialsFrale.frame.setVisible(true);
 			}
 		});
-		btnBuyMaterials.setBounds(10, 631, 116, 39);
-		frame.getContentPane().add(btnBuyMaterials);
+    btnBuyMaterials.setBounds(10, 631, 116, 39);
+    frame.getContentPane().add(btnBuyMaterials);
+    
+    JButton btnShowMaterials = new JButton("Show Materials");
+		btnShowMaterials.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		btnShowMaterials.addActionListener(bHandler);
+		btnShowMaterials.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ShowMaterialsInterface showMaterialsFrame = new ShowMaterialsInterface();
+        showMaterialsFrame.frame.setVisible(true);
+			}
+		});
+		btnShowMaterials.setBounds(126, 631, 126, 39);
+    frame.getContentPane().add(btnShowMaterials);
 		
 		lblCurrentMoney.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		lblCurrentMoney.setForeground(Color.WHITE);
