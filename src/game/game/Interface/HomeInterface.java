@@ -39,7 +39,7 @@ public class HomeInterface {
   String clickSound, tavernMusic;
   SoundEffect se = new SoundEffect();
   Music mu = new Music();
-  private MyThread t;
+  private ConditionUpdater t;
 
   public static void main(String[] args) {
 
@@ -63,7 +63,7 @@ public class HomeInterface {
     mu.setFile(tavernMusic);
     mu.play();
     mu.loop();
-    t = new MyThread();
+    t = new ConditionUpdater();
     t.start();
   }
 
@@ -214,7 +214,7 @@ public class HomeInterface {
     tavernMusic = SOUNDS_PATH + "backMusic.wav";
   }
 
-  private class MyThread extends Thread {
+  private class ConditionUpdater extends Thread {
 
     @Override
     public void run() {

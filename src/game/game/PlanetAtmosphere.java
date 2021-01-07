@@ -65,5 +65,15 @@ public class PlanetAtmosphere
   {
     return (nbCompleted() == NBCONDITIONS);
   }
+
+  /**
+   * get current condition value from condition name
+   * @param conditionName_p condition name
+   * @return condition value
+   */
+  public double getConditionValue(String conditionName_p)
+  {
+    return findCondition(conditionName_p).getCurrentValue();
+  }
  
 }
