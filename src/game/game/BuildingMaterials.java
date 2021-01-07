@@ -1,5 +1,6 @@
 package game;
 
+import java.util.Comparator;
 import java.util.Vector;
 
 public class BuildingMaterials {
@@ -18,11 +19,21 @@ public class BuildingMaterials {
     m_listOfMaterials.add(new BuildingMaterial("Iron", 1000.0));
     m_listOfMaterials.add(new BuildingMaterial("Metal", 500.0));
     m_listOfMaterials.add(new BuildingMaterial("Concrete", 800.0));
-    m_listOfMaterials.add(new BuildingMaterial("Soil", 800.0));
-    m_listOfMaterials.add(new BuildingMaterial("Zinc", 800.0));
-    m_listOfMaterials.add(new BuildingMaterial("Copper", 800.0));
-    m_listOfMaterials.add(new BuildingMaterial("Gold", 800.0));
-    m_listOfMaterials.add(new BuildingMaterial("Stone", 800.0));
+    m_listOfMaterials.add(new BuildingMaterial("Soil", 50.0));
+    m_listOfMaterials.add(new BuildingMaterial("Zinc", 850.0));
+    m_listOfMaterials.add(new BuildingMaterial("Copper", 950.0));
+    m_listOfMaterials.add(new BuildingMaterial("Gold", 2000.0));
+    m_listOfMaterials.add(new BuildingMaterial("Stone", 600.0));
+    //sort by price
+    m_listOfMaterials.sort(new Comparator<BuildingMaterial>(){
+      @Override
+      public int compare(BuildingMaterial BM1, BuildingMaterial BM2)
+      {
+        if(BM1.getPrice()<BM2.getPrice()) return -1;
+        if(BM1.getPrice()>BM2.getPrice()) return 1;
+        return 0;
+      }
+    });;
   }
 
   private BuildingMaterial find(String materialName_p)

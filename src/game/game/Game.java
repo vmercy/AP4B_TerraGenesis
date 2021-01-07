@@ -33,6 +33,7 @@ public class Game {
   private Planet m_planet;
   private BuildingMaterials m_buildingMaterials;
   private Money m_money;
+  
 
   public Missions getMissions()
   {

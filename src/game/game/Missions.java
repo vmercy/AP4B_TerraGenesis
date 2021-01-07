@@ -30,7 +30,8 @@ public class Missions {
    */
   public void nextMission()
   {
-    m_currentMission.complete();
+    //TODO: skip already completed missions
+    //m_currentMission.complete();
     byte nextMissionIndex = (byte) m_missionsList.indexOf(m_currentMission);
     nextMissionIndex++;
     if(nextMissionIndex<getNbMissions())
@@ -48,6 +49,11 @@ public class Missions {
     return null;
   }
 
+  /**
+   * completes targetted mission
+   * @param missionName_p name of target mission
+   * @return true if target was found
+   */
   public boolean setCompleted(String missionName_p)
   {
     Mission target = findMission(missionName_p);
@@ -70,17 +76,17 @@ public class Missions {
   
   public void fill()
   {
-    m_missionsList.add(new Mission("Add animal","Add an animal to the planet",500));
+    m_missionsList.add(new Mission("Add animal","Add an animal to the planet",500.0));
     m_missionsList.add(new Mission("Build a factory","Add a factory in the city",500));
     m_missionsList.add(new Mission("Build a laboratory","Add a laboratory in the city to unlock the purchase of animals",500));
     m_missionsList.add(new Mission("Build a botanical garden","Add a botanical garden in the city to unlock the purchase of plants",500));
-    m_missionsList.add(new Mission("Construire un dortoir","Add a dormitory to the city to house the settlers",500));
-    m_missionsList.add(new Mission("Buy a material ","Buy building material to construct buildings",500));
+    m_missionsList.add(new Mission("Build a dormitory","Add a dormitory to the city to house the settlers",500));
+    m_missionsList.add(new Mission("Buy a material","Buy building material to construct buildings",500));
     m_missionsList.add(new Mission("Buy a tree","Buy a tree to allow photosynthesis",500));
-    m_missionsList.add(new Mission("Reach 25% atmospheric conditions ","Achieve 25% of conditions met ",500));
-    m_missionsList.add(new Mission("Reach 50% atmospheric conditions ","Reach 50% of conditions met ",500));
-    m_missionsList.add(new Mission("Reach 75% atmospheric conditions ","Achieve 75% of conditions met ",500));
-    m_missionsList.add(new Mission("Achieve 100% atmospheric conditions ","Achieve 100% of conditions met ",500));
+    m_missionsList.add(new Mission("Reach 25% on all atmospheric conditions","Achieve 25% of conditions",500));
+    m_missionsList.add(new Mission("Reach 50% on all atmospheric conditions","achieve 50% of conditions",500));
+    m_missionsList.add(new Mission("Reach 75% on all atmospheric conditions","Achieve 75% of conditions",500));
+    m_missionsList.add(new Mission("Achieve 100% atmospheric conditions","Achieve 100% of conditions",500));
   }
 
   /**
