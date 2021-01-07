@@ -71,7 +71,9 @@ public class ConditionsInterface extends HomeInterface{
 		lblNewLabel_2.setForeground(Color.WHITE);
 		lblNewLabel_2.setFont(new Font("Showcard Gothic", Font.BOLD | Font.ITALIC, 26));
 		lblNewLabel_2.setBounds(468, 10, 168, 39);
-		frame.getContentPane().add(lblNewLabel_2);
+    frame.getContentPane().add(lblNewLabel_2);
+    
+    //TODO: set adequate values
 		
 		JLabel lblNewLabel_3 = new JLabel("Temperature :");
 		lblNewLabel_3.setForeground(Color.WHITE);

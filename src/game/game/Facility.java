@@ -66,10 +66,10 @@ public class Facility {
    */
   public boolean canBuy(Money m_currentMoney, BuildingMaterials m_currentBuildingMaterials)
   {
-    for (String necessaryMaterial : m_necessaryMaterials) {
+    /* for (String necessaryMaterial : m_necessaryMaterials) {
       if(!m_currentBuildingMaterials.getMaterial(necessaryMaterial).isOwned())  
         return false;
-    } 
+    }  */
     if(m_currentMoney.getAmount()<this.m_price)
       return false;
     return true;

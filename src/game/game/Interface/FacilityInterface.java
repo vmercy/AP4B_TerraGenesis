@@ -90,8 +90,11 @@ public class FacilityInterface extends HomeInterface {
         if (!newFacility.canBuy(mainGame.getMoney(), mainGame.getMaterials()))
           System.out.println("CANNOT BUY : OUT OF MONEY/MATERIALS");
         else
+        {
           mainGame.getCity().addFacility(comboBox.getSelectedItem().toString(), newFacility,
-              txtfldFacilityName.getText());
+          txtfldFacilityName.getText());
+          newFacility.updateConditions(mainGame.getPlanet().getPlanetAtmosphere());
+        }
       }
     });
     btnNewButton_3_1.setBounds(211, 370, 103, 32);
