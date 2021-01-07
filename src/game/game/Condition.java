@@ -12,15 +12,14 @@ public class Condition {
   private double m_threshold;
   private double m_defaultIncrement;
   private double m_defaultDecrement;
-  private boolean displayed;
 
 public Condition()
   {
     m_name = "";
     m_description = "";
     m_currentValue = m_startValue;
-    m_threshold = 1.0;
-    displayed = false;
+    m_threshold = 100.0;
+
   }
 
   /**
@@ -31,11 +30,10 @@ public Condition()
   
   public Condition(String name_p, String description_p)
   {
+    this();
     m_name = name_p;
     m_description = description_p;
-    m_startValue = 0.0;
-    m_currentValue = 0.0;
-    displayed = false;
+
   }
 
 
@@ -47,11 +45,10 @@ public Condition()
    */
   public Condition(String name_p, String description_p, double startValue_p)
   {
-    m_name = name_p;
-    m_description = description_p;
+    this(name_p, description_p);
     m_startValue = startValue_p;
     m_currentValue = startValue_p;
-    displayed = false;
+
   }
 
     /**
@@ -65,19 +62,16 @@ public Condition()
    */
   public Condition(String name_p, String description_p, double startValue_p, double defaultIncrement_p, double defaultDecrement_p, double threshold_p)
   {
-    m_name = name_p;
-    m_description = description_p;
-    m_startValue = startValue_p;
+    this(name_p, description_p, startValue_p);
     m_currentValue = startValue_p;
     m_defaultIncrement = defaultIncrement_p;
     m_defaultDecrement = defaultDecrement_p;
     m_threshold = threshold_p;
-    displayed = false;
   }
 
   public double getCurrentValue()
   {
-    return m_currentValue;
+    return m_currentValue/100;
   }
   
   public void setCurrentValue(double m_currentValue)
@@ -87,39 +81,18 @@ public Condition()
 
   public double getCurrentValuePercent()
   {
-    return 100*m_currentValue;
+    return m_currentValue;
   }
   
-  public boolean getDisplayed()
-  {
-    return displayed;
-  }
 
-  public void setDisplayed()
-  {
-    displayed = false;
-  }
-  
-  public void increment()
-  {
-    m_currentValue += m_defaultDecrement;
-  }
+
+
   
   public void increment(double amount_p)
   {
     m_currentValue += amount_p;
   }
   
-  public void decrement()
-  {
-    m_currentValue -= m_defaultDecrement;
-  }
-
-  public void decrement(double amount_p)
-  {
-    m_currentValue -= amount_p;
-  }
-
   /**
    * @brief return the color representation that corresponds to the condition completion status from red to green
    * TODO: use it in interface progress bars implemented by @ZackBNT
@@ -127,8 +100,8 @@ public Condition()
   public Color getColor()
   {
     byte red, green;
-    red = (byte) (255-(m_currentValue*255));
-    green = (byte) (255 * m_currentValue);
+    red = (byte) (255-(getCurrentValue()*255));
+    green = (byte) (255 * getCurrentValue());
     return (new Color(red, green, 0));
   }
 

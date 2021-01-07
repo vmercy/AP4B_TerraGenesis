@@ -225,6 +225,7 @@ public class HomeInterface {
         missionsProgressBar.setValue((int) mainGame.getMissions().percentAchieved());
 
         btnAddHumans.setEnabled(mainGame.getPlanet().getPlanetAtmosphere().isAllCompleted());
+        
         btnAddAnimals.setEnabled(!mainGame.getCity().getLaboratories().isEmpty());
         btnAddVegetals.setEnabled(!mainGame.getCity().getBotanicGardens().isEmpty());
 

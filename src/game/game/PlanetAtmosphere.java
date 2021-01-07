@@ -14,12 +14,12 @@ public class PlanetAtmosphere
   {
     m_conditions = new Vector<Condition>(NBCONDITIONS);
     //TODO: adjust parameters for each condition
-    m_conditions.add(new Condition("Water", "Amount of water in the planet", 0.0, 0.20, 0.20, 1.0));
-    m_conditions.add(new Condition("Temperature", "Temperature of planet atmosphere", 0.0, 0.20, 0.20, 1.0));
-    m_conditions.add(new Condition("Oxygen", "Oxygen rate in the air", 0.0, 0.20, 0.20, 1.0));
-    m_conditions.add(new Condition("Carbon dioxide", "Carbon dioxide rate in the air", 0.0, 0.20, 0.20, 1.0));
-    m_conditions.add(new Condition("Pressure", "Atmosphere of the planet", 0.0, 0.20, 0.20, 1.0));
-    m_conditions.add(new Condition("Biomass", "Energy obtained from factories", 0.0, 0.15, 0.15, 1.0));
+    m_conditions.add(new Condition("Water", "Amount of water in the planet", 0.0, 0.20, 0.20, 100.0));
+    m_conditions.add(new Condition("Temperature", "Temperature of planet atmosphere", 0.0, 0.20, 0.20, 100.0));
+    m_conditions.add(new Condition("Oxygen", "Oxygen rate in the air", 0.0, 0.20, 0.20, 100.0));
+    m_conditions.add(new Condition("Carbon dioxide", "Carbon dioxide rate in the air", 0.0, 0.20, 0.20, 100.0));
+    m_conditions.add(new Condition("Pressure", "Atmosphere of the planet", 0.0, 0.20, 0.20, 100.0));
+    m_conditions.add(new Condition("Biomass", "Energy obtained from factories", 0.0, 0.15, 0.15, 100.0));
   }
 
   public Vector<Condition> getConditions()

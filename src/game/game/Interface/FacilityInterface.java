@@ -86,14 +86,17 @@ public class FacilityInterface extends HomeInterface {
     btnNewButton_3_1.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         Facility newFacility = mainGame.getCity().createFacilityFromType(comboBox.getSelectedItem().toString());
-        JOptionPane.showConfirmDialog(null, "Create " + comboBox.getSelectedItem() + " \"" + txtfldFacilityName.getText() + "\" for " + newFacility.getPrice() + "$ ?");
-        if (!newFacility.canBuy(mainGame.getMoney(), mainGame.getMaterials()))
-          System.out.println("CANNOT BUY : OUT OF MONEY/MATERIALS");
-        else
-        {
+        JOptionPane.showConfirmDialog(null, "Create " + comboBox.getSelectedItem() + " \""
+            + txtfldFacilityName.getText() + "\" for " + newFacility.getPrice() + "$ ?");
+        if (newFacility.canBuy(mainGame.getMoney(), mainGame.getMaterials())) {
           mainGame.getCity().addFacility(comboBox.getSelectedItem().toString(), newFacility,
-          txtfldFacilityName.getText());
+              txtfldFacilityName.getText());
           newFacility.updateConditions(mainGame.getPlanet().getPlanetAtmosphere());
+          //TODO: update money
+        } else {
+          // TODO: add error message (first of all, modify return value of canBuy to make
+          // distinction between not enough money and not all necessary materials)
+          System.out.println("CANNOT BUY : OUT OF MONEY/MATERIALS");
         }
       }
     });
