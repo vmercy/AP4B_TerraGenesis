@@ -3,7 +3,7 @@ package game;
 import java.util.Vector;
 
 public class Factories
-{
+{ //TODO: delete class and file
   Factories()
   {
     

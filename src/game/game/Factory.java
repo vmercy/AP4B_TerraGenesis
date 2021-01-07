@@ -1,14 +1,19 @@
 package game;
 
-public class Factory {
+public class Factory extends Facility {
   
     private String m_name;
     
-    private double m_biomassGain = 2.0;
+    private double m_biomassGain = 2.0; //TODO: remove
   
   Factory()
   {
-    m_name = "BLA";
+    this.m_conditionEvolutions.add("Water", -0.5);
+    this.m_conditionEvolutions.add("Temperature", -0.5);
+    this.m_conditionEvolutions.add("Oxygen", -0.8);
+    this.m_conditionEvolutions.add("CarbonDioxide", +1.2);
+    this.m_conditionEvolutions.add("Pressure", 0.0);
+    this.m_conditionEvolutions.add("Biomass", -0.4);
   }
 
   Factory(String name_p)
