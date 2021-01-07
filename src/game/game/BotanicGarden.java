@@ -12,5 +12,8 @@ public class BotanicGarden extends Facility
     this.m_conditionEvolutions.add("CarbonDioxide", -0.3);
     this.m_conditionEvolutions.add("Pressure", 0.0);
     this.m_conditionEvolutions.add("Biomass", +1.0);
+
+    this.m_necessaryMaterials.add("Wood");
+    this.m_necessaryMaterials.add("Metal");
   }
 }

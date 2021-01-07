@@ -10,5 +10,8 @@ public class Dormitory extends Facility {
     this.m_conditionEvolutions.add("CarbonDioxide", 0.0);
     this.m_conditionEvolutions.add("Pressure", 0.0);
     this.m_conditionEvolutions.add("Biomass", 0.0);
+
+    this.m_necessaryMaterials.add("Wood");
+    this.m_necessaryMaterials.add("Concrete");
   }
 }

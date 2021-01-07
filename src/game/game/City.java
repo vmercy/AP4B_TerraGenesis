@@ -44,10 +44,15 @@ public class City {
     return facilitesNames;
   }
 
-  public void buildFactory()
+  public Facility createFacilityFromType(String type_p)
   {
-
+    for (Facility facility : getFacilitiesSample()){
+      if(facility.getName()==type_p)
+        return facility;
+    }
+    return null;
   }
+
 
   public Vector<Factory> getFactories()
   {
@@ -73,4 +78,74 @@ public class City {
   {
     return m_laboratories;
   }
+
+  /**
+   * add facility to the appropriate vector
+   * @param facilityType_p
+   * @param facility
+   * @param facilityName
+   */
+  public void addFacility(String facilityType_p, Facility facility, String facilityName_p)
+  {
+    facility.setName(facilityName_p);
+    switch(facilityType_p)
+    {
+      case "Factory":
+      {
+        addFactory(facility);
+       break; 
+      }
+      case "Dormitory":
+      {
+        addDormitory(facility);
+       break; 
+      }
+      case "Oxygen Supply":
+      {
+        addOxygenSupply(facility);
+       break; 
+      }
+      case "Botanic Garden":
+      {
+        addBotanicGarden(facility);
+       break; 
+      }
+      case "Energy Plant":
+      {
+        addEnergyPlant(facility);
+       break; 
+      }
+      case "Laboratory":
+      {
+        addLaboratory(facility);
+       break; 
+      }
+    }
+  }
+
+  public void addFactory(Facility facility)
+  {
+    this.m_factories.add((Factory)facility);
+  }  
+  public void addDormitory(Facility facility)
+  {
+    this.m_dormitories.add((Dormitory) facility);
+  }
+  public void addOxygenSupply(Facility facility)
+  {
+    this.m_oxygenSupplies.add((OxygenSupply) facility);
+  }
+  public void addBotanicGarden(Facility facility)
+  {
+    this.m_botanicGardens.add((BotanicGarden) facility);
+  }
+  public void addEnergyPlant(Facility facility)
+  {
+    this.m_energyPlants.add((EnergyPlant) facility);
+  }
+  public void addLaboratory(Facility facility)
+  {
+    this.m_laboratories.add((Laboratory)facility);
+  }
+
 }

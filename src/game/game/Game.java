@@ -43,7 +43,7 @@ public class Game {
 		}
   }
   
-  private Missions m_missions; //TODO: turn to public and implement getter
+  private Missions m_missions;
   private Planet m_planet;
   private BuildingMaterials m_buildingMaterials;
   private Money m_money;
@@ -74,9 +74,6 @@ public class Game {
     return m_buildingMaterials;
   }
 
-
-
-    
     /**
      * @param Animal animal_p
      * @brief Lorsque qu'une esp�ce animale est instaur�e avec succ�s sur la plan�te, la jauge de Co2 monte 

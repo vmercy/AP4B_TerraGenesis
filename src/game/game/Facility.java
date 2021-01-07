@@ -41,6 +41,11 @@ public class Facility {
     return m_name;
   }
 
+  public double getPrice()
+  {
+    return m_price;
+  }
+
   /**
    * updates planet conditions after facility creation
    * @param planet_p
@@ -59,7 +64,7 @@ public class Facility {
    * @return true if build is possible
    * @note this methods does not add any element to the corresponding city vector attribute
    */
-  public boolean build(Money m_currentMoney, BuildingMaterials m_currentBuildingMaterials)
+  public boolean canBuy(Money m_currentMoney, BuildingMaterials m_currentBuildingMaterials)
   {
     for (String necessaryMaterial : m_necessaryMaterials) {
       if(!m_currentBuildingMaterials.getMaterial(necessaryMaterial).isOwned())  

@@ -12,5 +12,9 @@ public class OxygenSupply extends Facility
     this.m_conditionEvolutions.add("CarbonDioxide", -0.5);
     this.m_conditionEvolutions.add("Pressure", -0.5);
     this.m_conditionEvolutions.add("Biomass", 0.0);
+
+    this.m_necessaryMaterials.add("Metal");
+    this.m_necessaryMaterials.add("Concrete");
+    this.m_necessaryMaterials.add("Iron");
   }
 }
