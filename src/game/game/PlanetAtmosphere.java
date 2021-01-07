@@ -36,28 +36,6 @@ public class PlanetAtmosphere
     return null;
   }
 
-  public boolean incrementCondition(String conditionName_p)
-  {
-    Condition cond = findCondition(conditionName_p);
-    if(cond != null)
-    {
-      cond.increment();
-      return true;
-    }
-    return false;
-  }
-
-  public boolean decrementCondition(String conditionName_p)
-  {
-    Condition cond = findCondition(conditionName_p);
-    if(cond != null)
-    {
-      cond.decrement();
-      return true;
-    }
-    return false;
-  }
-
   public boolean incrementCondition(String conditionName_p, double value_p)
   {
     Condition cond = findCondition(conditionName_p);
@@ -67,20 +45,7 @@ public class PlanetAtmosphere
       return true;
     }
     return false;
-  }
-
-  public boolean decrementCondition(String conditionName_p, double value_p)
-  {
-    Condition cond = findCondition(conditionName_p);
-    if(cond != null)
-    {
-      cond.decrement(value_p);
-      return true;
-    }
-    return false;
-  }
-
-  
+  }  
 
   /**
    * @return number of currently completed conditions

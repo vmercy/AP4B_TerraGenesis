@@ -1,7 +1,5 @@
 package game.Interface;
 
-import game.*;
-
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -58,9 +56,8 @@ public class FacilityInterface extends HomeInterface {
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		Object[] elements = new Object[] {"Factory", "Dormitory", "Oxygen supply", "Energy plant"};
 		@SuppressWarnings({ "unchecked", "rawtypes" })
-		JComboBox<String> comboBox = new JComboBox(elements);
+		JComboBox<String> comboBox = new JComboBox(mainGame.getCity().getFacilitiesNames());
 		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		comboBox.addActionListener(bHandler);
 		comboBox.setBounds(296, 251, 141, 32);
@@ -73,7 +70,7 @@ public class FacilityInterface extends HomeInterface {
 		btnNewButton_3_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showConfirmDialog(null, "Create "+ comboBox.getSelectedItem() +" : -5000$");
-
+        //mainGame.getCity().get
 			}
 		});
 		btnNewButton_3_1.setBounds(211, 370, 103, 32);

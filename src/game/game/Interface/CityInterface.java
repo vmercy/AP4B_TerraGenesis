@@ -55,41 +55,17 @@ public class CityInterface extends HomeInterface{
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 
-		JButton btnNewButton = new JButton("Create Facility");
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		btnNewButton.addActionListener(bHandler);
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton btnCreateFacility = new JButton("Create Facility");
+		btnCreateFacility.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		btnCreateFacility.addActionListener(bHandler);
+		btnCreateFacility.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				FacilityInterface facility = new FacilityInterface();
 				facility.frame.setVisible(true);
 			}	
 		});
-		btnNewButton.setBounds(190, 218, 175, 62);
-		frame.getContentPane().add(btnNewButton);
-		
-		JButton btnNewButton_1 = new JButton("Create Laboratory");
-		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		btnNewButton_1.addActionListener(bHandler);
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showConfirmDialog(null, "Create a Laboratory : -2000$");
-
-			}
-		});
-		btnNewButton_1.setBounds(190, 312, 175, 62);
-		frame.getContentPane().add(btnNewButton_1);
-		
-		JButton btnNewButton_2 = new JButton("Create Botanic Garden");
-		btnNewButton_2.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		btnNewButton_2.addActionListener(bHandler);
-		btnNewButton_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showConfirmDialog(null, "Create a Botanic Garden : -3500$");
-
-			}
-		});
-		btnNewButton_2.setBounds(190, 405, 175, 62);
-		frame.getContentPane().add(btnNewButton_2);
+		btnCreateFacility.setBounds(190, 218, 175, 62);
+		frame.getContentPane().add(btnCreateFacility);
 		
 		JButton btnNewButton_3 = new JButton("Back");
 		btnNewButton_3.setFont(new Font("Tahoma", Font.PLAIN, 12));

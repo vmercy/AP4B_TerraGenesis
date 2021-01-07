@@ -4,6 +4,8 @@ public class OxygenSupply extends Facility
 {
   public OxygenSupply()
   {
+    this.m_price = 1500.0;
+    this.m_name = "Oxygen Supply";
     this.m_conditionEvolutions.add("Water", -0.5);
     this.m_conditionEvolutions.add("Temperature", +0.4);
     this.m_conditionEvolutions.add("Oxygen", +1.5);

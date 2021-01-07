@@ -4,6 +4,8 @@ public class EnergyPlant extends Facility
 {
   public EnergyPlant()
   {
+    this.m_price = 500.0;
+    this.m_name = "Energy plant";
     this.m_conditionEvolutions.add("Water", -1.5);
     this.m_conditionEvolutions.add("Temperature", +1.1);
     this.m_conditionEvolutions.add("Oxygen", +0.8);

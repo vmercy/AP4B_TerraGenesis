@@ -12,6 +12,20 @@ import game.Species.Vegetal;
 
 public class Game {
 
+      /**
+    * @param None
+    * @brief Lors de l'initialisation de Game, les param�tres sont d�finis � 0 (jauge de progression en %)
+    */
+
+    public Game() 
+    {
+      m_buildingMaterials = new BuildingMaterials();
+      m_missions = new Missions();
+      m_money = new Money();
+      m_city = new City();
+      m_planet = new Planet();
+    }
+
   private class CompleteMissions extends Thread{
     
     @Override
@@ -61,19 +75,7 @@ public class Game {
   }
 
 
-    /**
-    * @param None
-    * @brief Lors de l'initialisation de Game, les param�tres sont d�finis � 0 (jauge de progression en %)
-    */
 
-    public Game() 
-    {
-      m_buildingMaterials = new BuildingMaterials();
-      m_missions = new Missions();
-      m_money = new Money();
-      m_city = new City();
-      m_planet = new Planet();
-    }
     
     /**
      * @param Animal animal_p
@@ -118,7 +120,7 @@ public class Game {
     
     public void FactoryIntroduced(Factory factory_p) //TODO: call on factory creation via interface
     {
-    	
+    	/* 
     	if(m_planet.m_planetAtmosphere.findCondition("Biomass").getCurrentValuePercent() < 100)
     	{
     		m_planet.m_planetAtmosphere.incrementCondition("Biomass", factory_p.getBiomassGain());
@@ -127,7 +129,7 @@ public class Game {
     	if(m_planet.m_planetAtmosphere.findCondition("Biomass").getCurrentValuePercent() >= 100)
     	{
     		m_planet.m_planetAtmosphere.findCondition("Biomass").setCurrentValue(1);
-    	}
+    	} */
     }
     
     public class ConditionThread extends Thread

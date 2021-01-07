@@ -7,7 +7,8 @@ public class Facility {
   /**
    * name of facility entered by the player
    */
-  private String m_name;
+  protected String m_name;
+  protected double m_price;
   protected ConditionEvolutions m_conditionEvolutions;
   protected Vector<String> m_necessaryMaterials;
 
@@ -18,9 +19,37 @@ public class Facility {
     m_name = "";
   }
 
+  /**
+   * create a facility and update given planet conditions
+   * @param name_p custom name provided by user
+   * @param planet_p
+   */
+  public Facility(String name_p, PlanetAtmosphere planet_p)
+  {
+    this();
+    setName(name_p);
+    updateConditions(planet_p);
+  }
+
   public void setName(String newName_p) //TODO : add textfield to interface
   {
     m_name = newName_p;
+  }
+
+  public String getName()
+  {
+    return m_name;
+  }
+
+  /**
+   * updates planet conditions after facility creation
+   * @param planet_p
+   */
+  public void updateConditions(PlanetAtmosphere planet_p)
+  {
+    for (ConditionEvolution condEvol : m_conditionEvolutions.getConditionEvolutions()) {
+      planet_p.findCondition(condEvol.getConditionName()).increment(condEvol.getEvolution());
+    }
   }
 
   /**
@@ -36,6 +65,8 @@ public class Facility {
       if(!m_currentBuildingMaterials.getMaterial(necessaryMaterial).isOwned())  
         return false;
     } 
+    if(m_currentMoney.getAmount()<this.m_price)
+      return false;
     return true;
   }
 

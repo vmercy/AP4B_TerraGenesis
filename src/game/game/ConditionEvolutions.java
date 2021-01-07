@@ -14,4 +14,9 @@ public class ConditionEvolutions {
   {
     m_conditionEvolutions.add(new ConditionEvolution(conditionName_p, evolution_p));
   }
+
+  public Vector<ConditionEvolution> getConditionEvolutions()
+  {
+    return m_conditionEvolutions;
+  }
 }

@@ -16,7 +16,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 import javax.swing.JProgressBar;
@@ -226,7 +225,7 @@ public class HomeInterface {
         missionsProgressBar.setValue((int) mainGame.getMissions().percentAchieved());
 
         btnAddHumans.setEnabled(mainGame.getPlanet().getPlanetAtmosphere().isAllCompleted());
-        btnAddAnimals.setEnabled(!mainGame.getCity().getLaboratories().isEmpty()); //FIXME
+        btnAddAnimals.setEnabled(!mainGame.getCity().getLaboratories().isEmpty());
         btnAddVegetals.setEnabled(!mainGame.getCity().getBotanicGardens().isEmpty());
 
         try {

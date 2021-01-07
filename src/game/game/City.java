@@ -10,6 +10,8 @@ public class City {
   private Vector<EnergyPlant> m_energyPlants;
   private Vector<Laboratory> m_laboratories;
 
+  private final int NB_FACILITIES_TYPE = 6;
+
   public City()
   {
     m_factories = new Vector<Factory>();
@@ -18,6 +20,33 @@ public class City {
     m_botanicGardens = new Vector<BotanicGarden>();
     m_energyPlants = new Vector<EnergyPlant>();
     m_laboratories = new Vector<Laboratory>();
+  }
+
+  private Vector<Facility> getFacilitiesSample()
+  {
+    Vector<Facility> sample = new Vector<Facility>(NB_FACILITIES_TYPE);
+    sample.add(new Dormitory());
+    sample.add(new OxygenSupply());
+    sample.add(new Laboratory());
+    sample.add(new Factory());
+    sample.add(new EnergyPlant());
+    sample.add(new BotanicGarden());
+    return sample;
+  }
+
+  public String[] getFacilitiesNames()
+  {
+    String[] facilitesNames = new String[NB_FACILITIES_TYPE];
+    Vector<Facility> facilitiesSample = getFacilitiesSample();
+    for (Facility sample : facilitiesSample) {
+      facilitesNames[facilitiesSample.indexOf(sample)] = sample.getName();
+    }
+    return facilitesNames;
+  }
+
+  public void buildFactory()
+  {
+
   }
 
   public Vector<Factory> getFactories()

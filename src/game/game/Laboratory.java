@@ -3,6 +3,8 @@ package game;
 public class Laboratory extends Facility {
   public Laboratory()
   {
+    this.m_price = 1000.0;
+    this.m_name = "Laboratory";
     this.m_conditionEvolutions.add("Water", +0.5);
     this.m_conditionEvolutions.add("Temperature", +0.0);
     this.m_conditionEvolutions.add("Oxygen", +0.4);

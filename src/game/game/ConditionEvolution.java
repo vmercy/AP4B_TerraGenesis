@@ -23,4 +23,9 @@ public class ConditionEvolution {
   {
     return m_evolution;
   }
+
+  public String getConditionName()
+  {
+    return m_conditionName;
+  }
 }
