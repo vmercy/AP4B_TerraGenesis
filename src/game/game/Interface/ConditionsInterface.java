@@ -67,121 +67,120 @@ public class ConditionsInterface extends HomeInterface{
 		btnNewButton_3.setBounds(10, 638, 103, 32);
 		frame.getContentPane().add(btnNewButton_3);
 		
-		JLabel lblNewLabel_2 = new JLabel("Mars 2035");
-		lblNewLabel_2.setForeground(Color.WHITE);
-		lblNewLabel_2.setFont(new Font("Showcard Gothic", Font.BOLD | Font.ITALIC, 26));
-		lblNewLabel_2.setBounds(468, 10, 168, 39);
-    frame.getContentPane().add(lblNewLabel_2);
+		JLabel lblGameTitle = new JLabel("Mars 2035");
+		lblGameTitle.setForeground(Color.WHITE);
+		lblGameTitle.setFont(new Font("Showcard Gothic", Font.BOLD | Font.ITALIC, 26));
+		lblGameTitle.setBounds(468, 10, 168, 39);
+    frame.getContentPane().add(lblGameTitle);
     
-    //TODO: set adequate values
+    //TODO add icons
 		
-		JLabel lblNewLabel_3 = new JLabel("Temperature :");
-		lblNewLabel_3.setForeground(Color.WHITE);
-		lblNewLabel_3.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
-		lblNewLabel_3.setBounds(65, 166, 233, 32);
-		frame.getContentPane().add(lblNewLabel_3);
+		JLabel lblWater = new JLabel("Water :");
+		lblWater.setForeground(Color.WHITE);
+		lblWater.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
+		lblWater.setBounds(65, 166, 233, 32);
+		frame.getContentPane().add(lblWater);
 		
-		JLabel lblNewLabel_3_1 = new JLabel("Pression :");
-		lblNewLabel_3_1.setForeground(Color.WHITE);
-		lblNewLabel_3_1.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
-		lblNewLabel_3_1.setBounds(65, 231, 233, 32);
-		frame.getContentPane().add(lblNewLabel_3_1);
+		JLabel lblTemperature = new JLabel("Temperature :");
+		lblTemperature.setForeground(Color.WHITE);
+		lblTemperature.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
+		lblTemperature.setBounds(65, 231, 233, 32);
+		frame.getContentPane().add(lblTemperature);
 		
-		JLabel lblNewLabel_3_1_1 = new JLabel("Gaz :");
-		lblNewLabel_3_1_1.setForeground(Color.WHITE);
-		lblNewLabel_3_1_1.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
-		lblNewLabel_3_1_1.setBounds(65, 499, 233, 32);
-		frame.getContentPane().add(lblNewLabel_3_1_1);
+		JLabel lblOxygen = new JLabel("Oxygen :");
+		lblOxygen.setForeground(Color.WHITE);
+		lblOxygen.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
+		lblOxygen.setBounds(65, 499, 233, 32);
+		frame.getContentPane().add(lblOxygen);
 		
+		JLabel lblCarbonDioxide = new JLabel("Carbon dioxide :");
+		lblCarbonDioxide.setForeground(Color.WHITE);
+		lblCarbonDioxide.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
+		lblCarbonDioxide.setBounds(65, 363, 233, 32);
+		frame.getContentPane().add(lblCarbonDioxide);
 		
-		JLabel lblNewLabel_3_1_2 = new JLabel("Oxygen :");
-		lblNewLabel_3_1_2.setForeground(Color.WHITE);
-		lblNewLabel_3_1_2.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
-		lblNewLabel_3_1_2.setBounds(65, 363, 233, 32);
-		frame.getContentPane().add(lblNewLabel_3_1_2);
-		
-		JLabel lblNewLabel_3_1_2_1 = new JLabel("Water :");
-		lblNewLabel_3_1_2_1.setForeground(Color.WHITE);
-		lblNewLabel_3_1_2_1.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
-		lblNewLabel_3_1_2_1.setBounds(65, 429, 233, 32);
-		frame.getContentPane().add(lblNewLabel_3_1_2_1);
+		JLabel lblPressure = new JLabel("Pressure :");
+		lblPressure.setForeground(Color.WHITE);
+		lblPressure.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
+		lblPressure.setBounds(65, 429, 233, 32);
+		frame.getContentPane().add(lblPressure);
 	
-		JLabel lblNewLabel_3_1_2_2 = new JLabel("Biomass :");
-		lblNewLabel_3_1_2_2.setForeground(Color.WHITE);
-		lblNewLabel_3_1_2_2.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
-		lblNewLabel_3_1_2_2.setBounds(65, 297, 233, 32);
-		frame.getContentPane().add(lblNewLabel_3_1_2_2);
+		JLabel lblBiomass = new JLabel("Biomass :");
+		lblBiomass.setForeground(Color.WHITE);
+		lblBiomass.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
+		lblBiomass.setBounds(65, 297, 233, 32);
+		frame.getContentPane().add(lblBiomass);
 		
-		JProgressBar progressBar = new JProgressBar();
-		progressBar.setBounds(878, 27, 207, 11);
-		progressBar.setValue(100);
-		frame.getContentPane().add(progressBar);
+		JProgressBar progressBarMissions = new JProgressBar();
+		progressBarMissions.setBounds(878, 27, 207, 11);
+		progressBarMissions.setValue(100);
+		frame.getContentPane().add(progressBarMissions);
 		
-		JProgressBar progressBar_1 = new JProgressBar();
-		progressBar_1.setBounds(253, 179, 207, 11);
-		progressBar_1.setValue(45);
-		frame.getContentPane().add(progressBar_1);
+		JProgressBar progressBarWater = new JProgressBar();
+		progressBarWater.setBounds(253, 179, 207, 11);
+		progressBarWater.setValue(45);
+		frame.getContentPane().add(progressBarWater);
 		JLabel lblNewLabel_3_3_5 = new JLabel("45%");
 		lblNewLabel_3_3_5.setForeground(Color.WHITE);
 		lblNewLabel_3_3_5.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
 		lblNewLabel_3_3_5.setBounds(468, 166, 50, 32);
 		frame.getContentPane().add(lblNewLabel_3_3_5);
 		
-		JProgressBar progressBar_2 = new JProgressBar();
-		progressBar_2.setBounds(253, 244, 207, 11);
-		progressBar_2.setValue(30);
-		frame.getContentPane().add(progressBar_2);
-		JLabel lblNewLabel_3_3 = new JLabel("30%");
-		lblNewLabel_3_3.setForeground(Color.WHITE);
-		lblNewLabel_3_3.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
-		lblNewLabel_3_3.setBounds(468, 231, 50, 32);
-		frame.getContentPane().add(lblNewLabel_3_3);
+		JProgressBar progressBarTemperature = new JProgressBar();
+		progressBarTemperature.setBounds(253, 244, 207, 11);
+		progressBarTemperature.setValue(30);
+		frame.getContentPane().add(progressBarTemperature);
+		JLabel lblTemperatureValue = new JLabel("30%");
+		lblTemperatureValue.setForeground(Color.WHITE);
+		lblTemperatureValue.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
+		lblTemperatureValue.setBounds(468, 231, 50, 32);
+		frame.getContentPane().add(lblTemperatureValue);
 		
-		JProgressBar progressBar_3 = new JProgressBar();
-		progressBar_3.setBounds(253, 308, 207, 11);
-		progressBar_3.setValue(10);
-		frame.getContentPane().add(progressBar_3);
-		JLabel lblNewLabel_3_3_4 = new JLabel("10%");
-		lblNewLabel_3_3_4.setForeground(Color.WHITE);
-		lblNewLabel_3_3_4.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
-		lblNewLabel_3_3_4.setBounds(468, 297, 50, 32);
-		frame.getContentPane().add(lblNewLabel_3_3_4);
+		JProgressBar progressBarOxygen = new JProgressBar();
+		progressBarOxygen.setBounds(253, 308, 207, 11);
+		progressBarOxygen.setValue(10);
+		frame.getContentPane().add(progressBarOxygen);
+		JLabel lblOxygenValue = new JLabel("10%");
+		lblOxygenValue.setForeground(Color.WHITE);
+		lblOxygenValue.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
+		lblOxygenValue.setBounds(468, 297, 50, 32);
+		frame.getContentPane().add(lblOxygenValue);
 		
-		JProgressBar progressBar_3_1 = new JProgressBar();
-		progressBar_3_1.setBounds(253, 374, 207, 11);
-		progressBar_3_1.setValue(95);
-		frame.getContentPane().add(progressBar_3_1);
-		JLabel lblNewLabel_3_3_3 = new JLabel("95%");
-		lblNewLabel_3_3_3.setForeground(Color.WHITE);
-		lblNewLabel_3_3_3.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
-		lblNewLabel_3_3_3.setBounds(468, 363, 50, 32);
-		frame.getContentPane().add(lblNewLabel_3_3_3);
+		JProgressBar progressBarCarbonDioxide = new JProgressBar();
+		progressBarCarbonDioxide.setBounds(253, 374, 207, 11);
+		progressBarCarbonDioxide.setValue(95);
+		frame.getContentPane().add(progressBarCarbonDioxide);
+		JLabel lblCarbonDioxideValue = new JLabel("95%");
+		lblCarbonDioxideValue.setForeground(Color.WHITE);
+		lblCarbonDioxideValue.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
+		lblCarbonDioxideValue.setBounds(468, 363, 50, 32);
+		frame.getContentPane().add(lblCarbonDioxideValue);
 		
-		JProgressBar progressBar_3_1_1 = new JProgressBar();
-		progressBar_3_1_1.setBounds(253, 443, 207, 11);
-		progressBar_3_1_1.setValue(73);
-		frame.getContentPane().add(progressBar_3_1_1);
-		JLabel lblNewLabel_3_3_2 = new JLabel("73%");
-		lblNewLabel_3_3_2.setForeground(Color.WHITE);
-		lblNewLabel_3_3_2.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
-		lblNewLabel_3_3_2.setBounds(468, 429, 50, 32);
-		frame.getContentPane().add(lblNewLabel_3_3_2);
+		JProgressBar progressBarPressure = new JProgressBar();
+		progressBarPressure.setBounds(253, 443, 207, 11);
+		progressBarPressure.setValue(73);
+		frame.getContentPane().add(progressBarPressure);
+		JLabel lblPressureValue = new JLabel("73%");
+		lblPressureValue.setForeground(Color.WHITE);
+		lblPressureValue.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
+		lblPressureValue.setBounds(468, 429, 50, 32);
+		frame.getContentPane().add(lblPressureValue);
 		
-		JProgressBar progressBar_3_1_2 = new JProgressBar();
-		progressBar_3_1_2.setBounds(253, 511, 207, 11);
-		progressBar_3_1_2.setValue(66);
-		frame.getContentPane().add(progressBar_3_1_2);
-		JLabel lblNewLabel_3_3_1 = new JLabel("66%");
-		lblNewLabel_3_3_1.setForeground(Color.WHITE);
-		lblNewLabel_3_3_1.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
-		lblNewLabel_3_3_1.setBounds(468, 499, 50, 32);
-		frame.getContentPane().add(lblNewLabel_3_3_1);
+		JProgressBar progressBarBiomass = new JProgressBar();
+		progressBarBiomass.setBounds(253, 511, 207, 11);
+		progressBarBiomass.setValue(66);
+		frame.getContentPane().add(progressBarBiomass);
+		JLabel lblBiomassValue = new JLabel("66%");
+		lblBiomassValue.setForeground(Color.WHITE);
+		lblBiomassValue.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
+		lblBiomassValue.setBounds(468, 499, 50, 32);
+		frame.getContentPane().add(lblBiomassValue);
 		
-		JLabel lblNewLabel_6 = new JLabel("Mission");
-		lblNewLabel_6.setForeground(Color.WHITE);
-		lblNewLabel_6.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
-		lblNewLabel_6.setBounds(955, 12, 59, 11);
-		frame.getContentPane().add(lblNewLabel_6);
+		JLabel lblMissionIntro = new JLabel("Mission");
+		lblMissionIntro.setForeground(Color.WHITE);
+		lblMissionIntro.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+		lblMissionIntro.setBounds(955, 12, 59, 11);
+		frame.getContentPane().add(lblMissionIntro);
 		
 		JLabel lblNewLabel_3_2 = new JLabel("{Mission Name}");
 		lblNewLabel_3_2.setHorizontalAlignment(SwingConstants.CENTER);
