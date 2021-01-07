@@ -9,7 +9,7 @@ public class BuildingMaterials {
 
   BuildingMaterials()
   {
-    m_listOfMaterials = new Vector<BuildingMaterial>();
+    m_listOfMaterials = new Vector<BuildingMaterial>(NB_BUILDING_MATERIALS);
     fill();
   }
 

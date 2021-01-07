@@ -68,7 +68,7 @@ public class FacilityInterface extends HomeInterface {
 		
 		JButton btnNewButton_3_1 = new JButton("Create");
 		btnNewButton_3_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		btnNewButton_3_1.setIcon(new ImageIcon(IMAGES_PATH+"add-icon-1.png"));
+		btnNewButton_3_1.setIcon(new ImageIcon(IMAGES_PATH+"add-icon.png"));
 		btnNewButton_3_1.addActionListener(bHandler);
 		btnNewButton_3_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -81,7 +81,7 @@ public class FacilityInterface extends HomeInterface {
 		
 		JButton btnNewButton_3 = new JButton("Back");
 		btnNewButton_3.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		btnNewButton_3.setIcon(new ImageIcon(IMAGES_PATH+"Go-back-icon-1.png"));
+		btnNewButton_3.setIcon(new ImageIcon(IMAGES_PATH+"back-icon.png"));
 		btnNewButton_3.addActionListener(bHandler);
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -125,17 +125,17 @@ public class FacilityInterface extends HomeInterface {
 		JLabel lblNewLabel_4 = new JLabel("100000$");
 		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		lblNewLabel_4.setForeground(Color.WHITE);
-		lblNewLabel_4.setIcon(new ImageIcon(IMAGES_PATH+"coin-us-dollar-icon-1.png"));
+		lblNewLabel_4.setIcon(new ImageIcon(IMAGES_PATH+"coin-icon.png"));
 		lblNewLabel_4.setBounds(38, 10, 123, 28);
 		frame.getContentPane().add(lblNewLabel_4);
 		
 		JLabel lblNewLabel = new JLabel();
-		lblNewLabel.setIcon(new ImageIcon(IMAGES_PATH+"terree.png"));
+		lblNewLabel.setIcon(new ImageIcon(IMAGES_PATH+"planet.png"));
 		lblNewLabel.setBounds(570, 79, 515, 523);
 		frame.getContentPane().add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel();
-		lblNewLabel_1.setIcon(new ImageIcon(IMAGES_PATH+"lunee.jpg"));
+		lblNewLabel_1.setIcon(new ImageIcon(IMAGES_PATH+"sky.jpg"));
 		lblNewLabel_1.setBounds(0, 0, 1106, 680);
 		frame.getContentPane().add(lblNewLabel_1);
 

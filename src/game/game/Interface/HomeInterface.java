@@ -143,7 +143,7 @@ public class HomeInterface {
 		
 		JButton btnExit = new JButton("Exit");
 		btnExit.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		btnExit.setIcon(new ImageIcon(IMAGES_PATH+"Close-2-icon.png"));
+		btnExit.setIcon(new ImageIcon(IMAGES_PATH+"close-icon.png"));
 		btnExit.addActionListener(bHandler);
 		btnExit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -180,7 +180,7 @@ public class HomeInterface {
 		btnBuyMaterials.addActionListener(bHandler);
 		btnBuyMaterials.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				MaterialsInterface materials = new MaterialsInterface();
+				BuyMaterialsInterface materials = new BuyMaterialsInterface();
         materials.frame.setVisible(true);
 			}
 		});
@@ -189,22 +189,22 @@ public class HomeInterface {
 		
 		lblCurrentMoney.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		lblCurrentMoney.setForeground(Color.WHITE);
-		lblCurrentMoney.setIcon(new ImageIcon(IMAGES_PATH+"coin-us-dollar-icon-1.png"));
+		lblCurrentMoney.setIcon(new ImageIcon(IMAGES_PATH+"coin-icon.png"));
 		lblCurrentMoney.setBounds(38, 10, 123, 28);
 		frame.getContentPane().add(lblCurrentMoney);
 		
 		JLabel lblRocketImage = new JLabel("");
-		lblRocketImage.setIcon(new ImageIcon(IMAGES_PATH+"Webp.net-resizeimage.png"));
+		lblRocketImage.setIcon(new ImageIcon(IMAGES_PATH+"rocket.png"));
 		lblRocketImage.setBounds(208, 79, 146, 156);
 		frame.getContentPane().add(lblRocketImage);
 		
 		JLabel lblPlanetImage = new JLabel();
-		lblPlanetImage.setIcon(new ImageIcon(IMAGES_PATH+"terree.png"));
+		lblPlanetImage.setIcon(new ImageIcon(IMAGES_PATH+"planet.png"));
 		lblPlanetImage.setBounds(570, 79, 515, 523);
 		frame.getContentPane().add(lblPlanetImage);
 		
 		JLabel lblSkyImage = new JLabel();
-		lblSkyImage.setIcon(new ImageIcon(IMAGES_PATH+"lunee.jpg"));
+		lblSkyImage.setIcon(new ImageIcon(IMAGES_PATH+"sky.jpg"));
 		lblSkyImage.setBounds(0, 0, 1106, 680);
 		frame.getContentPane().add(lblSkyImage);
 				
