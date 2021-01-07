@@ -36,6 +36,11 @@ public class BuildingMaterials {
     });;
   }
 
+  public Vector<BuildingMaterial> getMaterials()
+  {
+    return m_listOfMaterials;
+  }
+
   private BuildingMaterial find(String materialName_p)
   {
     for (BuildingMaterial buildingMaterial : m_listOfMaterials) {

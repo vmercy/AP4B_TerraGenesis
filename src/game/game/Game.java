@@ -33,7 +33,17 @@ public class Game {
   private Planet m_planet;
   private BuildingMaterials m_buildingMaterials;
   private Money m_money;
+  private City m_city;
+
+  public City getCity()
+  {
+    return m_city;
+  }
   
+  public Planet getPlanet()
+  {
+    return m_planet;
+  }
 
   public Missions getMissions()
   {
@@ -61,6 +71,8 @@ public class Game {
       m_buildingMaterials = new BuildingMaterials();
       m_missions = new Missions();
       m_money = new Money();
+      m_city = new City();
+      m_planet = new Planet();
     }
     
     /**
