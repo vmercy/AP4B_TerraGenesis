@@ -5,27 +5,23 @@ import javax.swing.*;
 
 import static game.Species.Vegetal.carbonDioxydeAbsorbed;
 
-
 public class SmallFish extends Fish {
-    
-    
 
+  public SmallFish() {
+    m_price = 50.0;
+  }
 
-    
-    
-    public SmallFish() {
+  private Fish makerel;
+
+  public Fish createFish(String nom, double taille, String urlPhoto) {
+    if (taille > 5) {
+      JOptionPane.showMessageDialog(null, "Taille trop grande ce type de poisson");
+    } else {
+      this.makerel = new Fish(nom, taille, urlPhoto);
+      carbonDioxydeAbsorbed += taille;
     }
+    return this.makerel;
 
-    private Fish makerel;
-    public Fish createFish(String nom,double taille, String urlPhoto){
-        if(taille>5){
-            JOptionPane.showMessageDialog(null,"Taille trop grande ce type de poisson");
-        }else {
-            this.makerel  = new Fish(nom,taille,urlPhoto);
-            carbonDioxydeAbsorbed += taille;
-        }
-        return this.makerel;
-
-    }
+  }
 
 }

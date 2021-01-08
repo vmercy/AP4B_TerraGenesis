@@ -1,15 +1,10 @@
 
 package game.Species;
 
-import game.Species.Fish;
-
 public class Tuna extends Fish {
-       
-    
-    public Tuna() {
-    
-    
-    }
 
+  public Tuna() {
+    m_price = 100.0;
+  }
 
 }

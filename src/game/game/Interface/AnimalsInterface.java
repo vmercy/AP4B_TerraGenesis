@@ -57,114 +57,103 @@ public class AnimalsInterface extends HomeInterface{
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		Object[] element = new Object[] {"Tuna", "Shark", "Shrimp", "Mackerel", "Small Fish", "Single Cell Organism"};
+		Object[] fishSpeciesStrings = new Object[] {"Tuna", "Shark", "Shrimp", "Mackerel", "Small Fish", "Single Cell Organism"};
 		@SuppressWarnings({ "unchecked", "rawtypes" })
-		JComboBox<String> comboBox_1 = new JComboBox(element);
-		comboBox_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		comboBox_1.addActionListener(bHandler);
-		comboBox_1.setBounds(296, 293, 141, 32);
-		comboBox_1.setVisible(false);
-		frame.getContentPane().add(comboBox_1);
+		JComboBox<String> cbxFishSpecies = new JComboBox(fishSpeciesStrings);
+		cbxFishSpecies.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		cbxFishSpecies.addActionListener(bHandler);
+		cbxFishSpecies.setBounds(296, 293, 141, 32);
+		cbxFishSpecies.setVisible(false);
+		frame.getContentPane().add(cbxFishSpecies);
 		
-		Object[] elements = new Object[] {"Aquatic Mammal","Insect","Fish"};
+		Object[] animalTypesStrings = new Object[] {"Aquatic Mammal","Insect","Fish"};
 		@SuppressWarnings({ "unchecked", "rawtypes" })
-		JComboBox<String> comboBox = new JComboBox(elements);
-		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		comboBox.addActionListener(bHandler);
-		comboBox.addActionListener(new ActionListener() {
+		JComboBox<String> cbxAnimalTypes = new JComboBox(animalTypesStrings);
+		cbxAnimalTypes.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		cbxAnimalTypes.addActionListener(bHandler);
+		cbxAnimalTypes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
-				if(comboBox.getSelectedItem().equals("Fish")) {
-					
-					comboBox_1.setVisible(true);
-				}
-				else {
-					
-					comboBox_1.setVisible(false);
-				}
-					
+        cbxFishSpecies.setVisible(cbxAnimalTypes.getSelectedItem().equals("Fish"));				
 			}
 		});
-		comboBox.setBounds(296, 251, 141, 32);
-		frame.getContentPane().add(comboBox);
+		cbxAnimalTypes.setBounds(296, 251, 141, 32);
+		frame.getContentPane().add(cbxAnimalTypes);
 		
-		JButton btnNewButton_3_1 = new JButton("Add");
-		btnNewButton_3_1.addActionListener(bHandler);
-		btnNewButton_3_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		btnNewButton_3_1.setIcon(new ImageIcon(IMAGES_PATH+"add-icon.png"));
-		btnNewButton_3_1.addActionListener(new ActionListener() {
+		JButton btnAdd = new JButton("Add");
+		btnAdd.addActionListener(bHandler);
+		btnAdd.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		btnAdd.setIcon(new ImageIcon(IMAGES_PATH+"add-icon.png"));
+		btnAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(comboBox.getSelectedItem().equals("Fish")) {
-					
-					JOptionPane.showConfirmDialog(null, "Add "+ comboBox_1.getSelectedItem() +" : -400$");
+				if(cbxAnimalTypes.getSelectedItem().equals("Fish")) {
+					JOptionPane.showConfirmDialog(null, "Add "+ cbxFishSpecies.getSelectedItem() +" : -400$");
 				}
 				else {
-					
-					JOptionPane.showConfirmDialog(null, "Add "+ comboBox.getSelectedItem() +" : -600$");
+					JOptionPane.showConfirmDialog(null, "Add "+ cbxAnimalTypes.getSelectedItem() +" : -600$");
 				}
 			}
 		});
-		btnNewButton_3_1.setBounds(214, 378, 103, 32);
-		frame.getContentPane().add(btnNewButton_3_1);
+		btnAdd.setBounds(214, 378, 103, 32);
+		frame.getContentPane().add(btnAdd);
 		
-		JButton btnNewButton_3 = new JButton("Back");
-		btnNewButton_3.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		btnNewButton_3.setIcon(new ImageIcon(IMAGES_PATH+"back-icon.png"));
-		btnNewButton_3.addActionListener(bHandler);
-		btnNewButton_3.addActionListener(new ActionListener() {
+		JButton btnBack = new JButton("Back");
+		btnBack.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		btnBack.setIcon(new ImageIcon(IMAGES_PATH+"back-icon.png"));
+		btnBack.addActionListener(bHandler);
+		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
 
 			}
 		});
-		btnNewButton_3.setBounds(10, 638, 103, 32);
-		frame.getContentPane().add(btnNewButton_3);
+		btnBack.setBounds(10, 638, 103, 32);
+		frame.getContentPane().add(btnBack);
 		
-		JLabel lblNewLabel_2 = new JLabel("Mars 2035");
-		lblNewLabel_2.setForeground(Color.WHITE);
-		lblNewLabel_2.setFont(new Font("Showcard Gothic", Font.BOLD | Font.ITALIC, 26));
-		lblNewLabel_2.setBounds(468, 10, 168, 39);
-		frame.getContentPane().add(lblNewLabel_2);
+		JLabel lblGameTitle = new JLabel("Mars 2035");
+		lblGameTitle.setForeground(Color.WHITE);
+		lblGameTitle.setFont(new Font("Showcard Gothic", Font.BOLD | Font.ITALIC, 26));
+		lblGameTitle.setBounds(468, 10, 168, 39);
+		frame.getContentPane().add(lblGameTitle);
 		
-		JLabel lblNewLabel_3 = new JLabel("Select a type of animals :");
-		lblNewLabel_3.setForeground(Color.WHITE);
-		lblNewLabel_3.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
-		lblNewLabel_3.setBounds(38, 251, 233, 32);
-		frame.getContentPane().add(lblNewLabel_3);
+		JLabel lblTypeIntro = new JLabel("Select a type of animals :");
+		lblTypeIntro.setForeground(Color.WHITE);
+		lblTypeIntro.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
+		lblTypeIntro.setBounds(38, 251, 233, 32);
+		frame.getContentPane().add(lblTypeIntro);
 		
 		JProgressBar progressBar = new JProgressBar();
 		progressBar.setBounds(878, 27, 207, 11);
 		progressBar.setValue(30);
 		frame.getContentPane().add(progressBar);
 
-		JLabel lblNewLabel_6 = new JLabel("Mission");
-		lblNewLabel_6.setForeground(Color.WHITE);
-		lblNewLabel_6.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
-		lblNewLabel_6.setBounds(955, 12, 59, 11);
-		frame.getContentPane().add(lblNewLabel_6);
+		JLabel lblMissionIntro = new JLabel("Mission");
+		lblMissionIntro.setForeground(Color.WHITE);
+		lblMissionIntro.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+		lblMissionIntro.setBounds(955, 12, 59, 11);
+		frame.getContentPane().add(lblMissionIntro);
 		
-		JLabel lblNewLabel_3_1 = new JLabel("{Mission Name}");
-		lblNewLabel_3_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3_1.setForeground(Color.WHITE);
-		lblNewLabel_3_1.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
-		lblNewLabel_3_1.setBounds(878, 41, 207, 20);
-		frame.getContentPane().add(lblNewLabel_3_1);
+		JLabel lblCurrentMission = new JLabel("{Mission Name}");
+		lblCurrentMission.setHorizontalAlignment(SwingConstants.CENTER);
+		lblCurrentMission.setForeground(Color.WHITE);
+		lblCurrentMission.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+		lblCurrentMission.setBounds(878, 41, 207, 20);
+		frame.getContentPane().add(lblCurrentMission);
 		
-		JLabel lblNewLabel_4 = new JLabel("100000$");
-		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
-		lblNewLabel_4.setForeground(Color.WHITE);
-		lblNewLabel_4.setIcon(new ImageIcon(IMAGES_PATH+"coin-icon.png"));
-		lblNewLabel_4.setBounds(38, 10, 123, 28);
-		frame.getContentPane().add(lblNewLabel_4);
+		JLabel lblCurrentMoney = new JLabel("100000$");
+		lblCurrentMoney.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+		lblCurrentMoney.setForeground(Color.WHITE);
+		lblCurrentMoney.setIcon(new ImageIcon(IMAGES_PATH+"coin-icon.png"));
+		lblCurrentMoney.setBounds(38, 10, 123, 28);
+		frame.getContentPane().add(lblCurrentMoney);
 		
-		JLabel lblNewLabel = new JLabel();
-		lblNewLabel.setIcon(new ImageIcon(IMAGES_PATH+"planet.png"));
-		lblNewLabel.setBounds(570, 79, 515, 523);
-		frame.getContentPane().add(lblNewLabel);
+		JLabel lblPlanetPicture = new JLabel();
+		lblPlanetPicture.setIcon(new ImageIcon(IMAGES_PATH+"planet.png"));
+		lblPlanetPicture.setBounds(570, 79, 515, 523);
+		frame.getContentPane().add(lblPlanetPicture);
 		
-		JLabel lblNewLabel_1 = new JLabel();
-		lblNewLabel_1.setIcon(new ImageIcon(IMAGES_PATH+"sky.jpg"));
-		lblNewLabel_1.setBounds(0, 0, 1106, 680);
-		frame.getContentPane().add(lblNewLabel_1);
+		JLabel lblSkyPicture = new JLabel();
+		lblSkyPicture.setIcon(new ImageIcon(IMAGES_PATH+"sky.jpg"));
+		lblSkyPicture.setBounds(0, 0, 1106, 680);
+		frame.getContentPane().add(lblSkyPicture);
 	}
 }

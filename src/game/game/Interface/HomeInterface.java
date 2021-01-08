@@ -26,6 +26,8 @@ public class HomeInterface {
   public final String IMAGES_PATH = "Images/";
   public final String SOUNDS_PATH = "Sounds/";
 
+  private final boolean UNLOCK_BTNS = true; //set to true for developement purposes
+
   protected static Game mainGame = new Game();
 
   JFrame frame;
@@ -224,10 +226,10 @@ public class HomeInterface {
 
         missionsProgressBar.setValue((int) mainGame.getMissions().percentAchieved());
 
-        btnAddHumans.setEnabled(mainGame.getPlanet().getPlanetAtmosphere().isAllCompleted());
+        btnAddHumans.setEnabled(UNLOCK_BTNS || mainGame.getPlanet().getPlanetAtmosphere().isAllCompleted());
         
-        btnAddAnimals.setEnabled(!mainGame.getCity().getLaboratories().isEmpty());
-        btnAddVegetals.setEnabled(!mainGame.getCity().getBotanicGardens().isEmpty());
+        btnAddAnimals.setEnabled(UNLOCK_BTNS || (!mainGame.getCity().getLaboratories().isEmpty()));
+        btnAddVegetals.setEnabled(UNLOCK_BTNS || (!mainGame.getCity().getBotanicGardens().isEmpty()));
 
         try {
           Thread.sleep(1000);

@@ -76,11 +76,9 @@ public class BuyMaterialsInterface extends HomeInterface {
 			public void actionPerformed(ActionEvent e) {
         BuildingMaterial target = mainGame.getMaterials().getMaterial(comboBox.getSelectedItem().toString());
         int userChoice = JOptionPane.showConfirmDialog(null, "Unlock material "+ target.getName() +" : "+target.getPrice()+"$ ?");
-        if(userChoice==JOptionPane.YES_OPTION)
-        {
-          target.buy(mainGame.getMoney());
-        }
-
+        if(userChoice==JOptionPane.YES_OPTION && !target.buy(mainGame.getMoney()))
+          JOptionPane.showMessageDialog(null,
+                "You don't have enough money ! Complete missions first and try again");
 			}
 		});
 		btnNewButton_3_1.setBounds(211, 370, 103, 32);

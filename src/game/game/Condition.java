@@ -2,16 +2,12 @@ package game;
 
 import java.awt.Color;
 
-import jdk.jfr.Threshold;
-
 public class Condition {
   private String m_name;
   private String m_description;
   private double m_startValue;
   private double m_currentValue;
   private double m_threshold;
-  private double m_defaultIncrement;
-  private double m_defaultDecrement;
   private boolean displayed;
 
 public Condition()
@@ -63,8 +59,6 @@ public Condition()
   {
     this(name_p, description_p, startValue_p);
     m_currentValue = startValue_p;
-    m_defaultIncrement = defaultIncrement_p;
-    m_defaultDecrement = defaultDecrement_p;
     m_threshold = threshold_p;
   }
 

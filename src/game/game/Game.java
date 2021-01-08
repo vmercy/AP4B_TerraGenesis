@@ -7,6 +7,7 @@ import java.util.Vector;
 import javax.swing.JOptionPane;
 
 import game.Species.Animal;
+import game.Species.Species;
 import game.Species.Vegetal;
 
 
@@ -26,6 +27,9 @@ public class Game {
       m_planet = new Planet();
       m_conditionThread = new ConditionThread();
       m_conditionThread.start();
+      m_animals = new Vector<Species>();
+      m_vegetals = new Vector<Species>();
+      m_humans = new Vector<Species>();
     }
 
   private class CompleteMissions extends Thread{
@@ -51,6 +55,9 @@ public class Game {
   private Money m_money;
   private City m_city;
   private ConditionThread m_conditionThread;
+  private Vector<Species> m_animals;
+  private Vector<Species> m_vegetals;
+  private Vector<Species> m_humans;
 
   public City getCity()
   {
@@ -138,7 +145,7 @@ public class Game {
     		
     		while(true)
     		{
-    			try 
+    			try
     			{
     				Thread.sleep(1000);
     			}

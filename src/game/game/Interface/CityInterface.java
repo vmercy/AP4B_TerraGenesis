@@ -65,7 +65,9 @@ public class CityInterface extends HomeInterface{
 			}	
 		});
 		btnCreateFacility.setBounds(190, 218, 175, 62);
-		frame.getContentPane().add(btnCreateFacility);
+    frame.getContentPane().add(btnCreateFacility);
+    
+    //TODO: add button to display city constructions with their names and descriptions
 		
 		JButton btnNewButton_3 = new JButton("Back");
 		btnNewButton_3.setFont(new Font("Tahoma", Font.PLAIN, 12));

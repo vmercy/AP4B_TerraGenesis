@@ -5,77 +5,74 @@ import static game.Species.Tree.numbreOfTree;
 import static game.Species.Vegetal.carbonDioxydeAbsorbed;
 
 public class Human extends Mammal {
-    
-    private String nom;
-    private  String sex;
-    private  double taille;
 
-    @Override
-    public double getTaille() {
-        return taille;
-    }
+  private String nom;
+  private String sex;
+  private double taille;
 
-    @Override
-    public void setTaille(double taille) {
-        this.taille = taille;
-    }
+  @Override
+  public double getTaille() {
+    return taille;
+  }
 
-    public String getNom() {
-        return nom;
-    }
+  @Override
+  public void setTaille(double taille) {
+    this.taille = taille;
+  }
 
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
+  public String getNom() {
+    return nom;
+  }
 
-    public String getSex() {
-        return sex;
-    }
+  public void setNom(String nom) {
+    this.nom = nom;
+  }
 
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
+  public String getSex() {
+    return sex;
+  }
 
-    public String getUrlPhoto() {
-        return urlPhoto;
-    }
+  public void setSex(String sex) {
+    this.sex = sex;
+  }
 
-    public void setUrlPhoto(String urlPhoto) {
-        this.urlPhoto = urlPhoto;
-    }
+  public String getUrlPhoto() {
+    return urlPhoto;
+  }
 
-    private  String urlPhoto;
+  public void setUrlPhoto(String urlPhoto) {
+    this.urlPhoto = urlPhoto;
+  }
 
-    public Human(){
-        super();
-    }
+  private String urlPhoto;
 
+  public Human() {
+    super();
+    m_price = 1000.0;
+  }
 
-    public Human(String nom, String sex,double taille, String urlPhoto) {
-        this.nom = nom;
-        this.sex = sex;
-        this.urlPhoto = urlPhoto;
-        this.taille = taille;
-    }
+  public Human(String nom, String sex, double taille, String urlPhoto) {
+    this.nom = nom;
+    this.sex = sex;
+    this.urlPhoto = urlPhoto;
+    this.taille = taille;
+  }
 
+  public Mammal createHuman(String nom, String sex, double taille, String urlPhoto) {
+    this.nom = nom;
+    this.sex = sex;
+    this.urlPhoto = urlPhoto;
+    this.taille = taille;
+    Human human = new Human(this.nom, this.sex, this.taille, this.urlPhoto);
+    carbonDioxydeAbsorbed += taille;
+    return human;
+  }
 
-    public Mammal createHuman(String nom, String sex,double taille, String urlPhoto){
-        this.nom = nom;
-        this.sex = sex;
-        this.urlPhoto = urlPhoto;
-        this.taille = taille;
-        Human human = new Human(this.nom,this.sex,this.taille,this.urlPhoto);
-        carbonDioxydeAbsorbed += taille;
-        return  human;
-    }
+  private double displaySizeBiomasse() {
+    double longueur = numbreOfTree * 2 + numbreOfPlant * 1.005;
+    double surface = longueur * longueur;
+    return surface;
 
-    private double displaySizeBiomasse(){
-        double longueur = numbreOfTree*2 +numbreOfPlant*1.005;
-        double surface = longueur*longueur;
-        return surface;
-
-    }
-
-
+  }
 
 }

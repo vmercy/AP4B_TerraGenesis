@@ -1,20 +1,15 @@
 package game.Species;
 
-
 public class Invertebrate {
-    
-    
-    private Animal animal;
 
-    public Animal getAnimal() {
-        return this.animal;
-    }
+  private Animal animal;
 
-    public void set(Animal animal) {
-        this.animal = animal;
-    }
+  public Animal getAnimal() {
+    return this.animal;
+  }
 
-
-
+  public void set(Animal animal) {
+    this.animal = animal;
+  }
 
 }

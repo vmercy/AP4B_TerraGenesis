@@ -61,18 +61,20 @@ public class Facility {
    * builds a facility if the player has enough money and the necessary building materials
    * @param m_currentMoney current money amount owned by player
    * @param m_currentBuildingMaterials current building materials owned by the player
-   * @return true if build is possible
+   * @return -1 if build is impossible because the player is out of money
+   * @return 0 if build is impossible because the player does not have the necessary materials
+   * @return +1 if build is possible
    * @note this methods does not add any element to the corresponding city vector attribute
    */
-  public boolean canBuy(Money m_currentMoney, BuildingMaterials m_currentBuildingMaterials)
+  public int canBuy(Money m_currentMoney, BuildingMaterials m_currentBuildingMaterials)
   {
-    /* for (String necessaryMaterial : m_necessaryMaterials) {
+    for (String necessaryMaterial : m_necessaryMaterials) {
       if(!m_currentBuildingMaterials.getMaterial(necessaryMaterial).isOwned())  
-        return false;
-    }  */
+        return 0;
+    }
     if(m_currentMoney.getAmount()<this.m_price)
-      return false;
-    return true;
+      return -1;
+    return 1;
   }
 
 }

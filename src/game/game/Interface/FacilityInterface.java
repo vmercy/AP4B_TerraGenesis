@@ -88,33 +88,46 @@ public class FacilityInterface extends HomeInterface {
         Facility newFacility = mainGame.getCity().createFacilityFromType(comboBox.getSelectedItem().toString());
         JOptionPane.showConfirmDialog(null, "Create " + comboBox.getSelectedItem() + " \""
             + txtfldFacilityName.getText() + "\" for " + newFacility.getPrice() + "$ ?");
-        if (newFacility.canBuy(mainGame.getMoney(), mainGame.getMaterials())) {
-          mainGame.getCity().addFacility(comboBox.getSelectedItem().toString(), newFacility,
-              txtfldFacilityName.getText());
-          newFacility.updateConditions(mainGame.getPlanet().getPlanetAtmosphere());
-          //TODO: update money
-        } else {
-          // TODO: add error message (first of all, modify return value of canBuy to make
-          // distinction between not enough money and not all necessary materials)
-          System.out.println("CANNOT BUY : OUT OF MONEY/MATERIALS");
+        switch (newFacility.canBuy(mainGame.getMoney(), mainGame.getMaterials())) {
+          case -1: // out of money
+          {
+            JOptionPane.showMessageDialog(null, "You don't have enough money ! Complete missions first and try again");
+            break;
+          }
+
+          case 0: // not all necessary materials
+          {
+            JOptionPane.showMessageDialog(null,
+                "You don't own the necessary materials ! Go to \"Buy Materials\" first and try again");
+            break;
+          }
+
+          case 1:
+          {
+            mainGame.getCity().addFacility(comboBox.getSelectedItem().toString(), newFacility,
+                txtfldFacilityName.getText());
+            newFacility.updateConditions(mainGame.getPlanet().getPlanetAtmosphere());
+            mainGame.getMoney().sub(newFacility.getPrice());
+            break;
+          }
         }
       }
     });
     btnNewButton_3_1.setBounds(211, 370, 103, 32);
     frame.getContentPane().add(btnNewButton_3_1);
 
-    JButton btnNewButton_3 = new JButton("Back");
-    btnNewButton_3.setFont(new Font("Tahoma", Font.PLAIN, 12));
-    btnNewButton_3.setIcon(new ImageIcon(IMAGES_PATH + "back-icon.png"));
-    btnNewButton_3.addActionListener(bHandler);
-    btnNewButton_3.addActionListener(new ActionListener() {
+    JButton btnBack = new JButton("Back");
+    btnBack.setFont(new Font("Tahoma", Font.PLAIN, 12));
+    btnBack.setIcon(new ImageIcon(IMAGES_PATH + "back-icon.png"));
+    btnBack.addActionListener(bHandler);
+    btnBack.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         frame.dispose();
 
       }
     });
-    btnNewButton_3.setBounds(10, 638, 103, 32);
-    frame.getContentPane().add(btnNewButton_3);
+    btnBack.setBounds(10, 638, 103, 32);
+    frame.getContentPane().add(btnBack);
 
     JLabel lblGameTitle = new JLabel("Mars 2035");
     lblGameTitle.setForeground(Color.WHITE);
@@ -133,35 +146,35 @@ public class FacilityInterface extends HomeInterface {
     progressBar.setValue(30);
     frame.getContentPane().add(progressBar);
 
-    JLabel lblNewLabel_6 = new JLabel("Mission");
-    lblNewLabel_6.setForeground(Color.WHITE);
-    lblNewLabel_6.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
-    lblNewLabel_6.setBounds(955, 12, 59, 11);
-    frame.getContentPane().add(lblNewLabel_6);
+    JLabel lblMissionIntro = new JLabel("Mission");
+    lblMissionIntro.setForeground(Color.WHITE);
+    lblMissionIntro.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+    lblMissionIntro.setBounds(955, 12, 59, 11);
+    frame.getContentPane().add(lblMissionIntro);
 
-    JLabel lblNewLabel_3_1 = new JLabel("{Mission Name}");
-    lblNewLabel_3_1.setHorizontalAlignment(SwingConstants.CENTER);
-    lblNewLabel_3_1.setForeground(Color.WHITE);
-    lblNewLabel_3_1.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
-    lblNewLabel_3_1.setBounds(878, 41, 207, 20);
-    frame.getContentPane().add(lblNewLabel_3_1);
+    JLabel lblCurrentMission = new JLabel("{Mission Name}");
+    lblCurrentMission.setHorizontalAlignment(SwingConstants.CENTER);
+    lblCurrentMission.setForeground(Color.WHITE);
+    lblCurrentMission.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+    lblCurrentMission.setBounds(878, 41, 207, 20);
+    frame.getContentPane().add(lblCurrentMission);
 
-    JLabel lblNewLabel_4 = new JLabel("100000$");
-    lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
-    lblNewLabel_4.setForeground(Color.WHITE);
-    lblNewLabel_4.setIcon(new ImageIcon(IMAGES_PATH + "coin-icon.png"));
-    lblNewLabel_4.setBounds(38, 10, 123, 28);
-    frame.getContentPane().add(lblNewLabel_4);
+    JLabel lblCurrentMoney = new JLabel("100000$");
+    lblCurrentMoney.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+    lblCurrentMoney.setForeground(Color.WHITE);
+    lblCurrentMoney.setIcon(new ImageIcon(IMAGES_PATH + "coin-icon.png"));
+    lblCurrentMoney.setBounds(38, 10, 123, 28);
+    frame.getContentPane().add(lblCurrentMoney);
 
-    JLabel lblNewLabel = new JLabel();
-    lblNewLabel.setIcon(new ImageIcon(IMAGES_PATH + "planet.png"));
-    lblNewLabel.setBounds(570, 79, 515, 523);
-    frame.getContentPane().add(lblNewLabel);
+    JLabel lblPlanetPicture = new JLabel();
+    lblPlanetPicture.setIcon(new ImageIcon(IMAGES_PATH + "planet.png"));
+    lblPlanetPicture.setBounds(570, 79, 515, 523);
+    frame.getContentPane().add(lblPlanetPicture);
 
-    JLabel lblNewLabel_1 = new JLabel();
-    lblNewLabel_1.setIcon(new ImageIcon(IMAGES_PATH + "sky.jpg"));
-    lblNewLabel_1.setBounds(0, 0, 1106, 680);
-    frame.getContentPane().add(lblNewLabel_1);
+    JLabel lblBackgroundPicture = new JLabel();
+    lblBackgroundPicture.setIcon(new ImageIcon(IMAGES_PATH + "sky.jpg"));
+    lblBackgroundPicture.setBounds(0, 0, 1106, 680);
+    frame.getContentPane().add(lblBackgroundPicture);
 
   }
 
