@@ -27,7 +27,7 @@ public class HomeInterface {
   public final String IMAGES_PATH = "Images/";
   public final String SOUNDS_PATH = "Sounds/";
 
-  private final boolean UNLOCK_BTNS = false; //set to true for developement purposes
+  private final boolean UNLOCK_BTNS = true; //set to true for developement purposes
 
   protected static Game mainGame = new Game();
 

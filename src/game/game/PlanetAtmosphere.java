@@ -11,12 +11,12 @@ public class PlanetAtmosphere
   public PlanetAtmosphere()
   {
     m_conditions = new Vector<Condition>(NBCONDITIONS);
-    m_conditions.add(new Condition("Water", "Amount of water in the planet", 0.0, 0.20, 0.20, 100.0));
-    m_conditions.add(new Condition("Temperature", "Temperature of planet atmosphere", 0.0, 0.20, 0.20, 100.0));
-    m_conditions.add(new Condition("Oxygen", "Oxygen rate in the air", 0.0, 0.20, 0.20, 100.0));
-    m_conditions.add(new Condition("Carbon dioxide", "Carbon dioxide rate in the air", 0.0, 0.20, 0.20, 100.0));
-    m_conditions.add(new Condition("Pressure", "Atmosphere of the planet", 0.0, 0.20, 0.20, 100.0));
-    m_conditions.add(new Condition("Biomass", "Energy obtained from factories", 0.0, 0.15, 0.15, 100.0));
+    m_conditions.add(new Condition("Water", 0.0, 0.20, 0.20, 100.0));
+    m_conditions.add(new Condition("Temperature", 0.0, 0.20, 0.20, 100.0));
+    m_conditions.add(new Condition("Oxygen",0.0, 0.20, 0.20, 100.0));
+    m_conditions.add(new Condition("Carbon dioxide", 0.0, 0.20, 0.20, 100.0));
+    m_conditions.add(new Condition("Pressure", 0.0, 0.20, 0.20, 100.0));
+    m_conditions.add(new Condition("Biomass", 0.0, 0.15, 0.15, 100.0));
   }
 
   /**
