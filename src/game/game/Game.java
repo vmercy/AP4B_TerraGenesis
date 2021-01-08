@@ -24,6 +24,8 @@ public class Game {
       m_money = new Money();
       m_city = new City();
       m_planet = new Planet();
+      m_conditionThread = new ConditionThread();
+      m_conditionThread.start();
     }
 
   private class CompleteMissions extends Thread{
@@ -32,7 +34,7 @@ public class Game {
 		public void run() { //TODO: deplacer vers la classe Game
 			while(true) {
         
-        
+        //remplir pour chaque mission
         
         try {
           Thread.sleep(1000);
@@ -48,6 +50,7 @@ public class Game {
   private BuildingMaterials m_buildingMaterials;
   private Money m_money;
   private City m_city;
+  private ConditionThread m_conditionThread;
 
   public City getCity()
   {
@@ -141,14 +144,14 @@ public class Game {
     		{
     			if(e.nextElement().getCurrentValuePercent()>=100 && !e.nextElement().getDisplayed())
     			{
-    				JOptionPane.showMessageDialog(null,"Param�tre " + e.nextElement().getName() + " propice � la vie !");
+    				JOptionPane.showMessageDialog(null,"Parameter " + e.nextElement().getName() + " conducive to life !");
     				e.nextElement().setDisplayed();
     			}
     		}		
     		
     		if(m_planet.m_planetAtmosphere.isAllCompleted() && !allCompleted)
     		{
-    			JOptionPane.showMessageDialog(null,"Tous les param�tres propices � la vie sont r�unis");
+    			JOptionPane.showMessageDialog(null,"All the parameters conducive to life are there! You can now add humans to the planet");
     			allCompleted = true;
     		}
     		

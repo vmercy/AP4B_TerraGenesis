@@ -220,27 +220,27 @@ public class ConditionsInterface extends HomeInterface {
         DecimalFormat f = new DecimalFormat();
         f.setMaximumFractionDigits(2);
 
-        double waterValue = mainGame.getPlanet().getPlanetAtmosphere().getConditionValue("Water");
+        double waterValue = mainGame.getPlanet().getPlanetAtmosphere().getConditionValuePercent("Water");
         lblWaterValue.setText(f.format(waterValue) + "%");
         progressBarWater.setValue((int) waterValue);
 
-        double temperatureValue = mainGame.getPlanet().getPlanetAtmosphere().getConditionValue("Temperature");
+        double temperatureValue = mainGame.getPlanet().getPlanetAtmosphere().getConditionValuePercent("Temperature");
         lblTemperatureValue.setText(f.format(temperatureValue) + "%");
         progressBarTemperature.setValue((int) temperatureValue);
 
-        double oxygenValue = mainGame.getPlanet().getPlanetAtmosphere().getConditionValue("Oxygen");
+        double oxygenValue = mainGame.getPlanet().getPlanetAtmosphere().getConditionValuePercent("Oxygen");
         lblOxygenValue.setText(f.format(oxygenValue) + "%");
         progressBarOxygen.setValue((int) oxygenValue);
 
-        double carbonDioxideValue = mainGame.getPlanet().getPlanetAtmosphere().getConditionValue("Carbon dioxide");
+        double carbonDioxideValue = mainGame.getPlanet().getPlanetAtmosphere().getConditionValuePercent("Carbon dioxide");
         lblCarbonDioxideValue.setText(f.format(carbonDioxideValue) + "%");
         progressBarCarbonDioxide.setValue((int) carbonDioxideValue);
 
-        double pressureValue = mainGame.getPlanet().getPlanetAtmosphere().getConditionValue("Pressure");
+        double pressureValue = mainGame.getPlanet().getPlanetAtmosphere().getConditionValuePercent("Pressure");
         lblPressureValue.setText(f.format(pressureValue) + "%");
         progressBarPressure.setValue((int) pressureValue);
 
-        double biomassValue = mainGame.getPlanet().getPlanetAtmosphere().getConditionValue("Biomass");
+        double biomassValue = mainGame.getPlanet().getPlanetAtmosphere().getConditionValuePercent("Biomass");
         lblBiomassValue.setText(f.format(biomassValue) + "%");
         progressBarBiomass.setValue((int) biomassValue);
 

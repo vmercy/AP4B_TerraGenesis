@@ -76,4 +76,8 @@ public class PlanetAtmosphere
     return findCondition(conditionName_p).getCurrentValue();
   }
  
+  public double getConditionValuePercent(String conditionName_p)
+  {
+    return findCondition(conditionName_p).getCurrentValuePercent();
+  }
 }

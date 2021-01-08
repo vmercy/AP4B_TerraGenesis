@@ -12,6 +12,7 @@ public class Condition {
   private double m_threshold;
   private double m_defaultIncrement;
   private double m_defaultDecrement;
+  private boolean displayed;
 
 public Condition()
   {
@@ -19,7 +20,7 @@ public Condition()
     m_description = "";
     m_currentValue = m_startValue;
     m_threshold = 100.0;
-
+    displayed = false;
   }
 
   /**
@@ -33,7 +34,6 @@ public Condition()
     this();
     m_name = name_p;
     m_description = description_p;
-
   }
 
 
@@ -48,7 +48,6 @@ public Condition()
     this(name_p, description_p);
     m_startValue = startValue_p;
     m_currentValue = startValue_p;
-
   }
 
     /**
@@ -84,9 +83,15 @@ public Condition()
     return m_currentValue;
   }
   
+  public boolean getDisplayed()
+  {
+    return displayed;
+  }
 
-
-
+  public void setDisplayed()
+  {
+    displayed = true;
+  }
   
   public void increment(double amount_p)
   {
