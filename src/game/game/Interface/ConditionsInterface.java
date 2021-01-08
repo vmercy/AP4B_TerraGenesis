@@ -92,36 +92,42 @@ public class ConditionsInterface extends HomeInterface {
     // TODO: add conditions descriptions
 
     JLabel lblWater = new JLabel("Water :");
+    lblWater.setIcon(new ImageIcon(IMAGES_PATH + "water-icon.png"));
     lblWater.setForeground(Color.WHITE);
     lblWater.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
     lblWater.setBounds(65, 166, 233, 32);
     frame.getContentPane().add(lblWater);
 
     JLabel lblTemperature = new JLabel("Temperature :");
+    lblTemperature.setIcon(new ImageIcon(IMAGES_PATH + "temperature-icon.png"));
     lblTemperature.setForeground(Color.WHITE);
     lblTemperature.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
     lblTemperature.setBounds(65, 231, 233, 32);
     frame.getContentPane().add(lblTemperature);
 
     JLabel lblOxygen = new JLabel("Oxygen :");
+    lblOxygen.setIcon(new ImageIcon(IMAGES_PATH + "oxygen-icon.png"));
     lblOxygen.setForeground(Color.WHITE);
     lblOxygen.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
     lblOxygen.setBounds(65, 297, 233, 32);
     frame.getContentPane().add(lblOxygen);
 
     JLabel lblCarbonDioxide = new JLabel("Carbon dioxide :");
+    lblCarbonDioxide.setIcon(new ImageIcon(IMAGES_PATH + "carbondioxide-icon.png"));
     lblCarbonDioxide.setForeground(Color.WHITE);
     lblCarbonDioxide.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
     lblCarbonDioxide.setBounds(65, 363, 233, 32);
     frame.getContentPane().add(lblCarbonDioxide);
 
     JLabel lblPressure = new JLabel("Pressure :");
+    lblPressure.setIcon(new ImageIcon(IMAGES_PATH + "pressure-icon.png"));
     lblPressure.setForeground(Color.WHITE);
     lblPressure.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
     lblPressure.setBounds(65, 429, 233, 32);
     frame.getContentPane().add(lblPressure);
 
     JLabel lblBiomass = new JLabel("Biomass :");
+    lblBiomass.setIcon(new ImageIcon(IMAGES_PATH + "biomass-icon.png"));
     lblBiomass.setForeground(Color.WHITE);
     lblBiomass.setFont(new Font("Arial Black", Font.BOLD | Font.ITALIC, 15));
     lblBiomass.setBounds(65, 499, 233, 32);
