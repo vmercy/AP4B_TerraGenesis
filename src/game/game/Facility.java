@@ -31,7 +31,7 @@ public class Facility {
     updateConditions(planet_p);
   }
 
-  public void setName(String newName_p) //TODO : add textfield to interface
+  public void setName(String newName_p)
   {
     m_name = newName_p;
   }

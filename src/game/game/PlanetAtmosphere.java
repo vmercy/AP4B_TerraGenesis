@@ -13,7 +13,6 @@ public class PlanetAtmosphere
   public PlanetAtmosphere()
   {
     m_conditions = new Vector<Condition>(NBCONDITIONS);
-    //TODO: adjust parameters for each condition
     m_conditions.add(new Condition("Water", "Amount of water in the planet", 0.0, 0.20, 0.20, 100.0));
     m_conditions.add(new Condition("Temperature", "Temperature of planet atmosphere", 0.0, 0.20, 0.20, 100.0));
     m_conditions.add(new Condition("Oxygen", "Oxygen rate in the air", 0.0, 0.20, 0.20, 100.0));

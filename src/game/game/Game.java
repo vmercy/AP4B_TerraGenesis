@@ -31,7 +31,7 @@ public class Game {
   private class CompleteMissions extends Thread{
     
     @Override
-		public void run() { //TODO: deplacer vers la classe Game
+		public void run() {
 			while(true) {
         
         //remplir pour chaque mission
@@ -111,25 +111,6 @@ public class Game {
     	{
     		m_planet.m_planetAtmosphere.findCondition("Oxygen").setCurrentValue(1);
     	}
-    }
-    
-    /**
-     * @param 
-     * @brief 
-     */
-    
-    public void FactoryIntroduced(Factory factory_p) //TODO: call on factory creation via interface
-    {
-    	/* 
-    	if(m_planet.m_planetAtmosphere.findCondition("Biomass").getCurrentValuePercent() < 100)
-    	{
-    		m_planet.m_planetAtmosphere.incrementCondition("Biomass", factory_p.getBiomassGain());
-    	}
-    	
-    	if(m_planet.m_planetAtmosphere.findCondition("Biomass").getCurrentValuePercent() >= 100)
-    	{
-    		m_planet.m_planetAtmosphere.findCondition("Biomass").setCurrentValue(1);
-    	} */
     }
     
     public class ConditionThread extends Thread
