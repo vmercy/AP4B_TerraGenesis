@@ -1,33 +1,38 @@
-package game.Species;
 
-/* import game.Game;
-import game.Species.Fish;
+package game.Species;
 
 import javax.swing.*;
 
-import static game.Species.Vegetal.carbonDioxydeAbsorbed; */
+import static game.Species.Vegetal.carbonDioxydeAbsorbed;
+
 
 public class Mackerel extends Fish {
 
-  public Mackerel() {
 
-    super();
+    public Mackerel() {
+           super();
 
-  }
-/*   TODO voir avec @danykem pourquoi lien avec carbonDioxydeAbsorbed
-
-  private Fish mackerel;
-
-public Fish createFish(String nom, double taille, String urlPhoto) {
-    if (taille > 20) {
-      JOptionPane.showMessageDialog(null, "Taille trop grande pour ce type de poisson");
-    } else {
-      this.mackerel = new Fish(nom, taille, urlPhoto);
-      carbonDioxydeAbsorbed += taille;
     }
-    return this.mackerel;
 
-  }
-*/
+    private Fish makerel;
+    public Fish createFish(String nom,double taille, String urlPhoto){
+        if(taille>20){
+            JOptionPane.showMessageDialog(null,"Taille trop grande pour ce type de poisson");
+        }else {
+            setNom(nom);
+            setTaille(taille);
+            setUrlPhoto(urlPhoto);
+             this.makerel  = new Fish(getNom(),getTaille(),getUrlPhoto())  ;
+            carbonDioxydeAbsorbed += taille;
+        }
+        return this.makerel;
 
+    }
+
+    public static void main(String arg[]){
+        Mackerel f = new Mackerel();
+        Species sp =new Species();
+        testCreateFish(f,"Mackerel",8,"home/photo-mackerel");
+        testEat(sp,f,"Fish","Animal");
+    }
 }

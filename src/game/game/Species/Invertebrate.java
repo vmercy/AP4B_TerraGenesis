@@ -1,8 +1,5 @@
 package game.Species;
 
-import game.Game;
-import game.Species.Animal;
-
 
 public class Invertebrate {
     

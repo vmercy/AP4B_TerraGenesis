@@ -1,26 +1,16 @@
 
 package game.Species;
 
-import game.Game;
-import game.Species.Animal;
-
 import javax.swing.*;
+
+import java.util.Random;
+
+import static game.Species.Vegetal.carbonDioxydeAbsorbed;
 
 
 public class Mammal extends Animal {
     
-    
-    private Vertebrate vertebrate;
 
-
-
-    public Vertebrate getVertebrate() {
-        return this.vertebrate;
-    }
-
-    public void set(Vertebrate vertebrate) {
-        this.vertebrate = vertebrate ;
-    }
 
 
     
@@ -29,12 +19,65 @@ public class Mammal extends Animal {
     
     }
 
+    private String nom;
+    private double taille;
+
+    public double getTaille() {
+        return taille;
+    }
+
+    public void setTaille(double taille) {
+        this.taille = taille;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getUrlPhoto() {
+        return urlPhoto;
+    }
+
+    public void setUrlPhoto(String urlPhoto) {
+        this.urlPhoto = urlPhoto;
+    }
+
+    private  String urlPhoto;
+
+
+
+    public Mammal(String nom,double taille, String urlPhoto) {
+        this.nom = nom;
+        this.urlPhoto = urlPhoto;
+        this.taille = taille;
+    }
+
+    public Mammal createMammal(String nom,double taille, String urlPhoto){
+        this.nom = nom;
+        this.urlPhoto = urlPhoto;
+        this.taille = taille;
+        Mammal mammal = new Mammal(this.nom,this.taille,this.urlPhoto);
+        carbonDioxydeAbsorbed += taille;
+        return  mammal;
+    }
+
+
     private static int energyNeed = 200;
     private  int energyProgress;
 
+    private int generateEnergy(int interval){
+        Random r = new Random();
+        int enrgy = r.nextInt(interval);
+        return enrgy;
+    }
+
     @Override
-    public void eat(Species species) {
-        String message ="message";
+    public int eat(Species species) {
+        String message ="Niveau maximal d'energie atteint";
         switch (species.getType()){
             case "Animal":
                 switch (this.getTypeOfAnimals()){
@@ -42,7 +85,7 @@ public class Mammal extends Animal {
                         if(getEnergyGiven()<=MAX_ENERGY){
                             if(this.energyProgress<=energyNeed){
                                 setEnergyGiven(MAX_ENERGY/energyNeed);
-                                this.energyProgress += getEnergyGiven();
+                                this.energyProgress += generateEnergy(energyNeed+20);
                             }else {
                                 JOptionPane.showMessageDialog(null,message);
                             }
@@ -54,7 +97,7 @@ public class Mammal extends Animal {
                         if(getEnergyGiven()<=MAX_ENERGY){
                             if(this.energyProgress<=energyNeed){
                                 setEnergyGiven(MAX_ENERGY/energyNeed-10);
-                                this.energyProgress += getEnergyGiven();
+                                this.energyProgress += generateEnergy(energyNeed+15);
                             }else {
                                 JOptionPane.showMessageDialog(null,message);
                             }
@@ -66,7 +109,7 @@ public class Mammal extends Animal {
                         if(getEnergyGiven()<=MAX_ENERGY){
                             if(this.energyProgress<=energyNeed){
                                 setEnergyGiven(MAX_ENERGY/energyNeed+140);
-                                this.energyProgress += getEnergyGiven();
+                                this.energyProgress += generateEnergy(energyNeed);;
                             }else {
                                 JOptionPane.showMessageDialog(null,message);
                             }
@@ -78,7 +121,7 @@ public class Mammal extends Animal {
                         if(getEnergyGiven()<=MAX_ENERGY){
                             if(this.energyProgress<=energyNeed){
                                 setEnergyGiven(MAX_ENERGY/energyNeed+180);
-                                this.energyProgress += getEnergyGiven();
+                                this.energyProgress += generateEnergy(energyNeed+10);
                             }else {
                                 JOptionPane.showMessageDialog(null,message);
                             }
@@ -93,7 +136,7 @@ public class Mammal extends Animal {
                 if(getEnergyGiven()<=MAX_ENERGY){
                     if(this.energyProgress<=energyNeed){
                         setEnergyGiven(MAX_ENERGY/energyNeed+200);
-                        this.energyProgress += getEnergyGiven();
+                        this.energyProgress += generateEnergy(energyNeed+5);
                     }else {
                         JOptionPane.showMessageDialog(null,message);
                     }
@@ -101,6 +144,8 @@ public class Mammal extends Animal {
                     JOptionPane.showMessageDialog(null,"Niveau maximal d'energie atteint");
                 }
         }
+        return this.energyProgress;
+
     }
 
 

@@ -59,11 +59,11 @@ public class Tree extends Vegetal {
         super();
     }
 
-    public boolean createTree(int nombreDePoint,String nom, double taille, double epaisseur,double oxy){
+    public boolean createTree(int nombreDePoint,String nom, double taille, double epaisseur){
         double oxygene = getOxygenGiven();
         double gazcarbonique = getCarbonDioxydeAbsorbed();
-        if(oxygene != 0 && gazcarbonique != 0 && nombreDePoint !=0){
-            if(oxygene >= oxy && gazcarbonique >=oxy ){
+        if(oxygene != 0  && nombreDePoint !=0){
+
                 this.nom = nom;
                 if(nombreDePoint >0 ){
                     if(taille <= nombreDePoint){
@@ -80,10 +80,10 @@ public class Tree extends Vegetal {
                     this.epaisseur = 0;
                     this.couleur = "orange";
                 }
-                numbreOfTree +=oxy*oxy*nombreDePoint;
-                setOxygenGiven(oxygene-oxy);
-                setCarbonDioxydeAbsorbed(gazcarbonique-oxy);
-            }
+                numbreOfTree +=oxygene*oxygene*nombreDePoint;
+                oxygenGiven +=oxygene+numbreOfTree*oxygene/30;
+                //setCarbonDioxydeAbsorbed(gazcarbonique-oxy);
+
             }
 
 

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6c11da41-319c-4ee7-8cb9-03278dc9f579" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/Game/Atmosphere.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/Game/City.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/Game/Factory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/Game/Game.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/Game/Gaz.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/Game/Humidity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/Game/Mission.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/Game/Money.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/Game/Oxygen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/Game/Planet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/Game/PlanetData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/Game/Pression.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/Game/Settings.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/Game/Shark.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/Game/Species/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/Game/Species/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/Game/Species/AquaticMammal.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/Game/Species/AquaticMammal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/Game/Species/Fish.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/Game/Species/Fish.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/Game/Species/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/Game/Species/Human.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/Game/Species/Insect.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/Game/Species/Insect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/Game/Species/Invertebrate.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/Game/Species/Invertebrate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/Game/Species/Mackerel.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/Game/Species/Mackerel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/Game/Species/Mammal.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/Game/Species/Mammal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/Game/Species/Plant.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/Game/Species/Plant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/Game/Species/Shrimp.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/Game/Species/Shrimp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/Game/Species/SingleCellOrganism.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/Game/Species/SingleCellOrganism.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/Game/Species/SmallFish.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/Game/Species/SmallFish.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/Game/Species/Vertebrate.java" beforeDir="false" afterPath="$PROJECT_DIR$/game/Game/Species/Vertebrate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/Game/Temperature.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/Game/Tuna.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/Game/Weather.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/Game/game.iml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1m9RTEsd3v1AykIDj8yytL0z2Ud" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RunManager" selected="Application.Fish">
+    <configuration name="Fish" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Game.Species.Fish" />
+      <module name="AP4B_TerraGenesis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Game.Species.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Mackerel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Game.Species.Mackerel" />
+      <module name="AP4B_TerraGenesis" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Game.Species.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Fish" />
+        <item itemvalue="Application.Mackerel" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6c11da41-319c-4ee7-8cb9-03278dc9f579" name="Default Changelist" comment="" />
+      <created>1608903826066</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1608903826066</updated>
+      <workItem from="1608903827397" duration="2694000" />
+      <workItem from="1609187121710" duration="34729000" />
+      <workItem from="1609948954051" duration="11433000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
