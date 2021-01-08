@@ -9,7 +9,7 @@
       "name": "Launch Home",
       "request": "launch",
       "mainClass": "game.Interface.HomeInterface",
-      "projectName": "src"
+      "projectName": "AP4B_TerraGenesis_300dcb7b"
     }
   ]
 }
