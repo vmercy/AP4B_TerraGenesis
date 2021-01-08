@@ -92,25 +92,27 @@ public class AnimalsInterface extends HomeInterface{
         if(cbxFishSpecies.isVisible())
           selectionString = cbxFishSpecies.getSelectedItem().toString();
         Animal newAnimal = mainGame.getAnimals().createAnimalfromType(selectionString);
-        JOptionPane.showConfirmDialog(null, "Add a(n) " + newAnimal.getName() + " for " + newAnimal.getPrice() + "$ ?");
-        switch(newAnimal.canBuy(mainGame.getAnimals(), mainGame.getMoney()))
+        if(JOptionPane.showConfirmDialog(null, "Add a(n) " + newAnimal.getName() + " for " + newAnimal.getPrice() + "$ ?")==JOptionPane.YES_OPTION)
         {
-          case -1: // out of money
+          switch(newAnimal.canBuy(mainGame.getAnimals(), mainGame.getMoney()))
           {
-            JOptionPane.showMessageDialog(null, "You don't have enough money ! Complete missions first and try again");
-            break;
-          }
-          case 0: // missing prey
-          {
-            JOptionPane.showMessageDialog(null, "Your animal just died because it couldnt find enough preys to eat :-(");
-            mainGame.getMoney().sub(newAnimal.getPrice());
-            break;
-          }
-          case 1: {
-              mainGame.getAnimals().addAnimal(newAnimal);
-              newAnimal.updateConditions(mainGame.getPlanet().getPlanetAtmosphere());
+            case -1: // out of money
+            {
+              JOptionPane.showMessageDialog(null, "You don't have enough money ! Complete missions first and try again");
+              break;
+            }
+            case 0: // missing prey
+            {
+              JOptionPane.showMessageDialog(null, "Your animal just died because it couldnt find enough preys to eat :-(");
               mainGame.getMoney().sub(newAnimal.getPrice());
-            break;
+              break;
+            }
+            case 1: {
+                mainGame.getAnimals().addAnimal(newAnimal);
+                newAnimal.updateConditions(mainGame.getPlanet().getPlanetAtmosphere());
+                mainGame.getMoney().sub(newAnimal.getPrice());
+              break;
+            }
           }
         }
 			}
