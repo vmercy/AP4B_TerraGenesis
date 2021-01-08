@@ -26,7 +26,7 @@ public class BuyMaterialsInterface extends HomeInterface {
   JFrame frame;
 	JLabel lblCurrentMoney = new JLabel(mainGame.getMoney().getAmount() + "$");
   JLabel lblCurrentMission = new JLabel(mainGame.getMissions().getCurrentMission().getTitle());
-JProgressBar missionsProgressBar = new JProgressBar();  
+JProgressBar missionsProgressBar = new JProgressBar(); 
 private MyThread t;
 
 	/**
@@ -123,12 +123,11 @@ private MyThread t;
 	    lblMissionIntro.setBounds(955, 12, 69, 11);
 	    frame.getContentPane().add(lblMissionIntro);
 
-	    lblCurrentMission.setToolTipText(mainGame.getMissions().getCurrentMission().getDescription());
-	    lblCurrentMission.setHorizontalAlignment(SwingConstants.CENTER);
-	    lblCurrentMission.setForeground(Color.WHITE);
-	    lblCurrentMission.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
-	    lblCurrentMission.setBounds(878, 41, 207, 20);
-	    frame.getContentPane().add(lblCurrentMission);
+	    lblCurrentMoney.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+	    lblCurrentMoney.setForeground(Color.WHITE);
+	    lblCurrentMoney.setIcon(new ImageIcon(IMAGES_PATH + "coin-icon.png"));
+	    lblCurrentMoney.setBounds(38, 10, 123, 28);
+	    frame.getContentPane().add(lblCurrentMoney);
 	    
 		lblCurrentMoney.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
 		lblCurrentMoney.setForeground(Color.WHITE);
