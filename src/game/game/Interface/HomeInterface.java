@@ -16,6 +16,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 import javax.swing.JProgressBar;
@@ -223,7 +224,9 @@ public class HomeInterface {
     public void run() {
       while (true) {
         lblCurrentMission.setText(mainGame.getMissions().getCurrentMission().getTitle());
+
         lblCurrentMoney.setText(mainGame.getMoney().getAmount() + "$");
+        lblCurrentMission.setToolTipText(mainGame.getMissions().getCurrentMission().getDescription());
 
         missionsProgressBar.setValue((int) mainGame.getMissions().percentAchieved());
 
@@ -231,6 +234,25 @@ public class HomeInterface {
         
         btnAddAnimals.setEnabled(UNLOCK_BTNS || (!mainGame.getCity().getLaboratories().isEmpty()));
         btnAddVegetals.setEnabled(UNLOCK_BTNS || (!mainGame.getCity().getBotanicGardens().isEmpty()));
+        
+        if(mainGame.getPlanet().getPlanetAtmosphere().areAllConditionsAbove(25))
+          mainGame.getMissions().setCompleted("Reach 25% on all atmospheric conditions");
+          if(mainGame.getPlanet().getPlanetAtmosphere().areAllConditionsAbove(50))
+          mainGame.getMissions().setCompleted("Reach 50% on all atmospheric conditions");
+          if(mainGame.getPlanet().getPlanetAtmosphere().areAllConditionsAbove(75))
+          mainGame.getMissions().setCompleted("Reach 75% on all atmospheric conditions");
+          if(mainGame.getPlanet().getPlanetAtmosphere().isAllCompleted())
+          mainGame.getMissions().setCompleted("Achieve 100% atmospheric conditions");
+
+        for (Mission mission : mainGame.getMissions().getMissionsVector())
+        {
+          if(mission.isCompleted() && ! mission.isDisplayed())
+          {
+            mission.setDisplayed();
+            JOptionPane.showMessageDialog(null, "Mission \""+ mission.getTitle() +"\" has been completed ! Congratulations !");
+            mainGame.getMissions().nextMission();
+          }
+        }
 
         try {
           Thread.sleep(1000);

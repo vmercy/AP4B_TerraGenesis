@@ -118,6 +118,7 @@ public class AnimalsInterface extends HomeInterface{
                 mainGame.getAnimals().addAnimal(newAnimal);
                 newAnimal.updateConditions(mainGame.getPlanet().getPlanetAtmosphere());
                 mainGame.getMoney().sub(newAnimal.getPrice());
+                mainGame.getMissions().setCompleted("Add animal");
               break;
             }
           }
@@ -192,7 +193,8 @@ public class AnimalsInterface extends HomeInterface{
 	    public void run() {
 	      while (true) {
 	        lblCurrentMission.setText(mainGame.getMissions().getCurrentMission().getTitle());
-	        lblCurrentMoney.setText(mainGame.getMoney().getAmount() + "$");
+          lblCurrentMoney.setText(mainGame.getMoney().getAmount() + "$");
+          lblCurrentMission.setToolTipText(mainGame.getMissions().getCurrentMission().getDescription());
 
 	        missionsProgressBar.setValue((int) mainGame.getMissions().percentAchieved());
 	        

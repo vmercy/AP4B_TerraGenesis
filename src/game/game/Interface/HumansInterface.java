@@ -62,26 +62,30 @@ public class HumansInterface extends HomeInterface {
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JButton btnNewButton_3 = new JButton("Back");
-		btnNewButton_3.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		btnNewButton_3.setIcon(new ImageIcon(IMAGES_PATH+"back-icon.png"));
-		btnNewButton_3.addActionListener(bHandler);
-		btnNewButton_3.addActionListener(new ActionListener() {
+		JButton btnExitGame = new JButton("Exit game");
+		btnExitGame.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		btnExitGame.setIcon(new ImageIcon(IMAGES_PATH+"close-icon.png"));
+		btnExitGame.addActionListener(bHandler);
+		btnExitGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				frame.dispose();
-
+        System.exit(0);
 			}
 		});
-		btnNewButton_3.setBounds(10, 638, 103, 32);
-		frame.getContentPane().add(btnNewButton_3);
+		btnExitGame.setBounds(10, 638, 200, 32);
+		frame.getContentPane().add(btnExitGame);
 		
-		JLabel lblNewLabel_2 = new JLabel("Mars 2035");
-		lblNewLabel_2.setForeground(Color.WHITE);
-		lblNewLabel_2.setFont(new Font("Showcard Gothic", Font.BOLD | Font.ITALIC, 26));
-		lblNewLabel_2.setBounds(468, 10, 168, 39);
-    frame.getContentPane().add(lblNewLabel_2);
+		JLabel lblGameTitle = new JLabel("Mars 2035");
+		lblGameTitle.setForeground(Color.WHITE);
+		lblGameTitle.setFont(new Font("Showcard Gothic", Font.BOLD | Font.ITALIC, 26));
+		lblGameTitle.setBounds(468, 10, 168, 39);
+    frame.getContentPane().add(lblGameTitle);
     
-    //JLabel lbl
+    JLabel lblGameSucess = new JLabel("<html>Well done !  </br>You were able to terraform the planet and add humans to it. The game is over!</html>");
+    lblGameSucess.setForeground(Color.WHITE);
+    lblGameSucess.setFont(new Font("Showcard Gothic", Font.BOLD | Font.ITALIC, 26));
+    lblGameSucess.setBounds(100, 100, 400, 500);
+    frame.getContentPane().add(lblGameSucess);
 		
     missionsProgressBar.setBounds(878, 27, 207, 11);
 	missionsProgressBar.setValue(30);

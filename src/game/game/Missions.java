@@ -5,14 +5,19 @@ import java.awt.Color;
 
 public class Missions {
   private Mission m_currentMission;
-  private final byte nbMissionsTotal = 12;
+  private final byte NB_MISSIONS_TOTAL = 13;
   private Vector<Mission> m_missionsList;
   
   public Missions()
   {
-    m_missionsList = new Vector<Mission>(nbMissionsTotal);
+    m_missionsList = new Vector<Mission>(NB_MISSIONS_TOTAL);
     this.fill();
     m_currentMission = m_missionsList.get(0);
+  }
+
+  public Vector<Mission> getMissionsVector()
+  {
+    return m_missionsList;
   }
 
   public Mission getCurrentMission()
@@ -30,13 +35,16 @@ public class Missions {
    */
   public void nextMission()
   {
-    //TODO: skip already completed missions
-    //m_currentMission.complete();
-    byte nextMissionIndex = (byte) m_missionsList.indexOf(m_currentMission);
-    nextMissionIndex++;
+    int nextMissionIndex = m_missionsList.indexOf(m_currentMission);
+    Mission nextMission = m_currentMission;
+    while(nextMission.isCompleted())
+    {
+      nextMissionIndex++;
+      nextMission = m_missionsList.get(nextMissionIndex);
+    }
     if(nextMissionIndex<getNbMissions())
     {
-      m_currentMission = m_missionsList.get(nextMissionIndex);
+      m_currentMission = nextMission;
     }
   }
 
@@ -76,17 +84,20 @@ public class Missions {
   
   public void fill()
   {
-    m_missionsList.add(new Mission("Add animal","Add an animal to the planet",500.0));
-    m_missionsList.add(new Mission("Build a factory","Add a factory in the city",500));
-    m_missionsList.add(new Mission("Build a laboratory","Add a laboratory in the city to unlock the purchase of animals",500));
-    m_missionsList.add(new Mission("Build a botanical garden","Add a botanical garden in the city to unlock the purchase of plants",500));
-    m_missionsList.add(new Mission("Build a dormitory","Add a dormitory to the city to house the settlers",500));
-    m_missionsList.add(new Mission("Buy a material","Buy building material to construct buildings",500));
-    m_missionsList.add(new Mission("Buy a tree","Buy a tree to allow photosynthesis",500));
-    m_missionsList.add(new Mission("Reach 25% on all atmospheric conditions","Achieve 25% of conditions",500));
-    m_missionsList.add(new Mission("Reach 50% on all atmospheric conditions","achieve 50% of conditions",500));
-    m_missionsList.add(new Mission("Reach 75% on all atmospheric conditions","Achieve 75% of conditions",500));
-    m_missionsList.add(new Mission("Achieve 100% atmospheric conditions","Achieve 100% of conditions",500));
+    m_missionsList.add(new Mission("Add animal","Add an animal to the planet",1000));
+    m_missionsList.add(new Mission("Buy a material","Buy building material to construct buildings",1000));
+    m_missionsList.add(new Mission("Build a Dormitory","Add a dormitory to the city to house the settlers",1000));
+    m_missionsList.add(new Mission("Build a Energy Plant","Add an energy plant to the city to house the settlers",1000));
+    m_missionsList.add(new Mission("Build a Factory","Add a factory in the city",1000));
+    m_missionsList.add(new Mission("Build a Laboratory","Add a laboratory in the city to unlock the purchase of animals",1000));
+    m_missionsList.add(new Mission("Build a Botanical Garden","Add a botanic garden in the city to unlock the purchase of plants",1000));
+    m_missionsList.add(new Mission("Build a Oxygen Supply","Add an oxygen supply to the city to house the settlers",1000));
+    m_missionsList.add(new Mission("Buy a Tree","Buy a tree to allow photosynthesis",1000));
+    m_missionsList.add(new Mission("Buy a Plant","Buy a plant to allow photosynthesis",1000));
+    m_missionsList.add(new Mission("Reach 25% on all atmospheric conditions","Achieve 25% of conditions",1000));
+    m_missionsList.add(new Mission("Reach 50% on all atmospheric conditions","achieve 50% of conditions",1000));
+    m_missionsList.add(new Mission("Reach 75% on all atmospheric conditions","Achieve 75% of conditions",1000));
+    m_missionsList.add(new Mission("Achieve 100% atmospheric conditions","Achieve 100% of conditions",1000));
   }
 
   /**
@@ -116,4 +127,5 @@ public class Missions {
   {
     return (double)nbMissionsAchieved()/getNbMissions();
   }
+
 }

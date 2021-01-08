@@ -93,31 +93,34 @@ public class FacilityInterface extends HomeInterface {
     btnNewButton_3_1.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         Facility newFacility = mainGame.getCity().createFacilityFromType(comboBox.getSelectedItem().toString());
-        JOptionPane.showConfirmDialog(null, "Create " + comboBox.getSelectedItem() + " \""
-            + txtfldFacilityName.getText() + "\" for " + newFacility.getPrice() + "$ ?");
-        switch (newFacility.canBuy(mainGame.getMoney(), mainGame.getMaterials())) {
-          case -1: // out of money
-          {
-            JOptionPane.showMessageDialog(null, "You don't have enough money ! Complete missions first and try again");
-            break;
-          }
-
-          case 0: // not all necessary materials
-          {
-            JOptionPane.showMessageDialog(null,
-                "You don't own the necessary materials ! Go to \"Buy Materials\" first and try again");
-            break;
-          }
-
-          case 1:
-          {
-            mainGame.getCity().addFacility(comboBox.getSelectedItem().toString(), newFacility,
-                txtfldFacilityName.getText());
-            newFacility.updateConditions(mainGame.getPlanet().getPlanetAtmosphere());
-            mainGame.getMoney().sub(newFacility.getPrice());
-            break;
-          }
-        }
+        if(JOptionPane.showConfirmDialog(null, "Create " + comboBox.getSelectedItem() + " \""
+            + txtfldFacilityName.getText() + "\" for " + newFacility.getPrice() + "$ ?")==JOptionPane.YES_OPTION)
+            {
+              switch (newFacility.canBuy(mainGame.getMoney(), mainGame.getMaterials())) {
+                case -1: // out of money
+                {
+                  JOptionPane.showMessageDialog(null, "You don't have enough money ! Complete missions first and try again");
+                  break;
+                }
+      
+                case 0: // not all necessary materials
+                {
+                  JOptionPane.showMessageDialog(null,
+                      "You don't own the necessary materials ! Go to \"Buy Materials\" first and try again");
+                  break;
+                }
+      
+                case 1:
+                {
+                  mainGame.getCity().addFacility(comboBox.getSelectedItem().toString(), newFacility,
+                      txtfldFacilityName.getText());
+                  newFacility.updateConditions(mainGame.getPlanet().getPlanetAtmosphere());
+                  mainGame.getMoney().sub(newFacility.getPrice());
+                  mainGame.getMissions().setCompleted("Build a "+newFacility.getName());
+                  break;
+                }
+              }
+            }
       }
     });
     btnNewButton_3_1.setBounds(211, 370, 103, 32);

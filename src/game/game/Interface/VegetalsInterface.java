@@ -99,6 +99,7 @@ public class VegetalsInterface extends HomeInterface {
                 mainGame.getVegetals().addVegetal(newVegetal);
                 newVegetal.updateConditions(mainGame.getPlanet().getPlanetAtmosphere());
                 mainGame.getMoney().sub(newVegetal.getPrice());
+                mainGame.getMissions().setCompleted("Buy a "+newVegetal.getName());
               break;
             }
           }
@@ -172,7 +173,7 @@ public class VegetalsInterface extends HomeInterface {
 	      while (true) {
 	        lblCurrentMission.setText(mainGame.getMissions().getCurrentMission().getTitle());
 	        lblCurrentMoney.setText(mainGame.getMoney().getAmount() + "$");
-
+          lblCurrentMission.setToolTipText(mainGame.getMissions().getCurrentMission().getDescription());
 	        missionsProgressBar.setValue((int) mainGame.getMissions().percentAchieved());
 	        
 	        try {
