@@ -1,9 +1,7 @@
 package game;
 
-import java.util.Enumeration;
 import java.util.Vector;
 
-import javax.swing.JOptionPane;
 
 public class PlanetAtmosphere
 {
@@ -19,6 +17,20 @@ public class PlanetAtmosphere
     m_conditions.add(new Condition("Carbon dioxide", "Carbon dioxide rate in the air", 0.0, 0.20, 0.20, 100.0));
     m_conditions.add(new Condition("Pressure", "Atmosphere of the planet", 0.0, 0.20, 0.20, 100.0));
     m_conditions.add(new Condition("Biomass", "Energy obtained from factories", 0.0, 0.15, 0.15, 100.0));
+  }
+
+  /**
+   * 
+   * @param threshold_p threshold in percent
+   * @return true if all conditions are avobe the threshold
+   */
+  public boolean areAllConditionsAbove(int threshold_p)
+  {
+    for (Condition condition : m_conditions) {
+      if(condition.getCurrentValuePercent()<threshold_p)
+        return false;
+    }
+    return true;
   }
 
   public Vector<Condition> getConditions()

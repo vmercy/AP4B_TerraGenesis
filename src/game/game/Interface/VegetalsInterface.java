@@ -91,6 +91,7 @@ public class VegetalsInterface extends HomeInterface {
                 mainGame.getVegetals().addVegetal(newVegetal);
                 newVegetal.updateConditions(mainGame.getPlanet().getPlanetAtmosphere());
                 mainGame.getMoney().sub(newVegetal.getPrice());
+                mainGame.getMissions().setCompleted("Buy a "+newVegetal.getName());
               break;
             }
           }

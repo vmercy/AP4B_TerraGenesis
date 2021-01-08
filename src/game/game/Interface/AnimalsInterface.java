@@ -110,6 +110,7 @@ public class AnimalsInterface extends HomeInterface{
                 mainGame.getAnimals().addAnimal(newAnimal);
                 newAnimal.updateConditions(mainGame.getPlanet().getPlanetAtmosphere());
                 mainGame.getMoney().sub(newAnimal.getPrice());
+                mainGame.getMissions().setCompleted("Add animal");
               break;
             }
           }

@@ -11,6 +11,7 @@ public class Mission {
     m_description = "";
     m_reward = 0.0;
     m_completed = false;
+    m_displayed = false;
   }
 
   /**
@@ -44,6 +45,8 @@ public class Mission {
    */
   private boolean m_completed;
 
+  private boolean m_displayed;
+
   /**
    * 
    * @return true if the mission is Achieved
@@ -71,5 +74,15 @@ public class Mission {
   public void complete()
   {
     this.m_completed = true;
+  }
+
+  public void setDisplayed()
+  {
+    this.m_displayed = true;
+  }
+
+  public boolean isDisplayed()
+  {
+    return this.m_displayed;
   }
 }
