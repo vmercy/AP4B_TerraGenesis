@@ -161,6 +161,7 @@ public class HomeInterface {
     lblMissionIntro.setBounds(955, 12, 69, 11);
     frame.getContentPane().add(lblMissionIntro);
 
+    lblCurrentMission.setToolTipText("Description...");
     lblCurrentMission.setHorizontalAlignment(SwingConstants.CENTER);
     lblCurrentMission.setForeground(Color.WHITE);
     lblCurrentMission.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
