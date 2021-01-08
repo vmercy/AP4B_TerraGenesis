@@ -120,7 +120,7 @@ public class Game {
       while (true) {
 
         for (Condition condition : conditions) {
-          if(condition.getCurrentValuePercent()>=100 && !condition.getDisplayed())
+          if(!condition.getDisplayed() && condition.getCurrentValuePercent()>=100)
             {
               JOptionPane.showMessageDialog(null, "Parameter " + condition.getName() + " conducive to life !");
               condition.setDisplayed();
