@@ -12,6 +12,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
@@ -72,24 +73,26 @@ public class VegetalsInterface extends HomeInterface {
     btnAdd.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         Vegetal newVegetal = mainGame.getVegetals().createVegetalFromType(comboBox.getSelectedItem().toString());
-        JOptionPane.showConfirmDialog(null, "Add a " + newVegetal.getName() + " for " + newVegetal.getPrice() + "$ ?");
-        switch (newVegetal.canBuy(mainGame.getAnimals(), mainGame.getMoney())) {
-          case -1: // out of money
-          {
-            JOptionPane.showMessageDialog(null, "You don't have enough money ! Complete missions first and try again");
-            break;
-          }
-
-          case 0: // no insect in animals
-          {
-            JOptionPane.showMessageDialog(null, "You don't have any insect in your animals collection - Please buy one and try again");
-            break;
-          }
-          case 1: {
-              mainGame.getVegetals().addVegetal(newVegetal);
-              newVegetal.updateConditions(mainGame.getPlanet().getPlanetAtmosphere());
-              mainGame.getMoney().sub(newVegetal.getPrice());
-            break;
+        if(JOptionPane.showConfirmDialog(null, "Add a " + newVegetal.getName() + " for " + newVegetal.getPrice() + "$ ?")==JOptionPane.YES_OPTION)
+        {
+          switch (newVegetal.canBuy(mainGame.getAnimals(), mainGame.getMoney())) {
+            case -1: // out of money
+            {
+              JOptionPane.showMessageDialog(null, "You don't have enough money ! Complete missions first and try again");
+              break;
+            }
+  
+            case 0: // no insect in animals
+            {
+              JOptionPane.showMessageDialog(null, "You don't have any insect in your animals collection - Please buy one and try again");
+              break;
+            }
+            case 1: {
+                mainGame.getVegetals().addVegetal(newVegetal);
+                newVegetal.updateConditions(mainGame.getPlanet().getPlanetAtmosphere());
+                mainGame.getMoney().sub(newVegetal.getPrice());
+              break;
+            }
           }
         }
       }

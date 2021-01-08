@@ -87,7 +87,6 @@ public class AnimalsInterface extends HomeInterface{
 		btnAdd.setIcon(new ImageIcon(IMAGES_PATH+"add-icon.png"));
 		btnAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-        //TODO: ajouter condition appui sur YES exclusivement (même chose pour facilities et vegetals)
         String selectionString = cbxAnimalTypes.getSelectedItem().toString();
         if(cbxFishSpecies.isVisible())
           selectionString = cbxFishSpecies.getSelectedItem().toString();
