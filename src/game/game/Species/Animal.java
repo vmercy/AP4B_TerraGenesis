@@ -1,112 +1,47 @@
 package game.Species;
 
-import javax.swing.*;
-import java.util.ArrayList;
+import game.Money;
 
 public abstract class Animal extends Species {
 
-  public static final int MAX_ENERGY = 200;
-  private double carbonDioxideProduced;
-  private int strenght;
-  private String typeOfAnimals;
-  private int energyGiven;
-  private int energyNeed;
+  private static final int NB_ANIMAL_TYPES = 9;
+  private String[] m_preys;
 
-  Animal() {
-
+  public Animal() {
+    m_preys = new String[NB_ANIMAL_TYPES];
+    for (int i = 0; i < NB_ANIMAL_TYPES; i++)
+      m_preys[i] = "";
   }
 
-  public Animal(double carbonDioxideProduced, int strenght, String typeOfAnimals) {
-    this.carbonDioxideProduced = carbonDioxideProduced;
-    this.strenght = strenght;
-    this.typeOfAnimals = typeOfAnimals;
+  /**
+   * adds a new prey to the animal preys collection
+   */
+  protected void addPrey(String newPrey_p) {
+    int i = 0;
+    for (i = 0; m_preys[i] != ""; i++)
+      ;
+    m_preys[i] = newPrey_p;
   }
 
-  private double taille;
-
-  protected int getStrenght() {
-    return strenght;
-  }
-
-  public double getcarbonDioxideProduced() {
-    return carbonDioxideProduced;
-  }
-
-  protected String getTypeOfAnimals() {
-    return typeOfAnimals;
-  }
-
-  protected int getEnergyGiven() {
-    return energyGiven;
-  }
-
-  protected int getEnergyNeed() {
-    return energyNeed;
-  }
-
-  public void setcarbonDioxideProduced(double carbonDioxideProduced) {
-    this.carbonDioxideProduced = carbonDioxideProduced;
-  }
-
-  protected void setStrenght(int strenght) {
-    this.strenght = strenght;
-  }
-
-  protected void setTypeOfAnimals(String typeOfAnimals) {
-    this.typeOfAnimals = typeOfAnimals;
-  }
-
-  protected void setEnergyGiven(int energyGiven) {
-    this.energyGiven = energyGiven;
-  }
-
-  protected void setEnergyNeed(int energyNeed) {
-    this.energyNeed = energyNeed;
-  }
-
-  public abstract int eat(Species species);
-
-  public static ArrayList AddchaineAlimentaire(Animal animal) {
-    ArrayList<Animal> animals = new ArrayList<>();
-    animals.add(animal);
-    ArrayList<Mammal> mammal = new ArrayList<>();
-    ArrayList<AquaticMammal> aquaticMammal = new ArrayList<>();
-    ArrayList<Fish> fish = new ArrayList<>();
-    ArrayList<Insect> insect = new ArrayList<>();
-    for (Animal a : animals) {
-      if (a.getTypeOfAnimals() == "Mammal") {
-        mammal.add((Mammal) a);
-      } else if (a.getTypeOfAnimals() == "aquaticMammal") {
-        aquaticMammal.add((AquaticMammal) a);
-      } else if (a.getTypeOfAnimals() == "Fish") {
-        fish.add((Fish) a);
-      } else if (a.getTypeOfAnimals() == "Insect") {
-        insect.add((Insect) a);
-      }
+  private boolean checkPreys(Animals currentAnimals) {
+    for (String string : m_preys) {
+      if (string != "" && !currentAnimals.findAnimal(string))
+        return false;
     }
-    ArrayList<Animal> chaine = new ArrayList<>();
-    ArrayList<String> st = new ArrayList<>();
-    for (Mammal m : mammal) {
-      chaine.add(m);
-      st.add(m.getNom());
-    }
-    for (AquaticMammal m : aquaticMammal) {
-      chaine.add(m);
-      st.add(m.getNom());
-    }
-    for (Fish m : fish) {
-      chaine.add(m);
-      st.add(m.getNom());
-    }
-    for (Insect m : insect) {
-      chaine.add(m);
-      st.add(m.getNom());
-    }
+    return true;
+  }
 
-    for (String m : st) {
-      System.out.println(m);
-    }
-    return st;
+  /**
+   * @return -1 if at least one prey is missing
+   * @return 0 if the player is out of money
+   * @return 1 if the player can buy the animal
+   */
+  public int canBuy(Animals currentAnimals_p, Money currentMoney_p) {
+    if (!checkPreys(currentAnimals_p))
+      return 0;
+    if (m_price > currentMoney_p.getAmount())
+      return -1;
+    return 1;
   }
 
 }

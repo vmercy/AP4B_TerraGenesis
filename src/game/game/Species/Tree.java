@@ -1,88 +1,19 @@
 
 package game.Species;
 
-import javax.swing.*;
-
 public class Tree extends Vegetal {
 
-  public static int numbreOfTree = 0;
-  private String nom;
-  private boolean iscorrectTreeCreated = false;
-
-  public String getNom() {
-    return nom;
-  }
-
-  public void setNom(String nom) {
-    this.nom = nom;
-  }
-
-  public boolean isIscorrectTreeCreated() {
-    return this.iscorrectTreeCreated;
-  }
-
-  public double getTaille() {
-    return this.taille;
-  }
-
-  public double getEpaisseur() {
-    return this.epaisseur;
-  }
-
-  public String getCouleur() {
-    return this.couleur;
-  }
-
-  public void setCouleur(String couleur) {
-    this.couleur = couleur;
-  }
-
-  private double taille;
-  private double epaisseur;
-  private String couleur;
-  private Vegetal vegetal;
-
-  public Vegetal getVegetal() {
-    return this.vegetal;
-  }
-
-  public void set(Vegetal vegetal) {
-    this.vegetal = vegetal;
-  }
-
-  public Tree() {
-    super();
-  }
-
-  public boolean createTree(int nombreDePoint, String nom, double taille, double epaisseur) {
-    double oxygene = getOxygenGiven();
-    double gazcarbonique = getCarbonDioxydeAbsorbed();
-    if (oxygene != 0 && nombreDePoint != 0) {
-
-      this.nom = nom;
-      if (nombreDePoint > 0) {
-        if (taille <= nombreDePoint) {
-          this.taille = taille;
-          this.iscorrectTreeCreated = true;
-        } else {
-          JOptionPane.showMessageDialog(null,
-              "Nombre de nombreDePoint insuffisant pour un arbre de cette taille. Veuillez réduire la taille");
-        }
-        // this.taille = taille <= nombreDePoint ? taille:nombreDePoint;
-        this.epaisseur = epaisseur <= nombreDePoint ? epaisseur / nombreDePoint : epaisseur / nombreDePoint + epaisseur;
-        this.couleur = "green";
-      } else {
-        this.taille = 0;
-        this.epaisseur = 0;
-        this.couleur = "orange";
-      }
-      numbreOfTree += oxygene * oxygene * nombreDePoint;
-      oxygenGiven += oxygene + numbreOfTree * oxygene / 30;
-      // setCarbonDioxydeAbsorbed(gazcarbonique-oxy);
-
-    }
-
-    return this.iscorrectTreeCreated;
+  public Tree()
+  {
+    this.m_price = 150.0;
+    this.m_name= "Tree";
+    //TODO: delete condition evolutions with zero value (do the same for facilities and animals)
+    this.m_conditionEvolutions.add("Water", 0.0);
+    this.m_conditionEvolutions.add("Temperature", +0.5);
+    this.m_conditionEvolutions.add("Oxygen", +5.12);
+    this.m_conditionEvolutions.add("Carbon dioxide", +1.0);
+    this.m_conditionEvolutions.add("Pressure", 0.0);
+    this.m_conditionEvolutions.add("Biomass", 0.0);
   }
 
 }

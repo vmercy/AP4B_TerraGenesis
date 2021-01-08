@@ -1,41 +1,42 @@
 package game.Species;
 
+import game.ConditionEvolutions;
+import game.ConditionEvolution;
+import game.PlanetAtmosphere;
+
 public class Species {
 
-  private String m_type;
+  protected String m_name;
   protected double m_price;
 
-  public Species(String type) {
-    this.m_type = type;
+  protected ConditionEvolutions m_conditionEvolutions;
+
+  public Species() {
+    m_conditionEvolutions = new ConditionEvolutions();
+  }
+
+  public Species(PlanetAtmosphere planet_p) {
+    this();
+    updateConditions(planet_p);
+  }
+
+
+  /**
+   * updates planet conditions after species creation
+   * @param planet_p
+   */
+  public void updateConditions(PlanetAtmosphere planet_p)
+  {
+    for (ConditionEvolution condEvol : m_conditionEvolutions.getConditionEvolutions()) {
+      planet_p.findCondition(condEvol.getConditionName()).increment(condEvol.getEvolution());
+    }
   }
 
   public double getPrice() {
     return m_price;
   }
 
-  public String getType() {
-    return m_type;
-  }
-
-  public void setType(String type) {
-    this.m_type = type;
-  }
-
-  public Species() {
-  }
-
-  public String verifiedSpecies(String species) {
-    switch (species) {
-      case "Animal":
-        this.m_type = "Animal";
-        break;
-      case "Vegetal":
-        this.m_type = " Vegetal";
-        break;
-      default:
-        this.m_type = "Undefined species";
-        break;
-    }
-    return this.m_type;
+  public String getName() {
+    return m_name;
   }
 }

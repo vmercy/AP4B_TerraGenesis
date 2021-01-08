@@ -53,7 +53,6 @@ public class City {
     return null;
   }
 
-
   public Vector<Factory> getFactories()
   {
     return m_factories;

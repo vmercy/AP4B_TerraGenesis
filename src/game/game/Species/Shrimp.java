@@ -1,30 +1,11 @@
 
 package game.Species;
 
-import javax.swing.*;
-
-import static game.Species.Vegetal.carbonDioxydeAbsorbed;
-
 public class Shrimp extends Fish {
-
-  public Shrimp() {
-    m_price = 30.0;
+  public Shrimp()
+  {
+    this.m_price = 30.0;
+    this.m_name = "Shrimp";
+    addPrey("Single Cell Organism");
   }
-
-  private Fish shrim;
-
-  public Fish createFish(String nom, double taille, String urlPhoto) {
-    if (taille > 15) {
-      JOptionPane.showMessageDialog(null, "Taille trop grande pour ce type de poisson");
-    } else {
-      setNom(nom);
-      setTaille(taille);
-      setUrlPhoto(urlPhoto);
-      this.shrim = new Fish(getNom(), getTaille(), getUrlPhoto());
-      carbonDioxydeAbsorbed += taille;
-    }
-    return this.shrim;
-
-  }
-
 }
