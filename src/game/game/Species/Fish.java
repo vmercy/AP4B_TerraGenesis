@@ -116,6 +116,7 @@ public class Fish extends Animal {
   }
 
   public Fish() {
+  
   }
 
   public void setUrlPhoto(String urlPhoto) {

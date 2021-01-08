@@ -10,6 +10,7 @@ public class Insect extends Animal {
 
   public Insect() {
     m_price = 20.0;
+    //typeOf
   }
 
   private static int energyNeed = 20;

@@ -86,10 +86,12 @@ public class AnimalsInterface extends HomeInterface{
 		btnAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(cbxAnimalTypes.getSelectedItem().equals("Fish")) {
-					JOptionPane.showConfirmDialog(null, "Add "+ cbxFishSpecies.getSelectedItem() +" : -400$");
+          JOptionPane.showConfirmDialog(null, "Add "+ cbxFishSpecies.getSelectedItem() +" : -400$");
+          //Fish selectedFish = 
 				}
 				else {
-					JOptionPane.showConfirmDialog(null, "Add "+ cbxAnimalTypes.getSelectedItem() +" : -600$");
+          JOptionPane.showConfirmDialog(null, "Add "+ cbxAnimalTypes.getSelectedItem() +" : -600$");
+          //Animal selectedAnimal = 
 				}
 			}
 		});
