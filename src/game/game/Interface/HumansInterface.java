@@ -71,7 +71,9 @@ public class HumansInterface extends HomeInterface {
 		lblNewLabel_2.setForeground(Color.WHITE);
 		lblNewLabel_2.setFont(new Font("Showcard Gothic", Font.BOLD | Font.ITALIC, 26));
 		lblNewLabel_2.setBounds(468, 10, 168, 39);
-		frame.getContentPane().add(lblNewLabel_2);
+    frame.getContentPane().add(lblNewLabel_2);
+    
+    //JLabel lbl
 		
 		JProgressBar progressBar = new JProgressBar();
 		progressBar.setBounds(878, 27, 207, 11);
