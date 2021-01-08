@@ -26,7 +26,9 @@ import game.BuildingMaterial;
 public class ShowMaterialsInterface extends HomeInterface {
 
   JFrame frame;
-  JLabel lblCurrentMoney = new JLabel("100000$");
+	JLabel lblCurrentMoney = new JLabel(mainGame.getMoney().getAmount() + "$");
+  JLabel lblCurrentMission = new JLabel(mainGame.getMissions().getCurrentMission().getTitle());
+JProgressBar missionsProgressBar = new JProgressBar();
   private MyThread t;
 
   /**
@@ -107,30 +109,29 @@ public class ShowMaterialsInterface extends HomeInterface {
 
     }
 
-    JProgressBar progressBar = new JProgressBar();
-    progressBar.setBounds(878, 27, 207, 11);
-    progressBar.setValue(30);
-    frame.getContentPane().add(progressBar);
+    missionsProgressBar.setBounds(878, 27, 207, 11);
+	missionsProgressBar.setValue(30);
+	frame.getContentPane().add(missionsProgressBar);
 
-    JLabel lblMissionIntro = new JLabel("Mission");
+	JLabel lblMissionIntro = new JLabel("Mission");
     lblMissionIntro.setForeground(Color.WHITE);
     lblMissionIntro.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
-    lblMissionIntro.setBounds(955, 12, 59, 11);
+    lblMissionIntro.setBounds(955, 12, 69, 11);
     frame.getContentPane().add(lblMissionIntro);
 
-    JLabel lblCurrentMission = new JLabel("{Mission Name}");
+    lblCurrentMission.setToolTipText(mainGame.getMissions().getCurrentMission().getDescription());
     lblCurrentMission.setHorizontalAlignment(SwingConstants.CENTER);
     lblCurrentMission.setForeground(Color.WHITE);
     lblCurrentMission.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
     lblCurrentMission.setBounds(878, 41, 207, 20);
     frame.getContentPane().add(lblCurrentMission);
-
+    
     lblCurrentMoney.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
     lblCurrentMoney.setForeground(Color.WHITE);
     lblCurrentMoney.setIcon(new ImageIcon(IMAGES_PATH + "coin-icon.png"));
     lblCurrentMoney.setBounds(38, 10, 123, 28);
     frame.getContentPane().add(lblCurrentMoney);
-
+    
     JLabel lblNewLabel = new JLabel();
     lblNewLabel.setIcon(new ImageIcon(IMAGES_PATH + "planet.png"));
     lblNewLabel.setBounds(570, 79, 515, 523);
@@ -149,7 +150,9 @@ public class ShowMaterialsInterface extends HomeInterface {
       while (true) {
         // lblCurrentMission.setText(mainGame.getMissions().getCurrentMission().getTitle());
         lblCurrentMoney.setText(mainGame.getMoney().getAmount() + "$");
+        lblCurrentMission.setText(mainGame.getMissions().getCurrentMission().getTitle());
 
+        missionsProgressBar.setValue((int) mainGame.getMissions().percentAchieved());
         // missionsProgressBar.setValue((int)mainGame.getMissions().percentAchieved());
 
         try {
