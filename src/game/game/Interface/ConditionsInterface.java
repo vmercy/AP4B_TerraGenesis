@@ -1,5 +1,7 @@
 package game.Interface;
 
+import game.*;
+
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -19,6 +21,9 @@ import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 public class ConditionsInterface extends HomeInterface {
 
   JFrame frame;
+  JLabel lblCurrentMission = new JLabel(mainGame.getMissions().getCurrentMission().getTitle());
+	JLabel lblCurrentMoney = new JLabel(mainGame.getMoney().getAmount() + "$");
+	JProgressBar missionsProgressBar = new JProgressBar();
   private ConditionsUpdater t;
   JProgressBar progressBarWater = new JProgressBar();
   JLabel lblWaterValue = new JLabel("45%");
@@ -133,11 +138,6 @@ public class ConditionsInterface extends HomeInterface {
     lblBiomass.setBounds(65, 499, 233, 32);
     frame.getContentPane().add(lblBiomass);
 
-    JProgressBar progressBarMissions = new JProgressBar();
-    progressBarMissions.setBounds(878, 27, 207, 11);
-    progressBarMissions.setValue(100);
-    frame.getContentPane().add(progressBarMissions);
-
     progressBarWater.setBounds(253, 179, 207, 11);
     progressBarWater.setValue(45);
     frame.getContentPane().add(progressBarWater);
@@ -186,25 +186,28 @@ public class ConditionsInterface extends HomeInterface {
     lblBiomassValue.setBounds(468, 499, 50, 32);
     frame.getContentPane().add(lblBiomassValue);
 
-    JLabel lblMissionIntro = new JLabel("Mission");
+    missionsProgressBar.setBounds(878, 27, 207, 11);
+	missionsProgressBar.setValue(30);
+	frame.getContentPane().add(missionsProgressBar);
+
+	JLabel lblMissionIntro = new JLabel("Mission");
     lblMissionIntro.setForeground(Color.WHITE);
     lblMissionIntro.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
-    lblMissionIntro.setBounds(955, 12, 59, 11);
+    lblMissionIntro.setBounds(955, 12, 69, 11);
     frame.getContentPane().add(lblMissionIntro);
 
-    JLabel lblNewLabel_3_2 = new JLabel("{Mission Name}");
-    lblNewLabel_3_2.setHorizontalAlignment(SwingConstants.CENTER);
-    lblNewLabel_3_2.setForeground(Color.WHITE);
-    lblNewLabel_3_2.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
-    lblNewLabel_3_2.setBounds(878, 41, 207, 20);
-    frame.getContentPane().add(lblNewLabel_3_2);
-
-    JLabel lblNewLabel_4 = new JLabel("100000$");
-    lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
-    lblNewLabel_4.setForeground(Color.WHITE);
-    lblNewLabel_4.setIcon(new ImageIcon(IMAGES_PATH + "coin-icon.png"));
-    lblNewLabel_4.setBounds(38, 10, 123, 28);
-    frame.getContentPane().add(lblNewLabel_4);
+    lblCurrentMission.setToolTipText(mainGame.getMissions().getCurrentMission().getDescription());
+    lblCurrentMission.setHorizontalAlignment(SwingConstants.CENTER);
+    lblCurrentMission.setForeground(Color.WHITE);
+    lblCurrentMission.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+    lblCurrentMission.setBounds(878, 41, 207, 20);
+    frame.getContentPane().add(lblCurrentMission);
+	
+	lblCurrentMoney.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+    lblCurrentMoney.setForeground(Color.WHITE);
+    lblCurrentMoney.setIcon(new ImageIcon(IMAGES_PATH + "coin-icon.png"));
+    lblCurrentMoney.setBounds(38, 10, 123, 28);
+    frame.getContentPane().add(lblCurrentMoney);
 
     JLabel lblNewLabel = new JLabel();
     lblNewLabel.setIcon(new ImageIcon(IMAGES_PATH + "planet.png"));
@@ -250,6 +253,11 @@ public class ConditionsInterface extends HomeInterface {
         lblBiomassValue.setText(f.format(biomassValue) + "%");
         progressBarBiomass.setValue((int) biomassValue);
 
+        lblCurrentMission.setText(mainGame.getMissions().getCurrentMission().getTitle());
+        lblCurrentMoney.setText(mainGame.getMoney().getAmount() + "$");
+
+        missionsProgressBar.setValue((int) mainGame.getMissions().percentAchieved());
+        
         try {
           Thread.sleep(1000);
         } catch (InterruptedException e1) {
