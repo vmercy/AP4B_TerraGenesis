@@ -59,7 +59,7 @@ public class AnimalsInterface extends HomeInterface{
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		Object[] fishSpeciesStrings = new Object[] {"Tuna", "Shark", "Shrimp", "Mackerel", "Small Fish", "Single Cell Organism"};
+		Object[] fishSpeciesStrings = new Object[] {"Tuna", "Shark", "Shrimp", "Mackerel", "Small Fish"};
 		@SuppressWarnings({ "unchecked", "rawtypes" })
 		JComboBox<String> cbxFishSpecies = new JComboBox(fishSpeciesStrings);
 		cbxFishSpecies.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -68,7 +68,7 @@ public class AnimalsInterface extends HomeInterface{
 		cbxFishSpecies.setVisible(false);
 		frame.getContentPane().add(cbxFishSpecies);
 		
-		Object[] animalTypesStrings = new Object[] {"Aquatic Mammal","Insect","Fish"};
+		Object[] animalTypesStrings = new Object[] {"Aquatic Mammal","Insect","Fish", "Single Cell Organism"};
 		@SuppressWarnings({ "unchecked", "rawtypes" })
 		JComboBox<String> cbxAnimalTypes = new JComboBox(animalTypesStrings);
 		cbxAnimalTypes.setFont(new Font("Tahoma", Font.PLAIN, 12));
