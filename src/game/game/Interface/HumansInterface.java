@@ -1,5 +1,8 @@
 package game.Interface;
 
+import game.*;
+
+
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -18,7 +21,10 @@ import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 public class HumansInterface extends HomeInterface {
 
 	JFrame frame;
-
+	JLabel lblCurrentMission = new JLabel(mainGame.getMissions().getCurrentMission().getTitle());
+	JLabel lblCurrentMoney = new JLabel(mainGame.getMoney().getAmount() + "$");
+	JProgressBar missionsProgressBar = new JProgressBar();
+	private ConditionUpdater t;
 	/**
 	 * Launch the application.
 	 */
@@ -43,6 +49,8 @@ public class HumansInterface extends HomeInterface {
 	public HumansInterface() {
 		initialize();
 		mu.stop();
+		t = new ConditionUpdater();
+	    t.start();
 	}
 
 	/**
@@ -79,30 +87,28 @@ public class HumansInterface extends HomeInterface {
     lblGameSucess.setBounds(100, 100, 400, 500);
     frame.getContentPane().add(lblGameSucess);
 		
-		JProgressBar progressBar = new JProgressBar();
-		progressBar.setBounds(878, 27, 207, 11);
-		progressBar.setValue(30);
-		frame.getContentPane().add(progressBar);
+    missionsProgressBar.setBounds(878, 27, 207, 11);
+	missionsProgressBar.setValue(30);
+	frame.getContentPane().add(missionsProgressBar);
+
+	JLabel lblMissionIntro = new JLabel("Mission");
+    lblMissionIntro.setForeground(Color.WHITE);
+    lblMissionIntro.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+    lblMissionIntro.setBounds(955, 12, 69, 11);
+    frame.getContentPane().add(lblMissionIntro);
+
+    lblCurrentMission.setToolTipText(mainGame.getMissions().getCurrentMission().getDescription());
+    lblCurrentMission.setHorizontalAlignment(SwingConstants.CENTER);
+    lblCurrentMission.setForeground(Color.WHITE);
+    lblCurrentMission.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+    lblCurrentMission.setBounds(878, 41, 207, 20);
+    frame.getContentPane().add(lblCurrentMission);
 	
-		JLabel lblNewLabel_3 = new JLabel("Mission");
-		lblNewLabel_3.setForeground(Color.WHITE);
-		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
-		lblNewLabel_3.setBounds(955, 12, 59, 11);
-		frame.getContentPane().add(lblNewLabel_3);
-		
-		JLabel lblNewLabel_3_1 = new JLabel("{Mission Name}");
-		lblNewLabel_3_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3_1.setForeground(Color.WHITE);
-		lblNewLabel_3_1.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
-		lblNewLabel_3_1.setBounds(878, 41, 207, 20);
-		frame.getContentPane().add(lblNewLabel_3_1);
-		
-		JLabel lblNewLabel_4 = new JLabel("100000$");
-		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
-		lblNewLabel_4.setForeground(Color.WHITE);
-		lblNewLabel_4.setIcon(new ImageIcon(IMAGES_PATH+"coin-icon.png"));
-		lblNewLabel_4.setBounds(38, 10, 123, 28);
-		frame.getContentPane().add(lblNewLabel_4);
+	lblCurrentMoney.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 14));
+    lblCurrentMoney.setForeground(Color.WHITE);
+    lblCurrentMoney.setIcon(new ImageIcon(IMAGES_PATH + "coin-icon.png"));
+    lblCurrentMoney.setBounds(38, 10, 123, 28);
+    frame.getContentPane().add(lblCurrentMoney);
 		
 		JLabel lblNewLabel = new JLabel();
 		lblNewLabel.setIcon(new ImageIcon(IMAGES_PATH+"planet.png"));
@@ -114,5 +120,22 @@ public class HumansInterface extends HomeInterface {
 		lblNewLabel_1.setBounds(0, 0, 1106, 680);
 		frame.getContentPane().add(lblNewLabel_1);
 	}
+	private class ConditionUpdater extends Thread {
 
+	    @Override
+	    public void run() {
+	      while (true) {
+	        lblCurrentMission.setText(mainGame.getMissions().getCurrentMission().getTitle());
+	        lblCurrentMoney.setText(mainGame.getMoney().getAmount() + "$");
+
+	        missionsProgressBar.setValue((int) mainGame.getMissions().percentAchieved());
+	        
+	        try {
+	          Thread.sleep(1000);
+	        } catch (InterruptedException e1) {
+	          e1.printStackTrace();
+	        }
+	      }
+	    }
+	  }
 }
