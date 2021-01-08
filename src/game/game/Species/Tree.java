@@ -1,15 +1,13 @@
 
 package game.Species;
 
-import javax.swing.*;
-
 public class Tree extends Vegetal {
 
   public Tree()
   {
     this.m_price = 150.0;
     this.m_name= "Tree";
-    //TODO: delete condition evolutions with zero value (do the same for facilities)
+    //TODO: delete condition evolutions with zero value (do the same for facilities and animals)
     this.m_conditionEvolutions.add("Water", 0.0);
     this.m_conditionEvolutions.add("Temperature", +0.5);
     this.m_conditionEvolutions.add("Oxygen", +5.12);

@@ -1,10 +1,11 @@
 package game.Species;
 
-import javax.swing.*;
-
-import java.util.Random;
-
 public class Insect extends Animal {
-
+  public Insect()
+  {
+    m_price = 20.0;
+    m_name = "Insect";
+    addPrey("Single Cell Organism");
+  }
 
 }

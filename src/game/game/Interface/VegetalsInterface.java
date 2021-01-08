@@ -65,11 +65,11 @@ public class VegetalsInterface extends HomeInterface {
     comboBox.setBounds(296, 251, 141, 32);
     frame.getContentPane().add(comboBox);
 
-    JButton btnNewButton_3_1 = new JButton("Add");
-    btnNewButton_3_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
-    btnNewButton_3_1.setIcon(new ImageIcon(IMAGES_PATH + "add-icon.png"));
-    btnNewButton_3_1.addActionListener(bHandler);
-    btnNewButton_3_1.addActionListener(new ActionListener() {
+    JButton btnAdd = new JButton("Add");
+    btnAdd.setFont(new Font("Tahoma", Font.PLAIN, 12));
+    btnAdd.setIcon(new ImageIcon(IMAGES_PATH + "add-icon.png"));
+    btnAdd.addActionListener(bHandler);
+    btnAdd.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
         Vegetal newVegetal = mainGame.getVegetals().createVegetalFromType(comboBox.getSelectedItem().toString());
         JOptionPane.showConfirmDialog(null, "Add a " + newVegetal.getName() + " for " + newVegetal.getPrice() + "$ ?");
@@ -85,19 +85,17 @@ public class VegetalsInterface extends HomeInterface {
             JOptionPane.showMessageDialog(null, "You don't have any insect in your animals collection - Please buy one and try again");
             break;
           }
-
           case 1: {
               mainGame.getVegetals().addVegetal(newVegetal);
               newVegetal.updateConditions(mainGame.getPlanet().getPlanetAtmosphere());
               mainGame.getMoney().sub(newVegetal.getPrice());
-              //TODO: test
             break;
           }
         }
       }
     });
-    btnNewButton_3_1.setBounds(211, 370, 103, 32);
-    frame.getContentPane().add(btnNewButton_3_1);
+    btnAdd.setBounds(211, 370, 103, 32);
+    frame.getContentPane().add(btnAdd);
 
     JButton btnNewButton_3 = new JButton("Back");
     btnNewButton_3.setFont(new Font("Tahoma", Font.PLAIN, 12));

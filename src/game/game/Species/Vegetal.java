@@ -1,8 +1,6 @@
 
 package game.Species;
 
-import javax.swing.*;
-
 import game.Money;
 
 public class Vegetal extends Species {
@@ -21,7 +19,6 @@ public class Vegetal extends Species {
       return 0;
     if (m_price > currentMoney_p.getAmount())
       return -1;
-    currentMoney_p.sub(m_price);
     return 1;
   }
 
