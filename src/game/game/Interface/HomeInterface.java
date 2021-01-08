@@ -244,6 +244,11 @@ public class HomeInterface {
           if(mainGame.getPlanet().getPlanetAtmosphere().isAllCompleted())
           mainGame.getMissions().setCompleted("Achieve 100% atmospheric conditions");
 
+        if(mainGame.getMoney().getAmount()<2.0){
+            JOptionPane.showMessageDialog(null, "OUT OF MONEY : GAME OVER :-(");
+            System.exit(0);
+        }
+
         for (Mission mission : mainGame.getMissions().getMissionsVector())
         {
           if(mission.isCompleted() && ! mission.isDisplayed())
