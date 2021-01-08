@@ -173,7 +173,7 @@ public class VegetalsInterface extends HomeInterface {
 	      while (true) {
 	        lblCurrentMission.setText(mainGame.getMissions().getCurrentMission().getTitle());
 	        lblCurrentMoney.setText(mainGame.getMoney().getAmount() + "$");
-
+          lblCurrentMission.setToolTipText(mainGame.getMissions().getCurrentMission().getDescription());
 	        missionsProgressBar.setValue((int) mainGame.getMissions().percentAchieved());
 	        
 	        try {

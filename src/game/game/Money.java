@@ -1,7 +1,7 @@
 package game;
 
 public class Money {
-  private static final double START_MONEY = 3000.0;
+  private static final double START_MONEY = 10000.0;
   private double m_amount;
 
   public Money()
