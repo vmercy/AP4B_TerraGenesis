@@ -6,23 +6,10 @@
   "configurations": [
     {
       "type": "java",
-      "name": "Launch ConditionsInterface",
-      "request": "launch",
-      "mainClass": "game.Interface.ConditionsInterface",
-      "projectName": "src"
-    },
-    {
-      "type": "java",
       "name": "Launch Home",
       "request": "launch",
       "mainClass": "game.Interface.HomeInterface",
       "projectName": "src"
-    },
-    {
-      "type": "java",
-      "name": "Launch Current File",
-      "request": "launch",
-      "mainClass": "${file}"
     }
   ]
 }
