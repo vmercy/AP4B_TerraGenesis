@@ -6,9 +6,9 @@ import java.util.Vector;
 
 import javax.swing.JOptionPane;
 
-import game.Species.Animal;
+import game.Species.Animals;
 import game.Species.Species;
-import game.Species.Vegetal;
+import game.Species.Vegetals;
 
 public class Game {
 
@@ -26,9 +26,9 @@ public class Game {
     m_planet = new Planet();
     m_conditionThread = new ConditionThread();
     m_conditionThread.start();
-    m_animals = new Vector<Species>();
-    m_vegetals = new Vector<Species>();
-    m_humans = new Vector<Species>();
+    m_animals = new Animals();
+    m_vegetals = new Vegetals();
+    //m_humans = new Humans();
   }
 
   private class CompleteMissions extends Thread {
@@ -54,9 +54,9 @@ public class Game {
   private Money m_money;
   private City m_city;
   private ConditionThread m_conditionThread;
-  private Vector<Species> m_animals;
-  private Vector<Species> m_vegetals;
-  private Vector<Species> m_humans;
+  private Animals m_animals;
+  private Vegetals m_vegetals;
+  //private Humans m_humans;
 
   public City getCity() {
     return m_city;
@@ -78,37 +78,22 @@ public class Game {
     return m_buildingMaterials;
   }
 
-  /**
-   * @param Animal animal_p
-   * @brief Lorsque qu'une esp�ce animale est instaur�e avec succ�s sur la
-   *        plan�te, la jauge de Co2 monte
-   */
-
-  public void animalSpeciesIntroduced(Animal animal_p) {
-    if (m_planet.m_planetAtmosphere.findCondition("Carbon dioxide").getCurrentValuePercent() < 100) {
-      m_planet.m_planetAtmosphere.incrementCondition("Carbon dioxide", animal_p.getcarbonDioxideProduced());
-    }
-
-    if (m_planet.m_planetAtmosphere.findCondition("Carbon dioxide").getCurrentValuePercent() >= 100) {
-      m_planet.m_planetAtmosphere.findCondition("Carbon dioxide").setCurrentValue(1);
-    }
+  public Animals getAnimals()
+  {
+    return m_animals;
   }
 
-  /**
-   * @param Vegetal vegetal_p
-   * @brief Lorsque qu'une esp�ce v�g�tale est instaur�e avec succ�s sur la
-   *        plan�te, la jauge d'O2 monte
-   */
-
-  public void vegetalSpeciesIntroduced(Vegetal vegetal_p) {
-    if (m_planet.m_planetAtmosphere.findCondition("Carbon dioxide").getCurrentValuePercent() < 100) {
-      m_planet.m_planetAtmosphere.incrementCondition("Oxygen", vegetal_p.getOxygenGiven());
-    }
-
-    if (m_planet.m_planetAtmosphere.findCondition("Carbon dioxide").getCurrentValuePercent() >= 100) {
-      m_planet.m_planetAtmosphere.findCondition("Oxygen").setCurrentValue(1);
-    }
+  public Vegetals getVegetals()
+  {
+    return m_vegetals;
   }
+
+  /*
+  public Humans getHumans()
+  {
+    return m_humans;
+  }
+  */
 
   public class ConditionThread extends Thread {
     Vector<Condition> conditions = m_planet.getPlanetAtmosphere().getConditions();
